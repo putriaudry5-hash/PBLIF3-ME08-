@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('internal_users', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('tenant_id')
+                ->nullable()
+                ->constrained('tenants')
+                ->nullOnDelete();
+
+            $table->string('nama');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('role');
+            $table->string('status')->default('aktif');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('internal_users');
+    }
+};

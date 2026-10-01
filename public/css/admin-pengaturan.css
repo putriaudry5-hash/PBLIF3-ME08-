@@ -1,0 +1,345 @@
+.setting-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.setting-panel {
+    overflow: hidden;
+}
+
+.setting-panel-header {
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 17px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.setting-header-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #edf4fb;
+    color: #3d74aa;
+}
+
+.setting-header-icon.orange {
+    background: #fff1e5;
+    color: #d96b1b;
+}
+
+.setting-header-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.setting-panel-header h2 {
+    margin-bottom: 3px;
+    color: var(--text);
+    font-size: 16px;
+}
+
+.setting-panel-header p {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.setting-panel-body {
+    padding: 15px 17px;
+}
+
+.setting-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.setting-full {
+    margin-bottom: 13px;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.setting-group label {
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.setting-group input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: 0;
+    background: #fff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 12px;
+    transition: .15s ease;
+}
+
+.setting-group input:focus {
+    border-color: #8292a4;
+    box-shadow: 0 0 0 3px rgba(25, 50, 77, .06);
+}
+
+.setting-group input::placeholder {
+    color: #a0a8b3;
+}
+
+.setting-group small {
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.setting-save-bar {
+    min-height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 17px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.setting-save-info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.setting-save-info svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.setting-save-button {
+    min-height: 39px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--navy);
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .15s ease;
+}
+
+.setting-save-button:hover {
+    background: var(--navy-dark);
+}
+
+.setting-save-button svg {
+    width: 15px;
+    height: 15px;
+}
+
+.setting-alert-success,
+.setting-alert-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 14px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    font-size: 11px;
+    transition: .3s ease;
+}
+
+.setting-alert-success {
+    border: 1px solid #caead7;
+    background: #eaf7ef;
+    color: #287653;
+}
+
+.setting-alert-error {
+    border: 1px solid #efc8c5;
+    background: #fff1ef;
+    color: #a64741;
+}
+
+.setting-alert-success svg,
+.setting-alert-error svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.setting-alert-error strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.setting-alert-error ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
+.setting-alert-error li {
+    margin-top: 2px;
+}
+
+.setting-alert-success.hide {
+    opacity: 0;
+    transform: translateY(-4px);
+}
+
+@media (max-width: 750px) {
+    .setting-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .setting-save-bar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .setting-save-button {
+        width: 100%;
+    }
+}
+
+.setting-password-panel {
+    margin-top: 14px;
+}
+
+.setting-header-icon.security {
+    background: #edf7f1;
+    color: #287b53;
+}
+
+.setting-password-input {
+    position: relative;
+}
+
+.setting-password-input input {
+    padding-right: 44px;
+}
+
+.setting-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #7a8795;
+    cursor: pointer;
+}
+
+.setting-password-toggle:hover {
+    background: #f1f4f6;
+    color: var(--text);
+}
+
+.setting-password-toggle svg {
+    width: 15px;
+    height: 15px;
+}
+
+.setting-password-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 13px;
+    padding-top: 13px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.setting-password-button {
+    min-height: 39px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--navy);
+    color: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.setting-password-button:hover {
+    background: var(--navy-dark);
+}
+
+.setting-password-button svg {
+    width: 15px;
+    height: 15px;
+}
+
+.setting-logout-button {
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 13px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #cbd4de;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.setting-logout-button:hover {
+    background: rgba(255, 255, 255, .07);
+    color: #fff;
+}
+
+.setting-logout-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sidebar-bottom form {
+    margin: 0;
+}
+
+@media (max-width: 750px) {
+    .setting-password-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .setting-password-button {
+        width: 100%;
+    }
+}

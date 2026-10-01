@@ -1,21 +1,34 @@
-function togglePassword() {
-    const passwordInput =
-        document.getElementById("password");
+document.addEventListener(
+    'DOMContentLoaded',
+    function () {
 
-    const toggleButton =
-        document.querySelector(".password-toggle");
+        const password =
+            document.getElementById('password');
 
-    if (passwordInput.type === "password") {
+        const toggle =
+            document.getElementById('passwordToggle');
 
-        passwordInput.type = "text";
+        if (!password || !toggle) {
+            return;
+        }
 
-        toggleButton.textContent = "🙈";
+        toggle.addEventListener(
+            'click',
+            function () {
 
-    } else {
+                const hidden =
+                    password.type === 'password';
 
-        passwordInput.type = "password";
+                password.type =
+                    hidden
+                        ? 'text'
+                        : 'password';
 
-        toggleButton.textContent = "👁";
-
+                toggle.textContent =
+                    hidden
+                        ? 'Sembunyikan'
+                        : 'Lihat';
+            }
+        );
     }
-}
+);

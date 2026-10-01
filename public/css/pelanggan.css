@@ -4,59 +4,101 @@
     box-sizing: border-box;
 }
 
+:root {
+    --navy: #0d3457;
+    --navy-dark: #082943;
+    --navy-light: #174b78;
+
+    --orange: #f7941f;
+    --orange-dark: #df7912;
+    --orange-soft: #fff3e4;
+
+    --white: #ffffff;
+
+    --background: #f6f8fb;
+
+    --text: #17233c;
+    --muted: #7b8797;
+    --muted-light: #9aa4b1;
+
+    --border: #e1e7ed;
+
+    --green: #258657;
+    --green-soft: #e9f6ef;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
 
-    color: #17233c;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-    background: #f8fafc;
+    color: var(--text);
+
+    background: var(--background);
 }
 
 
-/* =========================
+/* =========================================================
    NAVBAR
-========================= */
+========================================================= */
 
 .navbar {
     width: 100%;
-    height: 76px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 6%;
+    height: 78px;
 
     position: sticky;
     top: 0;
 
     z-index: 100;
 
-    background: #ffffff;
+    background:
+        rgba(255, 255, 255, 0.97);
 
-    border-bottom: 1px solid #e9edf2;
+    border-bottom:
+        1px solid
+        rgba(225, 231, 237, 0.9);
 
     box-shadow:
-        0 3px 14px
-        rgba(23, 35, 60, 0.04);
+        0 4px 20px
+        rgba(13, 52, 87, 0.035);
+}
+
+.navbar-inner {
+    width: 90%;
+    max-width: 1380px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
     display: flex;
     align-items: center;
 
-    gap: 10px;
+    gap: 11px;
+
+    text-decoration: none;
 }
 
 .logo-box {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
     align-items: center;
@@ -64,246 +106,311 @@ body {
 
     border-radius: 10px;
 
-    background: #17233c;
+    background:
+        linear-gradient(
+            145deg,
+            #ffa32f,
+            var(--orange)
+        );
 
     color: #ffffff;
 
+    font-size: 16px;
     font-weight: 800;
+
+    box-shadow:
+        0 7px 16px
+        rgba(247, 148, 31, 0.17);
 }
 
 .logo h2 {
-    color: #17233c;
+    color: var(--navy);
 
     font-size: 23px;
+    font-weight: 800;
 
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
 }
 
 .logo h2 span {
-    color: #f58220;
+    color: var(--orange);
 }
 
 
-/* MENU NAV */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-nav {
+.nav-menu {
     margin-left: auto;
 
     display: flex;
+    align-items: center;
 
     gap: 35px;
 }
 
-nav a {
+.nav-menu a {
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+
     position: relative;
 
-    color: #677286;
+    color: #718093;
 
     text-decoration: none;
 
     font-size: 14px;
     font-weight: 600;
+
+    transition:
+        color 0.15s ease;
 }
 
-nav a:hover,
-nav a.active {
-    color: #f58220;
+.nav-menu a:hover {
+    color: var(--navy);
 }
 
-nav a.active::after {
+.nav-menu a.active {
+    color: var(--orange);
+}
+
+.nav-menu a.active::after {
     content: "";
 
     position: absolute;
 
     left: 0;
     right: 0;
-
-    bottom: -28px;
+    bottom: 0;
 
     height: 3px;
 
-    border-radius: 5px;
+    border-radius:
+        4px 4px 0 0;
 
-    background: #f58220;
+    background: var(--orange);
 }
 
 
-/* USER */
+/* =========================================================
+   USER PROFILE
+========================================================= */
 
-.user {
+.user-profile {
     margin-left: 42px;
 
     display: flex;
     align-items: center;
 
-    gap: 10px;
+    gap: 11px;
+
+    padding-left: 24px;
+
+    border-left:
+        1px solid
+        #e6ebf0;
 }
 
 .user-avatar {
-    width: 40px;
-    height: 40px;
+    width: 41px;
+    height: 41px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     border-radius: 50%;
 
-    background: #fff0de;
+    background: var(--orange-soft);
 
-    color: #f58220;
+    color: var(--orange);
 
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.user-info strong {
+    display: block;
+
+    color: var(--navy);
+
+    font-size: 13px;
     font-weight: 700;
 }
 
-.user strong {
+.user-info span {
     display: block;
 
-    color: #17233c;
+    margin-top: 3px;
 
-    font-size: 13px;
-}
-
-.user small {
-    display: block;
-
-    margin-top: 2px;
-
-    color: #969fac;
+    color: #9aa4af;
 
     font-size: 11px;
 }
 
 
-/* =========================
+/* =========================================================
    MAIN
-========================= */
+========================================================= */
 
 main {
-    width: 88%;
-    max-width: 1280px;
+    width: 90%;
+    max-width: 1380px;
 
-    margin: 35px auto 70px;
+    margin:
+        36px auto
+        70px;
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
-    min-height: 300px;
+    min-height: 325px;
 
     display: grid;
 
     grid-template-columns:
-        1.2fr
-        0.8fr;
+        56% 44%;
+
+    position: relative;
 
     overflow: hidden;
 
-    border-radius: 24px;
+    border:
+        1px solid
+        #efdcc8;
+
+    border-radius: 22px;
 
     background:
         linear-gradient(
             135deg,
-            #fff0dc,
-            #fff9f1
+            #fff3e5 0%,
+            #fffaf5 100%
         );
 
-    border: 1px solid #f7e1c8;
+    box-shadow:
+        0 8px 28px
+        rgba(13, 52, 87, 0.055);
 }
 
-
-/* HERO TEXT */
-
 .hero-content {
-    padding: 52px;
+    padding:
+        55px
+        58px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-.hello {
+.hero-label {
     width: fit-content;
-
-    margin-bottom: 12px;
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    color: #d86616;
-
-    background: #ffffff;
-
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.hero h1 {
-    max-width: 570px;
 
     margin-bottom: 15px;
 
-    color: #17233c;
+    padding:
+        7px 11px;
 
-    font-size: 42px;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: var(--orange-dark);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.1px;
+}
+
+.hero h1 {
+    margin-bottom: 17px;
+
+    color: var(--navy);
+
+    font-size: 43px;
+    line-height: 1.1;
+
+    font-weight: 800;
 
     letter-spacing: -1.2px;
 }
 
 .hero p {
-    max-width: 550px;
+    max-width: 540px;
 
     margin-bottom: 27px;
 
-    color: #697487;
+    color: #67768a;
 
-    font-size: 16px;
-
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.75;
 }
-
-
-/* BUTTON HERO */
 
 .hero-button {
     width: fit-content;
 
     padding:
-        12px
-        20px;
+        12px 19px;
 
     border-radius: 9px;
 
-    background: #f58220;
+    background: var(--orange);
 
     color: #ffffff;
 
     text-decoration: none;
 
     font-size: 13px;
-
     font-weight: 700;
 
-    transition: .2s;
+    box-shadow:
+        0 7px 16px
+        rgba(247, 148, 31, 0.18);
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
 }
 
 .hero-button:hover {
-    background: #df6d13;
+    background: var(--orange-dark);
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(247, 148, 31, 0.23);
 }
 
 
-/* HERO FOTO */
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .hero-image {
-    min-height: 300px;
+    min-height: 325px;
+
+    position: relative;
 
     overflow: hidden;
+
+    background: #e9edf1;
 }
 
 .hero-image img {
@@ -313,129 +420,163 @@ main {
     display: block;
 
     object-fit: cover;
+
+    object-position:
+        center 35%;
+}
+
+.hero-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 248, 239, 0.16),
+            transparent 45%
+        );
+
+    pointer-events: none;
 }
 
 
-/* =========================
+/* =========================================================
    TENANT SECTION
-========================= */
+========================================================= */
 
 .tenant-section {
-    margin-top: 48px;
+    margin-top: 50px;
 }
 
-
-/* JUDUL */
-
 .section-heading {
-    margin-bottom: 23px;
+    margin-bottom: 24px;
 
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    gap: 20px;
 }
 
 .section-label {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
 
-    color: #f58220;
+    color: var(--orange);
 
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
 
-    letter-spacing: 1.3px;
+    letter-spacing: 1.4px;
 }
 
 .section-heading h2 {
     margin-bottom: 5px;
 
-    color: #17233c;
+    color: var(--navy);
 
-    font-size: 27px;
+    font-size: 28px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
 }
 
 .section-heading p {
-    color: #8993a1;
-
-    font-size: 14px;
-}
-
-.see-all {
-    color: #f58220;
-
-    text-decoration: none;
+    color: #8793a2;
 
     font-size: 13px;
+}
 
+.tenant-count {
+    padding:
+        7px
+        11px;
+
+    border:
+        1px solid
+        #f0dcc5;
+
+    border-radius: 8px;
+
+    background:
+        #fff9f2;
+
+    color: var(--orange-dark);
+
+    font-size: 11px;
     font-weight: 700;
 }
 
 
-/* =========================
-   GRID
-========================= */
+/* =========================================================
+   TENANT GRID
+========================================================= */
 
 .tenant-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4, minmax(0, 1fr));
 
     gap: 22px;
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* =========================================================
+   TENANT CARD
+========================================================= */
 
 .tenant-card {
-    overflow: hidden;
+    min-width: 0;
 
-    background: #ffffff;
+    overflow: hidden;
 
     border:
         1px solid
-        #e6eaf0;
+        var(--border);
 
-    border-radius: 17px;
+    border-radius: 16px;
+
+    background: #ffffff;
 
     box-shadow:
-        0 5px
-        18px
-        rgba(23, 35, 60, 0.05);
+        0 5px 18px
+        rgba(13, 52, 87, 0.045);
 
     transition:
-        transform .22s ease,
-        box-shadow .22s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
 }
 
 .tenant-card:hover {
     transform:
-        translateY(-5px);
+        translateY(-4px);
+
+    border-color:
+        #d5dde5;
 
     box-shadow:
-        0 15px
-        33px
-        rgba(23, 35, 60, 0.11);
+        0 15px 30px
+        rgba(13, 52, 87, 0.09);
 }
 
 
-/* =========================
+/* =========================================================
    FOTO TENANT
-========================= */
+========================================================= */
 
 .tenant-photo {
-    position: relative;
-
     width: 100%;
-    height: 235px;
+    height: 215px;
+
+    position: relative;
 
     overflow: hidden;
 
-    background: #f3f4f6;
+    background: #eef1f4;
 }
 
 .tenant-photo img {
@@ -446,18 +587,22 @@ main {
 
     object-fit: cover;
 
-    /* biar fokus gambar lebih ke bagian atas/tengah */
-    object-position: center 25%;
+    object-position:
+        center 28%;
 
     transition:
-        transform .3s ease;
+        transform 0.3s ease;
 }
 
 .tenant-card:hover .tenant-photo img {
-    transform: scale(1.025);
+    transform:
+        scale(1.025);
 }
 
-/* BADGE BUKA */
+
+/* =========================================================
+   STATUS
+========================================================= */
 
 .open-badge {
     position: absolute;
@@ -465,36 +610,49 @@ main {
     top: 12px;
     right: 12px;
 
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
     padding:
         6px
-        10px;
+        9px;
+
+    border:
+        1px solid
+        rgba(37, 134, 87, 0.14);
 
     border-radius: 20px;
 
-    color: #188a4c;
-
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.94
-        );
+        rgba(255, 255, 255, 0.94);
 
-    box-shadow:
-        0 3px
-        10px
-        rgba(0,0,0,.08);
+    color: var(--green);
 
     font-size: 10px;
-
     font-weight: 700;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.07);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #31a86a;
 }
 
 
-/* =========================
-   ISI TENANT
-========================= */
+/* =========================================================
+   CARD CONTENT
+========================================================= */
 
 .tenant-content {
     padding: 17px;
@@ -502,146 +660,163 @@ main {
 
 .tenant-title {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
-    align-items: center;
-
-    justify-content:
-        space-between;
-
-    gap: 10px;
+    gap: 12px;
 }
 
 .tenant-title h3 {
-    color: #17233c;
+    color: var(--navy);
 
     font-size: 16px;
+    font-weight: 750;
+
+    line-height: 1.35;
+}
+
+.category {
+    margin-top: 5px;
+
+    color: #8a95a4;
+
+    font-size: 11px;
 }
 
 .rating {
-    color: #e99b11;
+    flex-shrink: 0;
 
-    font-size: 12px;
+    color: #df9511;
 
+    font-size: 11px;
     font-weight: 700;
 
     white-space: nowrap;
 }
 
 
-/* CATEGORY */
-
-.category {
-    margin-top: 6px;
-
-    color: #8791a0;
-
-    font-size: 12px;
-}
-
-
-/* =========================
+/* =========================================================
    META
-========================= */
+========================================================= */
 
 .tenant-meta {
-    margin-top: 18px;
+    margin-top: 17px;
 
     display: grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+        1.35fr 0.65fr;
 
-    gap: 10px;
+    gap: 9px;
 }
 
-.tenant-meta > div {
-    padding: 9px;
+.meta-item {
+    min-width: 0;
+
+    padding:
+        10px
+        11px;
 
     border-radius: 9px;
 
-    background: #f8fafc;
+    background: #f7f9fb;
 }
 
-.meta-label {
+.meta-item span {
     display: block;
 
     margin-bottom: 4px;
 
-    color: #a0a8b3;
+    color: #9aa5b2;
 
     font-size: 9px;
 }
 
-.tenant-meta strong {
-    color: #4f5b6c;
+.meta-item strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #566375;
 
     font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
 }
 
 
-/* =========================
+/* =========================================================
    BUTTON TENANT
-========================= */
+========================================================= */
 
 .tenant-button {
     width: 100%;
+    height: 39px;
 
     margin-top: 15px;
 
-    padding: 10px;
-
-    border: none;
+    border:
+        1px solid
+        #f3ddc5;
 
     border-radius: 9px;
 
-    background: #fff0de;
+    background: var(--orange-soft);
 
-    color: #d86616;
+    color: #d86e16;
 
-    font-size: 12px;
-
+    font-family: inherit;
+    font-size: 11px;
     font-weight: 700;
 
     cursor: pointer;
 
-    transition: .2s;
+    transition:
+        color 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease;
 }
 
 .tenant-button:hover {
-    color: #ffffff;
+    border-color: var(--orange);
 
-    background: #f58220;
+    background: var(--orange);
+
+    color: #ffffff;
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
 
     .tenant-grid {
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(3, minmax(0, 1fr));
     }
 
+    .hero h1 {
+        font-size: 38px;
+    }
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .navbar {
-        padding:
-            0
-            25px;
+    .navbar-inner {
+        width: 92%;
     }
 
-    nav {
+    .nav-menu {
         display: none;
     }
 
-    .user {
+    .user-profile {
         margin-left: auto;
     }
 
@@ -653,35 +828,80 @@ main {
         grid-template-columns: 1fr;
     }
 
+    .hero-image {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .tenant-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .logo-box {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+    .user-profile {
+        padding-left: 16px;
+        margin-left: auto;
+    }
+
+    main {
+        margin-top: 22px;
+    }
+
+    .hero {
+        border-radius: 16px;
+    }
+
     .hero-content {
-        padding: 35px;
+        padding: 34px 25px;
     }
 
     .hero h1 {
         font-size: 32px;
     }
 
-    .hero-image {
-        height: 230px;
-
-        min-height: auto;
+    .hero p {
+        font-size: 14px;
     }
 
-}
-
-
-@media (max-width: 600px) {
-
-    .tenant-grid {
-        grid-template-columns: 1fr;
+    .hero-image {
+        height: 210px;
+        min-height: 210px;
     }
 
     .section-heading {
         align-items: flex-start;
     }
 
-    .see-all {
-        margin-top: 5px;
+    .section-heading h2 {
+        font-size: 24px;
     }
 
+    .tenant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tenant-photo {
+        height: 230px;
+    }
 }

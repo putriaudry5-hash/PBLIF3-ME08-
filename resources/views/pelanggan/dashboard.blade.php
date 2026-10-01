@@ -6,42 +6,70 @@
 
     <title>Dashboard Pelanggan | KantinKita</title>
 
-    <link rel="stylesheet" href="{{ asset('css/pelanggan.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/pelanggan.css') }}?v={{ filemtime(public_path('css/pelanggan.css')) }}"
+    >
 </head>
 
 <body>
 
-<!-- ==============================
+{{-- =========================================================
      NAVBAR
-================================== -->
+========================================================= --}}
 <header class="navbar">
 
-    <div class="logo">
-        <div class="logo-box">K</div>
+    <div class="navbar-inner">
 
-        <h2>
-            Kantin<span>Kita</span>
-        </h2>
-    </div>
+        <a href="{{ route('pelanggan.dashboard') }}" class="logo">
+            <div class="logo-box">
+                K
+            </div>
 
-
-    <nav>
-        <a href="#" class="active">Beranda</a>
-        <a href="#tenant">Tenant</a>
-        <a href="#">Pesanan Saya</a>
-        <a href="#">Riwayat</a>
-    </nav>
+            <h2>
+                Kantin<span>Kita</span>
+            </h2>
+        </a>
 
 
-    <div class="user">
+        <nav class="nav-menu">
+            <a
+                href="{{ route('pelanggan.dashboard') }}"
+                class="active"
+            >
+                Beranda
+            </a>
 
-        <div class="user-avatar">
-            E
-        </div>
+            <a href="#tenant">
+                Tenant
+            </a>
 
-        <div>
-            <strong>Enting</strong>
-            <small>Pelanggan</small>
+            <a href="#">
+                Pesanan Saya
+            </a>
+
+            <a href="#">
+                Riwayat
+            </a>
+        </nav>
+
+
+        <div class="user-profile">
+
+            <div class="user-avatar">
+                E
+            </div>
+
+            <div class="user-info">
+                <strong>
+                    Enting
+                </strong>
+
+                <span>
+                    Pelanggan
+                </span>
+            </div>
+
         </div>
 
     </div>
@@ -49,30 +77,37 @@
 </header>
 
 
-
+{{-- =========================================================
+     MAIN
+========================================================= --}}
 <main>
 
-    <!-- ==============================
+    {{-- =====================================================
          HERO
-    ================================== -->
+    ====================================================== --}}
     <section class="hero">
 
         <div class="hero-content">
 
-            <span class="hello">
-                Halo, Enting 👋
+            <span class="hero-label">
+                SELAMAT DATANG
             </span>
 
             <h1>
-                Mau makan apa hari ini?
+                Mau makan apa
+                <br>
+                hari ini?
             </h1>
 
             <p>
-                Pilih tenant favoritmu, lihat menu yang tersedia,
-                lalu pesan sebelum waktu istirahat.
+                Pilih tenant yang kamu inginkan, lihat menu yang
+                tersedia, lalu lakukan pemesanan sebelum waktu istirahat.
             </p>
 
-            <a href="#tenant" class="hero-button">
+            <a
+                href="#tenant"
+                class="hero-button"
+            >
                 Lihat Tenant
             </a>
 
@@ -83,18 +118,19 @@
 
             <img
                 src="{{ asset('images/tenant1.png') }}"
-                alt="Makanan KantinKita"
+                alt="KantinKita"
             >
+
+            <div class="hero-image-overlay"></div>
 
         </div>
 
     </section>
 
 
-
-    <!-- ==============================
-         JUDUL TENANT
-    ================================== -->
+    {{-- =====================================================
+         TENANT
+    ====================================================== --}}
     <section
         class="tenant-section"
         id="tenant"
@@ -113,28 +149,20 @@
                 </h2>
 
                 <p>
-                    Pilih tenant yang ingin kamu pesan hari ini.
+                    Pilih tenant untuk melihat menu yang tersedia.
                 </p>
 
             </div>
 
-
-            <a href="#" class="see-all">
-                Lihat semua →
-            </a>
+            <span class="tenant-count">
+                8 Tenant
+            </span>
 
         </div>
 
 
-
-        <!-- ==============================
-             DATA TENANT
-        ================================== -->
-
         @php
-
             $tenants = [
-
                 [
                     'nama' => 'Dapur Bu Sari',
                     'kategori' => 'Masakan Rumahan',
@@ -143,7 +171,6 @@
                     'rating' => '4.8',
                     'pesanan' => '120+'
                 ],
-
                 [
                     'nama' => 'Kantin Sehat',
                     'kategori' => 'Makanan Sehat',
@@ -152,7 +179,6 @@
                     'rating' => '4.7',
                     'pesanan' => '98+'
                 ],
-
                 [
                     'nama' => 'Warung Barokah',
                     'kategori' => 'Aneka Makanan',
@@ -161,7 +187,6 @@
                     'rating' => '4.6',
                     'pesanan' => '87+'
                 ],
-
                 [
                     'nama' => 'Kantin Maju',
                     'kategori' => 'Mie & Makanan Ringan',
@@ -170,7 +195,6 @@
                     'rating' => '4.5',
                     'pesanan' => '76+'
                 ],
-
                 [
                     'nama' => 'Resto Kampus',
                     'kategori' => 'Aneka Masakan',
@@ -179,7 +203,6 @@
                     'rating' => '4.7',
                     'pesanan' => '105+'
                 ],
-
                 [
                     'nama' => 'Pojok Nusantara',
                     'kategori' => 'Masakan Nusantara',
@@ -188,7 +211,6 @@
                     'rating' => '4.8',
                     'pesanan' => '114+'
                 ],
-
                 [
                     'nama' => 'Kedai Kita',
                     'kategori' => 'Minuman & Snack',
@@ -197,7 +219,6 @@
                     'rating' => '4.6',
                     'pesanan' => '92+'
                 ],
-
                 [
                     'nama' => 'Dapoer Rasa',
                     'kategori' => 'Masakan Indonesia',
@@ -206,11 +227,8 @@
                     'rating' => '4.7',
                     'pesanan' => '101+'
                 ]
-
             ];
-
         @endphp
-
 
 
         <div class="tenant-grid">
@@ -219,8 +237,6 @@
 
                 <article class="tenant-card">
 
-
-                    <!-- FOTO -->
                     <div class="tenant-photo">
 
                         <img
@@ -229,22 +245,26 @@
                         >
 
                         <span class="open-badge">
-                            ● Buka
+                            <span class="status-dot"></span>
+                            Buka
                         </span>
 
                     </div>
 
 
-
-                    <!-- ISI CARD -->
                     <div class="tenant-content">
-
 
                         <div class="tenant-title">
 
-                            <h3>
-                                {{ $tenant['nama'] }}
-                            </h3>
+                            <div>
+                                <h3>
+                                    {{ $tenant['nama'] }}
+                                </h3>
+
+                                <p class="category">
+                                    {{ $tenant['kategori'] }}
+                                </p>
+                            </div>
 
                             <span class="rating">
                                 ★ {{ $tenant['rating'] }}
@@ -253,36 +273,27 @@
                         </div>
 
 
-                        <p class="category">
-                            {{ $tenant['kategori'] }}
-                        </p>
-
-
                         <div class="tenant-meta">
 
-                            <div>
-
-                                <span class="meta-label">
+                            <div class="meta-item">
+                                <span>
                                     Jam Operasional
                                 </span>
 
                                 <strong>
                                     {{ $tenant['jam'] }}
                                 </strong>
-
                             </div>
 
 
-                            <div>
-
-                                <span class="meta-label">
+                            <div class="meta-item">
+                                <span>
                                     Pesanan
                                 </span>
 
                                 <strong>
                                     {{ $tenant['pesanan'] }}
                                 </strong>
-
                             </div>
 
                         </div>
