@@ -30,61 +30,7 @@
 
 <div class="admin-layout">
 
-    <aside class="sidebar">
-
-        <div class="sidebar-logo">
-            <div class="logo-mark">K</div>
-
-            <div>
-                <h2>Kantin<span>Kita</span></h2>
-                <small>Tenant</small>
-            </div>
-        </div>
-
-        <nav class="sidebar-menu">
-
-            <a href="{{ route(
-                'tenant.dashboard'
-            ) }}">
-                <i data-lucide="layout-dashboard"></i>
-                <span>Dashboard</span>
-            </a>
-
-            <a
-                href="{{ route(
-                    'tenant.transaksi.offline'
-                ) }}"
-                class="active"
-            >
-                <i data-lucide="receipt-text"></i>
-                <span>Transaksi Offline</span>
-            </a>
-
-        </nav>
-
-        <div class="sidebar-bottom">
-
-            <form
-                method="POST"
-                action="{{ route(
-                    'login.internal.logout'
-                ) }}"
-            >
-                @csrf
-
-                <button
-                    type="submit"
-                    class="tenant-logout"
-                >
-                    <i data-lucide="log-out"></i>
-                    <span>Keluar</span>
-                </button>
-
-            </form>
-
-        </div>
-
-    </aside>
+@include('tenant.partials.sidebar')
 
     <main class="admin-main">
 
@@ -101,29 +47,7 @@
 
             </div>
 
-            <div class="admin-profile">
-
-                <div class="admin-avatar">
-                    {{ strtoupper(
-                        substr(
-                            $tenant->nama_tenant,
-                            0,
-                            1
-                        )
-                    ) }}
-                </div>
-
-                <div class="admin-info">
-                    <strong>
-                        {{ $tenant->nama_tenant }}
-                    </strong>
-
-                    <small>
-                        {{ $user->nama ?? 'Tenant' }}
-                    </small>
-                </div>
-
-            </div>
+            @include('tenant.partials.profile-menu')
 
         </header>
 
@@ -429,9 +353,11 @@
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
-<script src="{{ asset(
-    'js/tenant-transaksi.js'
-) }}"></script>
+<script id="tenantMenusData" type="application/json">
+{!! json_encode($menus, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT) !!}
+</script>
+
+<script src="{{ asset('js/tenant-transaksi.js') }}"></script>
 
 </body>
 </html>

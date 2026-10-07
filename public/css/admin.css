@@ -3783,3 +3783,201 @@ td strong {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== PROFILE ADMIN TOPBAR ===== */
+.admin-topbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-profile-menu {
+    position: relative;
+}
+
+.admin-profile-menu summary {
+    list-style: none;
+}
+
+.admin-profile-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.admin-profile-menu summary::marker {
+    display: none;
+    content: "";
+}
+
+.admin-profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 9px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.admin-profile-trigger:hover {
+    background: #eef1f4;
+}
+
+.admin-profile-trigger .admin-avatar {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #fff0df;
+    color: #ef7412;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.admin-profile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    min-width: 115px;
+}
+
+.admin-profile-text strong {
+    color: #102b49;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.admin-profile-text small {
+    color: #8997a8;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.admin-profile-chevron {
+    width: 15px;
+    height: 15px;
+    color: #8290a0;
+    transition: .2s;
+}
+
+.admin-profile-menu[open] .admin-profile-chevron {
+    transform: rotate(180deg);
+}
+
+.admin-profile-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #dde3e9;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(20, 45, 70, .14);
+    z-index: 1000;
+}
+
+.admin-profile-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.admin-profile-dropdown-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #fff0df;
+    color: #ef7412;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.admin-profile-dropdown-header div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.admin-profile-dropdown-header strong {
+    color: #102b49;
+    font-size: 13px;
+}
+
+.admin-profile-dropdown-header span {
+    color: #8997a8;
+    font-size: 11px;
+}
+
+.admin-profile-dropdown-menu {
+    padding-top: 6px;
+}
+
+.admin-profile-dropdown-menu a,
+.admin-profile-dropdown-menu button {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #102b49;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.admin-profile-dropdown-menu a:hover,
+.admin-profile-dropdown-menu button:hover {
+    background: #f4f6f8;
+}
+
+.admin-profile-dropdown-menu button {
+    color: #c34a42;
+}
+
+.admin-profile-dropdown-menu svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ===== RAPINKAN TABEL DATA TENANT ===== */
+.tenant-table th,
+.tenant-table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tenant-name-cell {
+    justify-content: center;
+}
+
+.tenant-contact {
+    align-items: center;
+    text-align: center;
+}
+
+.tenant-actions {
+    justify-content: center;
+}
+
+.tenant-table th:first-child,
+.tenant-table td:first-child {
+    text-align: center;
+}

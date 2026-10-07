@@ -62,12 +62,6 @@
             </a>
         </nav>
 
-        <div class="sidebar-bottom">
-            <a href="{{ route('login.internal') }}">
-                <i data-lucide="log-out"></i>
-                <span>Keluar</span>
-            </a>
-        </div>
     </aside>
 
     <main class="admin-main">
@@ -78,19 +72,8 @@
                 <p>Pantau transaksi online setiap tenant secara langsung.</p>
             </div>
 
-            <div class="admin-profile">
-                <button type="button" class="notification" aria-label="Notifikasi">
-                    <i data-lucide="bell"></i>
-                    <span class="notification-dot"></span>
-                </button>
+            @include('admin.partials.profile-menu')
 
-                <div class="admin-avatar">A</div>
-
-                <div class="admin-info">
-                    <strong>Admin Utama</strong>
-                    <small>Kasir Utama / Admin</small>
-                </div>
-            </div>
         </header>
 
         <section class="offline-summary-grid">

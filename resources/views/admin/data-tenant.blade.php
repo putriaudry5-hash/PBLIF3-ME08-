@@ -60,12 +60,6 @@
             </a>
         </nav>
 
-        <div class="sidebar-bottom">
-            <a href="{{ route('login.internal') }}">
-                <i data-lucide="log-out"></i>
-                <span>Keluar</span>
-            </a>
-        </div>
     </aside>
 
     <main class="admin-main">
@@ -75,19 +69,8 @@
                 <p>Kelola tenant yang terdaftar pada KantinKita.</p>
             </div>
 
-            <div class="admin-profile">
-                <button type="button" class="notification" aria-label="Notifikasi">
-                    <i data-lucide="bell"></i>
-                    <span class="notification-dot"></span>
-                </button>
+            @include('admin.partials.profile-menu')
 
-                <div class="admin-avatar">A</div>
-
-                <div class="admin-info">
-                    <strong>Admin Utama</strong>
-                    <small>Kasir Utama / Admin</small>
-                </div>
-            </div>
         </header>
 
         @if (session('success'))
@@ -271,129 +254,148 @@
         </div>
 
         <form
-            class="tenant-form"
-            method="POST"
-            action="{{ route('admin.tenant.store') }}"
+    class="tenant-form"
+    method="POST"
+    action="{{ route('admin.tenant.store') }}"
+    autocomplete="off"
+>
+    @csrf
+
+    <div class="tenant-form-group">
+        <label for="tenantName">Nama Tenant</label>
+        <input
+            type="text"
+            id="tenantName"
+            name="nama_tenant"
+            value="{{ old('nama_tenant') }}"
+            placeholder="Contoh: Dapur Bu Sari"
+            autocomplete="off"
+            required
         >
-            @csrf
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantName">Nama Tenant</label>
-                <input
-                    type="text"
-                    id="tenantName"
-                    name="nama_tenant"
-                    value="{{ old('nama_tenant') }}"
-                    placeholder="Contoh: Dapur Bu Sari"
-                    required
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantOwner">Nama Penanggung Jawab</label>
+        <input
+            type="text"
+            id="tenantOwner"
+            name="nama_penanggung_jawab"
+            value="{{ old('nama_penanggung_jawab') }}"
+            placeholder="Nama pemilik atau penjaga tenant"
+            autocomplete="off"
+            required
+        >
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantOwner">Nama Penanggung Jawab</label>
-                <input
-                    type="text"
-                    id="tenantOwner"
-                    name="nama_penanggung_jawab"
-                    value="{{ old('nama_penanggung_jawab') }}"
-                    placeholder="Nama pemilik atau penjaga tenant"
-                    required
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantEmail">Email</label>
+        <input
+            type="email"
+            id="tenantEmail"
+            name="email"
+            value="{{ old('email') }}"
+            placeholder="tenant@kantinkita.com"
+            autocomplete="off"
+            data-lpignore="true"
+            required
+        >
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantEmail">Email</label>
-                <input
-                    type="email"
-                    id="tenantEmail"
-                    name="email"
-                    value="{{ old('email') }}"
-                    placeholder="tenant@kantinkita.com"
-                    required
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantPhone">No. HP</label>
+        <input
+            type="text"
+            id="tenantPhone"
+            name="no_hp"
+            value="{{ old('no_hp') }}"
+            placeholder="08xxxxxxxxxx"
+            autocomplete="off"
+            required
+        >
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantPhone">No. HP</label>
-                <input
-                    type="text"
-                    id="tenantPhone"
-                    name="no_hp"
-                    value="{{ old('no_hp') }}"
-                    placeholder="08xxxxxxxxxx"
-                    required
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantType">Jenis Tenant</label>
+        <select id="tenantType" name="jenis_tenant" required>
+            <option value="satuan" {{ old('jenis_tenant') === 'satuan' ? 'selected' : '' }}>
+                Menu Satuan
+            </option>
+            <option value="prasmanan" {{ old('jenis_tenant') === 'prasmanan' ? 'selected' : '' }}>
+                Prasmanan
+            </option>
+        </select>
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantType">Jenis Tenant</label>
-                <select id="tenantType" name="jenis_tenant" required>
-                    <option value="satuan">Menu Satuan</option>
-                    <option value="prasmanan">Prasmanan</option>
-                </select>
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantLocation">Lokasi / Nomor Kios</label>
+        <input
+            type="text"
+            id="tenantLocation"
+            name="lokasi_kios"
+            value="{{ old('lokasi_kios') }}"
+            placeholder="Contoh: Kios 03"
+            autocomplete="off"
+        >
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantLocation">Lokasi / Nomor Kios</label>
-                <input
-                    type="text"
-                    id="tenantLocation"
-                    name="lokasi_kios"
-                    value="{{ old('lokasi_kios') }}"
-                    placeholder="Contoh: Kios 03"
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantPassword">Password</label>
+        <input
+            type="password"
+            id="tenantPassword"
+            name="password"
+            placeholder="Minimal 6 karakter"
+            autocomplete="new-password"
+            data-lpignore="true"
+            required
+        >
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantPassword">Password</label>
-                <input
-                    type="password"
-                    id="tenantPassword"
-                    name="password"
-                    placeholder="Minimal 6 karakter"
-                    required
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantConfirmPassword">Konfirmasi Password</label>
+        <input
+            type="password"
+            id="tenantConfirmPassword"
+            name="password_confirmation"
+            placeholder="Masukkan kembali password"
+            autocomplete="new-password"
+            data-lpignore="true"
+            required
+        >
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantConfirmPassword">Konfirmasi Password</label>
-                <input
-                    type="password"
-                    id="tenantConfirmPassword"
-                    name="password_confirmation"
-                    placeholder="Masukkan kembali password"
-                    required
-                >
-            </div>
+    <div class="tenant-form-group">
+        <label for="tenantStatus">Status Akun</label>
+        <select id="tenantStatus" name="status" required>
+            <option value="aktif" {{ old('status', 'aktif') === 'aktif' ? 'selected' : '' }}>
+                Aktif
+            </option>
+            <option value="nonaktif" {{ old('status') === 'nonaktif' ? 'selected' : '' }}>
+                Nonaktif
+            </option>
+        </select>
+    </div>
 
-            <div class="tenant-form-group">
-                <label for="tenantStatus">Status Akun</label>
-                <select id="tenantStatus" name="status">
-                    <option value="aktif">Aktif</option>
-                    <option value="nonaktif">Nonaktif</option>
-                </select>
-            </div>
+    @if ($errors->any())
+        <div class="form-error">
+            {{ $errors->first() }}
+        </div>
+    @endif
 
-            @if ($errors->any())
-                <div class="form-error">
-                    {{ $errors->first() }}
-                </div>
-            @endif
+    <div class="tenant-modal-actions">
+        <button
+            type="button"
+            class="btn-modal-cancel"
+            onclick="closeTenantModal()"
+        >
+            Batal
+        </button>
 
-            <div class="tenant-modal-actions">
-                <button
-                    type="button"
-                    class="btn-modal-cancel"
-                    onclick="closeTenantModal()"
-                >
-                    Batal
-                </button>
-
-                <button type="submit" class="btn-modal-save">
-                    Simpan Tenant
-                </button>
-            </div>
-        </form>
+        <button type="submit" class="btn-modal-save">
+            Simpan Tenant
+        </button>
+    </div>
+</form>
     </div>
 </div>
 

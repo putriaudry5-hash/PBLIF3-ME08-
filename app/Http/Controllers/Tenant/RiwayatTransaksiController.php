@@ -9,12 +9,13 @@ use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class TransaksiOfflineTenantController extends Controller
+class RiwayatTransaksiController extends Controller
 {
     public function index(Request $request)
     {
         $user = Auth::guard('internal')->user();
         $tenant = Tenant::findOrFail($user->tenant_id);
+
         $filter = $request->query('jenis', 'semua');
 
         $offline = collect();

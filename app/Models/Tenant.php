@@ -15,5 +15,15 @@ class Tenant extends Model
         'lokasi_kios',
         'password',
         'status',
+        'aktif_online',
     ];
+
+    protected $casts = [
+        'aktif_online' => 'boolean',
+    ];
+
+    public function menus()
+    {
+        return $this->hasMany(Menu::class);
+    }
 }

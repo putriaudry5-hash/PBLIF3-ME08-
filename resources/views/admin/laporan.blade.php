@@ -87,26 +87,6 @@
 
         </nav>
 
-
-        <div class="sidebar-bottom">
-
-            <form
-                method="POST"
-                action="{{ route('login.internal.logout') }}"
-            >
-                @csrf
-
-                <button
-                    type="submit"
-                    class="sidebar-logout"
-                >
-                    <i data-lucide="log-out"></i>
-                    <span>Keluar</span>
-                </button>
-            </form>
-
-        </div>
-
     </aside>
 
 
@@ -128,29 +108,9 @@
                 </p>
             </div>
 
-
-            <div class="admin-profile">
-
-                <div class="admin-avatar">
-                    {{ strtoupper(substr(auth('internal')->user()->nama ?? 'A', 0, 1)) }}
-                </div>
-
-                <div class="admin-info">
-
-                    <strong>
-                        {{ auth('internal')->user()->nama ?? 'Admin Utama' }}
-                    </strong>
-
-                    <small>
-                        Kasir Utama / Admin
-                    </small>
-
-                </div>
-
-            </div>
+        @include('admin.partials.profile-menu')
 
         </header>
-
 
         {{-- =================================================
              FILTER LAPORAN

@@ -1,0 +1,129 @@
+.tenant-report-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.tenant-report-stat {
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fff;
+}
+
+.tenant-report-stat span {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.tenant-report-stat strong {
+    margin: 5px 0 3px;
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.tenant-report-stat small {
+    color: var(--text-muted);
+    font-size: 9px;
+}
+
+.tenant-report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.tenant-report-panel {
+    overflow: hidden;
+}
+
+.tenant-monthly-panel {
+    margin-bottom: 14px;
+}
+
+.tenant-chart-box {
+    position: relative;
+    height: 270px;
+    padding: 15px 17px 18px;
+}
+
+.tenant-chart-large {
+    height: 300px;
+}
+
+.tenant-report-type {
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.tenant-report-type.offline {
+    background: #fff0e3;
+    color: #d66b13;
+}
+
+.tenant-report-type.online {
+    background: #e8f1fb;
+    color: #326896;
+}
+
+@media (max-width: 1100px) {
+    .tenant-report-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tenant-report-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .tenant-report-stat-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tenant-report-panel .panel-header h2,
+.tenant-monthly-panel .panel-header h2 {
+    font-size: 18px;
+}
+
+.tenant-report-panel .panel-header p,
+.tenant-monthly-panel .panel-header p {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.tenant-report-stat span {
+    font-size: 12px;
+}
+
+.tenant-report-stat strong {
+    font-size: 20px;
+}
+
+.tenant-report-stat small {
+    font-size: 11px;
+}
+
+.tenant-table th {
+    font-size: 11px;
+}
+
+.tenant-table td {
+    font-size: 12px;
+}
+
+.tenant-report-type {
+    font-size: 11px;
+}

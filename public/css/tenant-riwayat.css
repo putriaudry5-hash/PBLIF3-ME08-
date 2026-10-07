@@ -1,0 +1,185 @@
+.tenant-history-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.tenant-history-stat-grid .tenant-small-stat {
+    min-height: 80px;
+    justify-content: center;
+}
+
+.tenant-history-stat-grid .tenant-small-stat span {
+    font-size: 12px;
+}
+
+.tenant-history-stat-grid .tenant-small-stat strong {
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+.tenant-action-panel h2 {
+    font-size: 17px;
+}
+
+.tenant-action-panel p {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.tenant-history-filter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 7px;
+    background: #f2f4f6;
+}
+
+.tenant-history-filter a {
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border-radius: 5px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.tenant-history-filter a:hover {
+    color: var(--navy);
+    background: #f8f9fa;
+}
+
+.tenant-history-filter a.active {
+    background: #fff;
+    color: var(--navy);
+    box-shadow: 0 1px 4px rgba(25, 50, 77, .10);
+}
+
+.tenant-panel .panel-header h2 {
+    font-size: 18px;
+}
+
+.tenant-panel .panel-header p {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.tenant-table th {
+    font-size: 11px;
+}
+
+.tenant-table td {
+    font-size: 12px;
+}
+
+.tenant-table td strong {
+    font-size: 13px;
+}
+
+.tenant-history-type {
+    min-height: 26px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 9px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.tenant-history-type.offline {
+    background: #fff0e3;
+    color: #d66b13;
+}
+
+.tenant-history-type.online {
+    background: #e8f1fb;
+    color: #326896;
+}
+
+.status-success {
+    font-size: 10px;
+}
+
+.tenant-empty-table {
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    .tenant-history-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tenant-history-filter {
+        width: 100%;
+    }
+
+    .tenant-history-filter a {
+        flex: 1;
+    }
+}
+
+.tenant-history-stat-grid .tenant-small-stat span {
+    font-size: 14px;
+}
+
+.tenant-history-stat-grid .tenant-small-stat strong {
+    font-size: 24px;
+}
+
+.tenant-action-panel h2 {
+    font-size: 20px;
+}
+
+.tenant-action-panel p {
+    font-size: 14px;
+}
+
+.tenant-history-filter a {
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 13px;
+}
+
+.tenant-panel .panel-header h2 {
+    font-size: 21px;
+}
+
+.tenant-panel .panel-header p {
+    font-size: 14px;
+}
+
+.tenant-table th {
+    padding: 14px 14px;
+    font-size: 13px;
+}
+
+.tenant-table td {
+    padding: 16px 14px;
+    font-size: 14px;
+}
+
+.tenant-table td strong {
+    font-size: 15px;
+}
+
+.tenant-history-type {
+    min-height: 30px;
+    padding: 0 11px;
+    font-size: 12px;
+}
+
+.status-success {
+    min-height: 30px;
+    padding: 0 11px;
+    font-size: 12px;
+}
+
+.tenant-empty-table {
+    font-size: 14px;
+}

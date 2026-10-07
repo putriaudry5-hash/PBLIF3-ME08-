@@ -341,15 +341,6 @@
             </a>
         </nav>
 
-        <div class="sidebar-bottom">
-            <form method="POST" action="{{ route('login.internal.logout') }}">
-                @csrf
-                <button type="submit" class="sidebar-logout-button">
-                    <i data-lucide="log-out"></i>
-                    <span>Keluar</span>
-                </button>
-            </form>
-        </div>
     </aside>
 
     <main class="admin-main">

@@ -1,8 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Middleware\InternalAdminMiddleware;
+use App\Http\Middleware\InternalTenantMiddleware;
+
 use App\Http\Controllers\Auth\InternalLoginController;
+
+/*
+|--------------------------------------------------------------------------
+| CONTROLLER ADMIN
+|--------------------------------------------------------------------------
+*/
+
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TenantController;
 use App\Http\Controllers\Admin\PelangganController;
@@ -11,9 +21,20 @@ use App\Http\Controllers\Admin\TransaksiOnlineController;
 use App\Http\Controllers\Admin\RiwayatTransaksiController;
 use App\Http\Controllers\Admin\LaporanController;
 use App\Http\Controllers\Admin\PengaturanController;
-use App\Http\Middleware\InternalTenantMiddleware;
+
+/*
+|--------------------------------------------------------------------------
+| CONTROLLER TENANT
+|--------------------------------------------------------------------------
+*/
+
 use App\Http\Controllers\Tenant\DashboardTenantController;
+use App\Http\Controllers\Tenant\MenuController;
 use App\Http\Controllers\Tenant\TransaksiOfflineTenantController;
+use App\Http\Controllers\Tenant\PesananOnlineController;
+use App\Http\Controllers\Tenant\RiwayatTransaksiController as TenantRiwayatTransaksiController;
+use App\Http\Controllers\Tenant\LaporanTenantController;
+use App\Http\Controllers\Tenant\PengaturanTenantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -214,7 +235,7 @@ Route::middleware(InternalAdminMiddleware::class)
         )->name('admin.pengaturan.password');
     });
 
-    /*
+/*
 |--------------------------------------------------------------------------
 | AREA TENANT
 |--------------------------------------------------------------------------
@@ -224,24 +245,121 @@ Route::middleware(InternalTenantMiddleware::class)
     ->prefix('tenant')
     ->group(function () {
 
+        /*
+        |--------------------------------------------------------------------------
+        | DASHBOARD
+        |--------------------------------------------------------------------------
+        */
+
         Route::get(
             '/dashboard',
             [DashboardTenantController::class, 'index']
         )->name('tenant.dashboard');
 
+        /*
+        |--------------------------------------------------------------------------
+        | KELOLA MENU
+        |--------------------------------------------------------------------------
+        */
+
         Route::get(
-            '/transaksi-offline',
-            [
-                TransaksiOfflineTenantController::class,
-                'index'
-            ]
-        )->name('tenant.transaksi.offline');
+            '/menu',
+            [MenuController::class, 'index']
+        )->name('tenant.menu.index');
 
         Route::post(
-            '/transaksi-offline',
-            [
-                TransaksiOfflineTenantController::class,
-                'store'
-            ]
+            '/menu',
+            [MenuController::class, 'store']
+        )->name('tenant.menu.store');
+
+        Route::put(
+            '/menu/{id}',
+            [MenuController::class, 'update']
+        )->name('tenant.menu.update');
+
+        Route::patch(
+            '/menu/{id}/status',
+            [MenuController::class, 'toggleStatus']
+        )->name('tenant.menu.status');
+
+        Route::patch(
+            '/menu/{id}/online',
+            [MenuController::class, 'toggleOnline']
+        )->name('tenant.menu.online');
+
+        Route::delete(
+            '/menu/{id}',
+            [MenuController::class, 'destroy']
+        )->name('tenant.menu.destroy');
+
+        /*
+        |--------------------------------------------------------------------------
+        | TRANSAKSI OFFLINE
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get('/transaksi-offline',
+            [TransaksiOfflineTenantController::class, 'index']
+        )->name('tenant.transaksi.offline');
+
+        Route::post('/transaksi-offline',
+            [TransaksiOfflineTenantController::class, 'store']
         )->name('tenant.transaksi.offline.store');
+
+        /*
+        |--------------------------------------------------------------------------
+        | PESANAN ONLINE
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get(
+            '/pesanan-online',
+            [PesananOnlineController::class, 'index']
+        )->name('tenant.pesanan.online');
+
+        Route::patch(
+            '/pesanan-online/{id}/lanjut',
+            [PesananOnlineController::class, 'lanjutStatus']
+        )->name('tenant.pesanan.online.lanjut');
+
+        /*
+        |--------------------------------------------------------------------------
+        | RIWAYAT TRANSAKSI
+        |--------------------------------------------------------------------------
+        */
+
+        Route::get(
+            '/riwayat-transaksi',
+            [TenantRiwayatTransaksiController::class, 'index']
+        )->name('tenant.riwayat');
+
+        Route::get(
+            '/laporan',
+            [LaporanTenantController::class, 'index']
+        )->name('tenant.laporan');
+
+        Route::get(
+            '/pengaturan',
+            [PengaturanTenantController::class, 'index']
+        )->name('tenant.pengaturan');
+
+        Route::put(
+            '/pengaturan/profil',
+            [PengaturanTenantController::class, 'updateProfil']
+        )->name('tenant.pengaturan.profil');
+
+        Route::put(
+            '/pengaturan/akun',
+            [PengaturanTenantController::class, 'updateAkun']
+        )->name('tenant.pengaturan.akun');
+
+        Route::patch(
+            '/pengaturan/online',
+            [PengaturanTenantController::class, 'updateOnline']
+        )->name('tenant.pengaturan.online');
+
+        Route::put(
+            '/pengaturan/password',
+            [PengaturanTenantController::class, 'updatePassword']
+        )->name('tenant.pengaturan.password');
     });

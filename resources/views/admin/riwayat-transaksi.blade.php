@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riwayat Transaksi | KantinKita</title>
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}?v={{ filemtime(public_path('css/admin.css')) }}">
 </head>
 
 <body>
@@ -13,7 +13,6 @@
     <aside class="sidebar">
         <div class="sidebar-logo">
             <div class="logo-mark">K</div>
-
             <div>
                 <h2>Kantin<span>Kita</span></h2>
                 <small>Kasir Utama / Admin</small>
@@ -61,44 +60,22 @@
                 <span>Pengaturan</span>
             </a>
         </nav>
-
-        <div class="sidebar-bottom">
-            <a href="{{ route('login.internal') }}">
-                <i data-lucide="log-out"></i>
-                <span>Keluar</span>
-            </a>
-        </div>
     </aside>
 
     <main class="admin-main">
 
         <header class="topbar">
-            <div>
+            <div class="topbar-title">
                 <h1>Riwayat Transaksi</h1>
                 <p>Pilih jenis riwayat transaksi yang ingin dilihat.</p>
             </div>
 
-            <div class="admin-profile">
-                <button type="button" class="notification" aria-label="Notifikasi">
-                    <i data-lucide="bell"></i>
-                    <span class="notification-dot"></span>
-                </button>
-
-                <div class="admin-avatar">A</div>
-
-                <div class="admin-info">
-                    <strong>Admin Utama</strong>
-                    <small>Kasir Utama / Admin</small>
-                </div>
-            </div>
+            @include('admin.partials.profile-menu')
         </header>
 
         <section class="history-choice-grid">
 
-            <a
-                href="{{ route('admin.riwayat.online') }}"
-                class="history-choice-card"
-            >
+            <a href="{{ route('admin.riwayat.online') }}" class="history-choice-card">
                 <div class="history-choice-icon online">
                     <i data-lucide="credit-card"></i>
                 </div>
@@ -107,8 +84,8 @@
                     <h2>Riwayat Transaksi Online</h2>
 
                     <p>
-                        Lihat transaksi pelanggan yang melakukan
-                        pemesanan dan pembayaran melalui website.
+                        Lihat transaksi pelanggan yang melakukan pemesanan
+                        dan pembayaran melalui website.
                     </p>
 
                     <span>
@@ -118,10 +95,7 @@
                 </div>
             </a>
 
-            <a
-                href="{{ route('admin.riwayat.offline') }}"
-                class="history-choice-card"
-            >
+            <a href="{{ route('admin.riwayat.offline') }}" class="history-choice-card">
                 <div class="history-choice-icon offline">
                     <i data-lucide="banknote"></i>
                 </div>
@@ -130,8 +104,8 @@
                     <h2>Riwayat Transaksi Offline</h2>
 
                     <p>
-                        Lihat transaksi pelanggan yang melakukan
-                        pembayaran tunai melalui Kasir Utama.
+                        Lihat transaksi pelanggan yang melakukan pembayaran
+                        tunai melalui Kasir Utama.
                     </p>
 
                     <span>
@@ -147,12 +121,9 @@
 </div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    if (typeof lucide !== 'undefined') lucide.createIcons();
 });
 </script>
 

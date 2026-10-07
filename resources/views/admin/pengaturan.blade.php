@@ -65,23 +65,7 @@
                 <span>Pengaturan</span>
             </a>
         </nav>
-
-        <div class="sidebar-bottom">
-            <form
-                method="POST"
-                action="{{ route('login.internal.logout') }}"
-            >
-                @csrf
-
-                <button
-                    type="submit"
-                    class="setting-logout-button"
-                >
-                    <i data-lucide="log-out"></i>
-                    <span>Keluar</span>
-                </button>
-            </form>
-        </div>
+        
     </aside>
 
     <main class="admin-main">
@@ -92,25 +76,8 @@
                 <p>Kelola informasi kantin dan akun Kasir Utama/Admin.</p>
             </div>
 
-            <div class="admin-profile">
-                <button
-                    type="button"
-                    class="notification"
-                    aria-label="Notifikasi"
-                >
-                    <i data-lucide="bell"></i>
-                    <span class="notification-dot"></span>
-                </button>
+            @include('admin.partials.profile-menu')
 
-                <div class="admin-avatar">
-                    {{ strtoupper(substr($admin->nama, 0, 1)) }}
-                </div>
-
-                <div class="admin-info">
-                    <strong>{{ $admin->nama }}</strong>
-                    <small>Kasir Utama / Admin</small>
-                </div>
-            </div>
         </header>
 
         @if (session('success'))

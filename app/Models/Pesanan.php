@@ -12,12 +12,14 @@ class Pesanan extends Model
         'pelanggan_id',
         'total',
         'status_pembayaran',
+        'status_pesanan',
         'catatan',
         'dibayar_at',
     ];
 
     protected $casts = [
         'dibayar_at' => 'datetime',
+        'total' => 'integer',
     ];
 
     public function tenant()
@@ -29,4 +31,9 @@ class Pesanan extends Model
     {
         return $this->belongsTo(Pelanggan::class);
     }
+    public function details()
+{
+    return $this->hasMany(PesananDetail::class);
+}
+
 }
