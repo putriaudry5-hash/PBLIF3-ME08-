@@ -1,16 +1,16 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --navy: #0d3457;
-    --navy-mid: #123f69;
-    --navy-dark: #082943;
+    --navy: #38000a;
+    --navy-mid: #5a1018;
+    --navy-dark: #260006;
 
-    --orange: #f7941f;
-    --orange-light: #ffad32;
+    --orange: #cd1c18;
+    --orange-light: #ffe566;
 
     --cream: #fbf8f3;
     --white: #ffffff;

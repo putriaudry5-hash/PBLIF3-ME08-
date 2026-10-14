@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,15 @@ use App\Http\Controllers\Tenant\PengaturanTenantController;
 
 /*
 |--------------------------------------------------------------------------
+| CONTROLLER PELANGGAN
+|--------------------------------------------------------------------------
+*/
+
+use App\Http\Controllers\Pelanggan\MenuTenantController;
+use App\Http\Controllers\Pelanggan\KeranjangController;
+
+/*
+|--------------------------------------------------------------------------
 | HALAMAN AWAL
 |--------------------------------------------------------------------------
 */
@@ -55,6 +65,27 @@ Route::get('/', function () {
 Route::get('/login/pelanggan', function () {
     return view('auth.login-pelanggan');
 })->name('login.pelanggan');
+
+/*
+|--------------------------------------------------------------------------
+| PROSES PEMBAYARAN DAN DETAIL PESANAN
+|--------------------------------------------------------------------------
+*/
+
+Route::post('/pelanggan/konfirmasi-pembayaran', [
+    KeranjangController::class,
+    'konfirmasiPembayaran'
+])->name('pelanggan.pembayaran.konfirmasi');
+
+Route::get('/pelanggan/pembayaran-berhasil', [
+    KeranjangController::class,
+    'pembayaranBerhasil'
+])->name('pelanggan.pembayaran.berhasil');
+
+Route::get('/pelanggan/detail-pesanan/{nomor}', [
+    KeranjangController::class,
+    'detailPesanan'
+])->name('pelanggan.detail-pesanan');
 
 /*
 |--------------------------------------------------------------------------
@@ -78,13 +109,75 @@ Route::post(
 
 /*
 |--------------------------------------------------------------------------
-| PELANGGAN
+| AREA PELANGGAN
 |--------------------------------------------------------------------------
 */
 
 Route::get('/pelanggan/dashboard', function () {
     return view('pelanggan.dashboard');
 })->name('pelanggan.dashboard');
+
+// Halaman Pesanan Saya
+Route::get('/pelanggan/pesanan-saya', [
+    \App\Http\Controllers\Pelanggan\PesananSayaController::class,
+    'index'
+])->name('pelanggan.pesanan-saya');
+
+Route::get('/pelanggan/riwayat-transaksi', [
+    \App\Http\Controllers\Pelanggan\RiwayatPelangganController::class,
+    'index'
+])->name('pelanggan.riwayat-transaksi');
+
+
+// Halaman Profil Pelanggan
+Route::get('/pelanggan/profil', function () {
+    return view('pelanggan.profil');
+})->name('pelanggan.profil');
+
+Route::get('/pelanggan/data-diri', function () {
+    return view('pelanggan.data-diri');
+})->name('pelanggan.data-diri');
+
+
+/*
+|--------------------------------------------------------------------------
+| HALAMAN MENU TENANT UNTUK PELANGGAN
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    '/pelanggan/tenant/{tenant}/menu',
+    [MenuTenantController::class, 'index']
+)->name('pelanggan.tenant.menu');
+
+
+Route::post('/pelanggan/keranjang/tambah', [
+    KeranjangController::class, 'tambah'
+])->name('pelanggan.keranjang.tambah');
+
+Route::get('/pelanggan/keranjang', [
+    KeranjangController::class, 'index'
+])->name('pelanggan.keranjang');
+
+Route::post('/pelanggan/keranjang/{item}/jumlah', [
+    KeranjangController::class, 'jumlah'
+])->name('pelanggan.keranjang.jumlah');
+
+Route::delete('/pelanggan/keranjang/{item}', [
+    KeranjangController::class, 'hapus'
+])->name('pelanggan.keranjang.hapus');
+
+Route::post('/pelanggan/keranjang/kosongkan', [
+    KeranjangController::class, 'kosongkan'
+])->name('pelanggan.keranjang.kosongkan');
+
+Route::get('/pelanggan/checkout', [
+    KeranjangController::class, 'checkout'
+])->name('pelanggan.checkout');
+
+Route::post('/pelanggan/pembayaran', [
+    KeranjangController::class, 'pembayaran'
+])->name('pelanggan.pembayaran');
 
 /*
 |--------------------------------------------------------------------------
@@ -96,23 +189,13 @@ Route::middleware(InternalAdminMiddleware::class)
     ->prefix('admin')
     ->group(function () {
 
-        /*
-        |--------------------------------------------------------------------------
-        | DASHBOARD
-        |--------------------------------------------------------------------------
-        */
-
+        // Dashboard
         Route::get(
             '/dashboard',
             [DashboardController::class, 'index']
         )->name('admin.dashboard');
 
-        /*
-        |--------------------------------------------------------------------------
-        | DATA TENANT
-        |--------------------------------------------------------------------------
-        */
-
+        // Data Tenant
         Route::get(
             '/tenant',
             [TenantController::class, 'index']
@@ -133,12 +216,7 @@ Route::middleware(InternalAdminMiddleware::class)
             [TenantController::class, 'toggleStatus']
         )->name('admin.tenant.status');
 
-        /*
-        |--------------------------------------------------------------------------
-        | DATA PELANGGAN
-        |--------------------------------------------------------------------------
-        */
-
+        // Data Pelanggan
         Route::get(
             '/pelanggan',
             [PelangganController::class, 'index']
@@ -154,12 +232,7 @@ Route::middleware(InternalAdminMiddleware::class)
             [PelangganController::class, 'destroy']
         )->name('admin.pelanggan.destroy');
 
-        /*
-        |--------------------------------------------------------------------------
-        | TRANSAKSI OFFLINE
-        |--------------------------------------------------------------------------
-        */
-
+        // Transaksi Offline
         Route::get(
             '/transaksi-offline',
             [TransaksiOfflineController::class, 'index']
@@ -170,23 +243,13 @@ Route::middleware(InternalAdminMiddleware::class)
             [TransaksiOfflineController::class, 'bayar']
         )->name('admin.transaksi.offline.bayar');
 
-        /*
-        |--------------------------------------------------------------------------
-        | TRANSAKSI ONLINE
-        |--------------------------------------------------------------------------
-        */
-
+        // Transaksi Online
         Route::get(
             '/transaksi-online',
             [TransaksiOnlineController::class, 'index']
         )->name('admin.transaksi.online');
 
-        /*
-        |--------------------------------------------------------------------------
-        | RIWAYAT TRANSAKSI
-        |--------------------------------------------------------------------------
-        */
-
+        // Riwayat Transaksi
         Route::get(
             '/riwayat-transaksi',
             [RiwayatTransaksiController::class, 'index']
@@ -202,23 +265,13 @@ Route::middleware(InternalAdminMiddleware::class)
             [RiwayatTransaksiController::class, 'offline']
         )->name('admin.riwayat.offline');
 
-        /*
-        |--------------------------------------------------------------------------
-        | LAPORAN
-        |--------------------------------------------------------------------------
-        */
-
+        // Laporan
         Route::get(
             '/laporan',
             [LaporanController::class, 'index']
         )->name('admin.laporan');
 
-        /*
-        |--------------------------------------------------------------------------
-        | PENGATURAN
-        |--------------------------------------------------------------------------
-        */
-
+        // Pengaturan
         Route::get(
             '/pengaturan',
             [PengaturanController::class, 'index']
@@ -245,23 +298,13 @@ Route::middleware(InternalTenantMiddleware::class)
     ->prefix('tenant')
     ->group(function () {
 
-        /*
-        |--------------------------------------------------------------------------
-        | DASHBOARD
-        |--------------------------------------------------------------------------
-        */
-
+        // Dashboard
         Route::get(
             '/dashboard',
             [DashboardTenantController::class, 'index']
         )->name('tenant.dashboard');
 
-        /*
-        |--------------------------------------------------------------------------
-        | KELOLA MENU
-        |--------------------------------------------------------------------------
-        */
-
+        // Kelola Menu
         Route::get(
             '/menu',
             [MenuController::class, 'index']
@@ -292,26 +335,18 @@ Route::middleware(InternalTenantMiddleware::class)
             [MenuController::class, 'destroy']
         )->name('tenant.menu.destroy');
 
-        /*
-        |--------------------------------------------------------------------------
-        | TRANSAKSI OFFLINE
-        |--------------------------------------------------------------------------
-        */
-
-        Route::get('/transaksi-offline',
+        // Transaksi Offline
+        Route::get(
+            '/transaksi-offline',
             [TransaksiOfflineTenantController::class, 'index']
         )->name('tenant.transaksi.offline');
 
-        Route::post('/transaksi-offline',
+        Route::post(
+            '/transaksi-offline',
             [TransaksiOfflineTenantController::class, 'store']
         )->name('tenant.transaksi.offline.store');
 
-        /*
-        |--------------------------------------------------------------------------
-        | PESANAN ONLINE
-        |--------------------------------------------------------------------------
-        */
-
+        // Pesanan Online
         Route::get(
             '/pesanan-online',
             [PesananOnlineController::class, 'index']
@@ -322,22 +357,19 @@ Route::middleware(InternalTenantMiddleware::class)
             [PesananOnlineController::class, 'lanjutStatus']
         )->name('tenant.pesanan.online.lanjut');
 
-        /*
-        |--------------------------------------------------------------------------
-        | RIWAYAT TRANSAKSI
-        |--------------------------------------------------------------------------
-        */
-
+        // Riwayat Transaksi
         Route::get(
             '/riwayat-transaksi',
             [TenantRiwayatTransaksiController::class, 'index']
         )->name('tenant.riwayat');
 
+        // Laporan
         Route::get(
             '/laporan',
             [LaporanTenantController::class, 'index']
         )->name('tenant.laporan');
 
+        // Pengaturan
         Route::get(
             '/pengaturan',
             [PengaturanTenantController::class, 'index']

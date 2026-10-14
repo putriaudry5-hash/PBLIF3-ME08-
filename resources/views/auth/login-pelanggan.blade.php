@@ -227,7 +227,7 @@
             <div class="customer-heading">
 
                 <h3>
-                    Masuk sebagai Pelanggan
+                    Login sebagai Pelanggan
                 </h3>
 
                 <p>
@@ -255,7 +255,7 @@
                 </svg>
 
                 <span>
-                    Masuk dengan Google
+                    Login dengan Google
                 </span>
 
             </a>

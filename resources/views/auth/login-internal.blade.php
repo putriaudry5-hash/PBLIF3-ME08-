@@ -287,7 +287,7 @@
                 </h2>
 
                 <p>
-                    Masuk sebagai Tenant atau Kasir Utama/Admin.
+                    Login sebagai Tenant atau Kasir Utama/Admin.
                 </p>
 
             </div>
@@ -394,7 +394,7 @@
                     type="submit"
                     class="btn-login"
                 >
-                    Masuk
+                    Login
                 </button>
 
             </form>
