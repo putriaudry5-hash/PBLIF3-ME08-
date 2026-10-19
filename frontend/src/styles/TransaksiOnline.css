@@ -1,0 +1,234 @@
+
+/* HALAMAN TRANSAKSI ONLINE */
+.online-page {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  color: #38000A;
+}
+
+.online-heading h1 {
+  margin: 0 0 6px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.online-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 11px;
+}
+
+/* STATISTIK */
+.online-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.online-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 75px;
+  padding: 14px 18px;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+}
+
+.online-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.online-stat-card:nth-child(2) .online-stat-icon {
+  background: #FFE8E5;
+  color: #CD1C18;
+}
+
+.online-stat-card small {
+  display: block;
+  margin-bottom: 5px;
+  color: #77717D;
+  font-size: 10px;
+}
+
+.online-stat-card strong {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* DROPDOWN TENANT */
+.online-tenant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.online-tenant-card {
+  overflow: hidden;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 18px rgba(70,20,20,0.025);
+}
+
+.online-tenant-toggle {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 73px;
+  padding: 13px 18px;
+  border: none;
+  background: #FFFFFF;
+  color: #38000A;
+  text-align: left;
+  cursor: pointer;
+}
+
+.online-tenant-toggle:hover {
+  background: #FFFDF7;
+}
+
+.online-tenant-card.open .online-tenant-toggle {
+  background: #FFFCF3;
+  border-bottom: 1px solid #F1E8DE;
+}
+
+.online-tenant-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.online-tenant-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+  min-width: 0;
+}
+
+.online-tenant-info strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.online-tenant-info small,
+.online-tenant-revenue small {
+  color: #77717D;
+  font-size: 10px;
+}
+
+.online-tenant-revenue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  margin-right: 12px;
+}
+
+.online-tenant-revenue strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.online-chevron {
+  flex-shrink: 0;
+  color: #77717D;
+  transition: transform 0.2s;
+}
+
+.online-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* TABEL TRANSAKSI */
+.online-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.online-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.online-table th {
+  padding: 13px 10px;
+  background: #FAF7F3;
+  color: #77717D;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.online-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #F1E8DE;
+  color: #514B59;
+  font-size: 10px;
+}
+
+.online-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.online-empty {
+  height: 60px;
+  color: #98909C !important;
+  text-align: center;
+}
+
+.online-status {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #E2F6E8;
+  color: #158447;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .online-table {
+    min-width: 900px;
+  }
+}
+
+@media (max-width: 700px) {
+  .online-heading h1 {
+    font-size: 26px;
+  }
+
+  .online-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .online-tenant-toggle {
+    padding: 12px;
+    gap: 9px;
+  }
+
+  .online-tenant-revenue {
+    margin-right: 3px;
+  }
+}

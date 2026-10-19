@@ -1,0 +1,363 @@
+
+/* HALAMAN TRANSAKSI OFFLINE */
+.offline-page {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #38000A;
+}
+
+.offline-heading h1 {
+  margin: 0 0 6px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.offline-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 11px;
+}
+
+/* STATISTIK */
+.offline-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.offline-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 75px;
+  padding: 14px 18px;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+}
+
+.offline-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.offline-stat-card:nth-child(2) .offline-stat-icon {
+  background: #FFE8E5;
+  color: #CD1C18;
+}
+
+.offline-stat-card small {
+  display: block;
+  margin-bottom: 5px;
+  color: #77717D;
+  font-size: 10px;
+}
+
+.offline-stat-card strong {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* PANEL */
+.offline-panel {
+  overflow: hidden;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 18px rgba(70,20,20,0.025);
+}
+
+.offline-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 65px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #F1E8DE;
+}
+
+.offline-panel-heading h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.offline-panel-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 10px;
+}
+
+.offline-cash-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #E2F6E8;
+  color: #158447;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* FORM CARI TRANSAKSI */
+.offline-search-form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 18px;
+}
+
+.offline-search-form > label {
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.offline-search-form > input,
+.offline-search-form > select {
+  width: 100%;
+  height: 39px;
+  margin-bottom: 13px;
+  padding: 0 12px;
+  border: 1px solid #EBDCD7;
+  border-radius: 8px;
+  outline: none;
+  background: #FFFFFF;
+  color: #38000A;
+  font-size: 11px;
+}
+
+.offline-search-form > input:focus,
+.offline-search-form > select:focus {
+  border-color: #CD1C18;
+  box-shadow: 0 0 0 3px rgba(205,28,24,0.07);
+}
+
+.offline-search-form > input::placeholder {
+  color: #AAA2A8;
+}
+
+.offline-search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 11px;
+  border-top: 1px solid #F1E8DE;
+}
+
+.offline-search-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #938B97;
+  font-size: 10px;
+}
+
+.offline-search-footer > span svg {
+  flex-shrink: 0;
+}
+
+.offline-search-footer > button,
+.offline-confirm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 37px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  background: #650916;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.offline-search-footer > button:hover,
+.offline-confirm-btn:hover {
+  background: #CD1C18;
+}
+
+.offline-message {
+  margin: 10px 0 0;
+  color: #CD1C18;
+  font-size: 11px;
+}
+
+/* HASIL PENCARIAN */
+.offline-result {
+  margin: 0 18px 18px;
+  padding: 17px;
+  border: 1px solid #F1E8DE;
+  border-radius: 11px;
+  background: #FFFDF8;
+}
+
+.offline-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.offline-result-header h3 {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.offline-result-header button {
+  display: flex;
+  border: none;
+  background: transparent;
+  color: #77717D;
+}
+
+.offline-result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.offline-result-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.offline-result-grid span {
+  color: #77717D;
+  font-size: 10px;
+}
+
+.offline-result-grid strong {
+  font-size: 12px;
+}
+
+.offline-paid {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #158447;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* FILTER */
+.offline-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 165px;
+}
+
+.offline-filter label {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.offline-filter select {
+  height: 35px;
+  padding: 0 10px;
+  border: 1px solid #EBDCD7;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #38000A;
+  font-size: 10px;
+  outline: none;
+}
+
+/* TABEL */
+.offline-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.offline-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.offline-table th {
+  padding: 13px 10px;
+  background: #FAF7F3;
+  color: #77717D;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.offline-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #F1E8DE;
+  color: #514B59;
+  font-size: 10px;
+}
+
+.offline-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.offline-empty {
+  height: 60px;
+  color: #98909C !important;
+}
+
+.offline-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.offline-status.paid {
+  background: #E2F6E8;
+  color: #158447;
+}
+
+.offline-status.pending {
+  background: #FFF2CB;
+  color: #946300;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .offline-heading h1 {
+    font-size: 26px;
+  }
+
+  .offline-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .offline-panel-heading {
+    flex-wrap: wrap;
+  }
+
+  .offline-search-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .offline-search-footer > button {
+    width: 100%;
+  }
+
+  .offline-result-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

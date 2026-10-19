@@ -1,0 +1,135 @@
+
+.weekly-calendar {
+  position: relative;
+  width: 100%;
+}
+
+.weekly-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 39px;
+  padding: 0 12px;
+  border: 1px solid #EBDCD7;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #38000A;
+  font-size: 11px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.weekly-input:focus-visible {
+  outline: 2px solid #CD1C18;
+  outline-offset: 2px;
+}
+
+.weekly-popup {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  z-index: 50;
+  width: 310px;
+  max-width: min(310px, 90vw);
+  padding: 14px;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  box-shadow: 0 15px 40px rgba(56,0,10,0.15);
+}
+
+.weekly-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.weekly-popup-header strong {
+  color: #38000A;
+  font-size: 12px;
+}
+
+.weekly-popup-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background: #FFF5D8;
+  color: #650916;
+  cursor: pointer;
+}
+
+.weekly-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.weekly-day-name {
+  padding: 9px 0;
+  color: #77717D;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.weekly-day {
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #38000A;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.weekly-day:hover {
+  background: #FFF2CB;
+}
+
+.weekly-day.selected {
+  background: #FFF2CB;
+  color: #650916;
+  font-weight: 700;
+}
+
+.weekly-day.clicked {
+  background: #650916;
+  color: #FFFFFF;
+}
+
+.weekly-day.outside:not(.selected) {
+  color: #BDB6BB;
+}
+
+.weekly-popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #F1E8DE;
+}
+
+.weekly-popup-footer span {
+  color: #77717D;
+  font-size: 10px;
+}
+
+.weekly-popup-footer button {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 7px;
+  background: #CD1C18;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}

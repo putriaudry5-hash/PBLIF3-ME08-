@@ -1,0 +1,340 @@
+
+/* HALAMAN RIWAYAT TRANSAKSI */
+.riwayat-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+  color: #38000A;
+}
+
+.riwayat-heading h1 {
+  margin: 0 0 6px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.riwayat-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 11px;
+}
+
+/* PILIHAN RIWAYAT */
+.riwayat-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.riwayat-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 145px;
+  padding: 20px;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 18px rgba(70,20,20,0.025);
+}
+
+.riwayat-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 11px;
+}
+
+.riwayat-option-icon.online {
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.riwayat-option-icon.offline {
+  background: #FFE8E5;
+  color: #CD1C18;
+}
+
+.riwayat-option-content h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.riwayat-option-content p {
+  margin: 0 0 16px;
+  color: #77717D;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.riwayat-option-content button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #CD1C18;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.riwayat-option-content button:hover {
+  color: #900B19;
+}
+
+/* PANEL RIWAYAT */
+.riwayat-panel {
+  overflow: hidden;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 18px rgba(70,20,20,0.025);
+}
+
+.riwayat-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 19px;
+}
+
+.riwayat-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 15px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #CD1C18;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.riwayat-back:hover {
+  color: #900B19;
+}
+
+.riwayat-panel-heading h2 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.riwayat-panel-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 10px;
+}
+
+.riwayat-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: #FFF2CB;
+  color: #946300;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* DAFTAR TENANT DROPDOWN */
+.riwayat-tenant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border-top: 1px solid #F1E8DE;
+  background: #FFFDFB;
+}
+
+.riwayat-tenant-card {
+  overflow: hidden;
+  border: 1px solid #F1E8DE;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 3px 12px rgba(70,20,20,0.02);
+}
+
+.riwayat-tenant-toggle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 76px;
+  padding: 14px 17px;
+  border: none;
+  background: #FFFFFF;
+  color: #38000A;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.riwayat-tenant-toggle:hover,
+.riwayat-tenant-toggle.is-open {
+  background: #FFFDF7;
+}
+
+.riwayat-tenant-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.riwayat-tenant-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.riwayat-tenant-info strong {
+  color: #38000A;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.riwayat-tenant-info small {
+  color: #77717D;
+  font-size: 10px;
+}
+
+.riwayat-tenant-total {
+  padding: 7px 11px;
+  border-radius: 8px;
+  background: #FFF3D3;
+  color: #A46B00;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.riwayat-chevron {
+  flex-shrink: 0;
+  margin-left: 7px;
+  color: #77717D;
+  transition: transform 0.25s ease;
+}
+
+.riwayat-chevron.rotate {
+  transform: rotate(180deg);
+}
+
+.riwayat-tenant-content {
+  border-top: 1px solid #F1E8DE;
+  background: #FFFFFF;
+}
+
+/* TABEL RIWAYAT */
+.riwayat-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.riwayat-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.riwayat-table th {
+  padding: 14px 10px;
+  background: #FAF7F3;
+  color: #77717D;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.riwayat-table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #F1E8DE;
+  color: #514B59;
+  font-size: 10px;
+}
+
+.riwayat-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.riwayat-empty {
+  height: 85px;
+  color: #98909C !important;
+  font-size: 11px !important;
+  text-align: center;
+}
+
+.riwayat-no-tenant {
+  padding: 35px 15px;
+  color: #98909C;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .riwayat-page {
+    gap: 18px;
+  }
+
+  .riwayat-heading h1 {
+    font-size: 26px;
+  }
+
+  .riwayat-options {
+    grid-template-columns: 1fr;
+  }
+
+  .riwayat-option {
+    min-height: 130px;
+    padding: 16px;
+  }
+
+  .riwayat-panel-heading {
+    flex-wrap: wrap;
+  }
+
+  .riwayat-tenant-list {
+    padding: 12px;
+  }
+
+  .riwayat-tenant-toggle {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .riwayat-tenant-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .riwayat-tenant-total {
+    font-size: 9px;
+    padding: 6px;
+  }
+
+  .riwayat-table {
+    min-width: 750px;
+  }
+}

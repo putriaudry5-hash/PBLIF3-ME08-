@@ -1,0 +1,571 @@
+
+/* ========================================
+   DATA TENANT - KANTINKITA
+======================================== */
+.tenant-page {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  min-width: 0;
+  color: #38000A;
+}
+
+.tenant-page-heading {
+  margin-bottom: 4px;
+}
+
+.tenant-page-heading h1 {
+  margin: 0 0 6px;
+  color: #38000A;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.tenant-page-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 11px;
+}
+
+/* ========================================
+   RINGKASAN TENANT
+======================================== */
+.tenant-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 75px;
+  padding: 15px 18px;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+}
+
+.tenant-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tenant-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 11px;
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.tenant-summary-left span {
+  display: block;
+  margin-bottom: 5px;
+  color: #77717D;
+  font-size: 10px;
+}
+
+.tenant-summary-left strong {
+  display: block;
+  color: #38000A;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.tenant-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 9px;
+  background: #CD1C18;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tenant-add-btn:hover {
+  background: #A81516;
+}
+
+/* ========================================
+   PANEL DAFTAR TENANT
+======================================== */
+.tenant-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  box-shadow: 0 6px 22px rgba(70,20,20,0.025);
+}
+
+.tenant-panel-heading {
+  padding: 18px 18px 16px;
+}
+
+.tenant-panel-heading h2 {
+  margin: 0 0 6px;
+  color: #38000A;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.tenant-panel-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 10px;
+}
+
+/* ========================================
+   TABEL TENANT
+======================================== */
+.tenant-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tenant-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tenant-table th {
+  padding: 14px 10px;
+  background: #FAF7F3;
+  color: #77717D;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tenant-table td {
+  height: 65px;
+  padding: 10px;
+  border-bottom: 1px solid #F1E8DE;
+  color: #514B59;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.tenant-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tenant-table tbody tr:hover {
+  background: #FFFDF8;
+}
+
+.tenant-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.tenant-name strong {
+  color: #38000A;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.tenant-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  background: #FFF2D4;
+  color: #A56800;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tenant-type {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #FFF2CB;
+  color: #946300;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tenant-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.tenant-contact span {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.tenant-contact small {
+  color: #938B97;
+  font-size: 9px;
+}
+
+/* ========================================
+   STATUS TENANT
+======================================== */
+.tenant-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tenant-status.is-active {
+  background: #E2F6E8;
+  color: #158447;
+}
+
+.tenant-status.is-inactive {
+  background: #F5E5E5;
+  color: #B12B2B;
+}
+
+/* ========================================
+   TOMBOL AKSI
+======================================== */
+.tenant-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tenant-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 0 9px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tenant-btn.detail {
+  border: 1px solid #E4DFE0;
+  background: #F7F6F6;
+  color: #514B59;
+}
+
+.tenant-btn.edit {
+  border: 1px solid #FFF2D4;
+  background: #FFF2D4;
+  color: #986500;
+}
+
+.tenant-btn.deactivate {
+  border: 1px solid #EAC6C6;
+  background: #FFFFFF;
+  color: #CD1C18;
+}
+
+.tenant-btn.activate {
+  border: 1px solid #BEE8CC;
+  background: #E2F6E8;
+  color: #158447;
+}
+
+.tenant-btn:hover {
+  filter: brightness(0.96);
+}
+
+/* ========================================
+   OVERLAY MODAL
+======================================== */
+.tenant-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: rgba(30,0,9,0.48);
+  backdrop-filter: blur(2px);
+}
+
+/* ========================================
+   CARD MODAL RAMPING
+======================================== */
+.tenant-modal {
+  width: 100%;
+  max-width: 430px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 22px 24px;
+  border: 1px solid #F1E8DE;
+  border-top: 3px solid #FFE566;
+  border-radius: 18px;
+  background: #FFFFFF;
+  box-shadow: 0 20px 55px rgba(30,0,9,0.16);
+  scrollbar-width: thin;
+  scrollbar-color: #E8DAD5 transparent;
+}
+
+/* ========================================
+   HEADER MODAL
+======================================== */
+.tenant-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tenant-modal-header h2 {
+  margin: 0 0 6px;
+  color: #38000A;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.tenant-modal-header p {
+  margin: 0;
+  color: #77717D;
+  font-size: 11px;
+}
+
+.tenant-modal-header > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: #FFF0EB;
+  color: #CD1C18;
+  cursor: pointer;
+}
+
+.tenant-modal-header > button:hover {
+  background: #FFE3DA;
+}
+
+/* ========================================
+   FORM MODAL
+======================================== */
+.tenant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tenant-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #38000A;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tenant-form input,
+.tenant-form select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #EBDCD7;
+  border-radius: 9px;
+  outline: none;
+  background: #FFFFFF;
+  color: #38000A;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tenant-form input::placeholder {
+  color: #A49A9E;
+}
+
+.tenant-form input:focus,
+.tenant-form select:focus {
+  border-color: #CD1C18;
+  box-shadow: 0 0 0 3px rgba(205,28,24,0.07);
+}
+
+/* ========================================
+   TOMBOL MODAL
+======================================== */
+.tenant-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 9px;
+}
+
+.tenant-cancel,
+.tenant-modal-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 15px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tenant-cancel {
+  border: 1px solid #EBDCD7;
+  background: #FFFFFF;
+  color: #514B59;
+}
+
+.tenant-cancel:hover {
+  background: #FFF7F2;
+}
+
+.tenant-modal-primary {
+  border: none;
+  background: #CD1C18;
+  color: #FFFFFF;
+}
+
+.tenant-modal-primary:hover {
+  background: #A81516;
+}
+
+/* ========================================
+   MODAL DETAIL TENANT
+======================================== */
+.tenant-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tenant-detail > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #F1E8DE;
+}
+
+.tenant-detail span {
+  color: #77717D;
+  font-size: 10px;
+}
+
+.tenant-detail strong {
+  color: #38000A;
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.tenant-detail > button {
+  align-self: flex-end;
+  margin-top: 8px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 1200px) {
+  .tenant-table {
+    min-width: 1050px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tenant-page-heading h1 {
+    font-size: 26px;
+  }
+
+  .tenant-summary {
+    flex-wrap: wrap;
+    padding: 13px;
+  }
+
+  .tenant-add-btn {
+    width: 100%;
+  }
+
+  .tenant-panel-heading {
+    padding: 15px;
+  }
+
+  .tenant-modal {
+    max-width: 100%;
+    padding: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tenant-modal {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .tenant-modal-header h2 {
+    font-size: 19px;
+  }
+
+  .tenant-form-actions {
+    gap: 8px;
+  }
+
+  .tenant-form-actions button {
+    flex: 1;
+  }
+}
+/* PESAN ERROR FORM TENANT */
+.tenant-form-error {
+  margin: 0;
+  padding: 9px 11px;
+  border: 1px solid #F4C9C6;
+  border-radius: 8px;
+  background: #FFF0EE;
+  color: #CD1C18;
+  font-size: 11px;
+  line-height: 1.5;
+}

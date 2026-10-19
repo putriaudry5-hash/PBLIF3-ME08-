@@ -1,0 +1,289 @@
+
+/* HALAMAN DATA PELANGGAN */
+.pelanggan-page {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  color: #38000A;
+}
+
+.pelanggan-heading h1 {
+  margin: 0 0 6px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.pelanggan-heading p {
+  color: #77717D;
+  font-size: 11px;
+}
+
+/* RINGKASAN PELANGGAN */
+.pelanggan-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 75px;
+  padding: 15px 18px;
+  background: #FFFFFF;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+}
+
+.pelanggan-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 11px;
+  background: #FFF2CB;
+  color: #B67D00;
+}
+
+.pelanggan-summary span {
+  display: block;
+  margin-bottom: 5px;
+  color: #77717D;
+  font-size: 10px;
+}
+
+.pelanggan-summary strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* PANEL PELANGGAN */
+.pelanggan-panel {
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid #F1E8DE;
+  border-radius: 13px;
+  box-shadow: 0 6px 22px rgba(70,20,20,0.025);
+}
+
+.pelanggan-panel-heading {
+  padding: 18px 18px 16px;
+}
+
+.pelanggan-panel-heading h2 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.pelanggan-panel-heading p {
+  margin: 0;
+  color: #77717D;
+  font-size: 10px;
+}
+
+/* TABEL */
+.pelanggan-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.pelanggan-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.pelanggan-table th {
+  padding: 14px 12px;
+  background: #FAF7F3;
+  color: #77717D;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pelanggan-table td {
+  height: 60px;
+  padding: 12px;
+  border-bottom: 1px solid #F1E8DE;
+  color: #514B59;
+  font-size: 10px;
+}
+
+.pelanggan-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pelanggan-table tbody tr:hover {
+  background: #FFFDF8;
+}
+
+.pelanggan-table td strong {
+  color: #38000A;
+  font-weight: 800;
+}
+
+.pelanggan-table .pelanggan-empty {
+  height: 85px;
+  color: #98909C;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* STATUS */
+.pelanggan-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.pelanggan-status.active {
+  background: #E2F6E8;
+  color: #158447;
+}
+
+.pelanggan-status.inactive {
+  background: #FCE7E7;
+  color: #B12B2B;
+}
+
+/* TOMBOL AKSI */
+.pelanggan-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.pelanggan-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pelanggan-btn.detail {
+  border: 1px solid #E4DFE0;
+  background: #F7F6F6;
+  color: #514B59;
+}
+
+.pelanggan-btn.deactivate {
+  border: 1px solid #EAC6C6;
+  background: #FFFFFF;
+  color: #CD1C18;
+}
+
+.pelanggan-btn.activate {
+  border: 1px solid #BEE8CC;
+  background: #E2F6E8;
+  color: #158447;
+}
+
+.pelanggan-btn:hover {
+  filter: brightness(0.96);
+}
+
+/* MODAL DETAIL */
+.pelanggan-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(30,0,9,0.55);
+}
+
+.pelanggan-modal {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  border: 1px solid #F1E8DE;
+  border-top: 3px solid #FFE566;
+  border-radius: 17px;
+  background: #FFFFFF;
+  box-shadow: 0 20px 60px rgba(30,0,9,0.18);
+}
+
+.pelanggan-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pelanggan-modal-header h2 {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.pelanggan-modal-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background: #FFF2ED;
+  color: #CD1C18;
+}
+
+.pelanggan-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pelanggan-detail > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F1E8DE;
+}
+
+.pelanggan-detail span {
+  color: #77717D;
+  font-size: 10px;
+}
+
+.pelanggan-detail strong {
+  color: #38000A;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .pelanggan-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pelanggan-heading h1 {
+    font-size: 26px;
+  }
+
+  .pelanggan-summary {
+    padding: 13px;
+  }
+
+  .pelanggan-panel-heading {
+    padding: 15px;
+  }
+
+  .pelanggan-modal {
+    padding: 18px;
+  }
+}
