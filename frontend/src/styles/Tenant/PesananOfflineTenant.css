@@ -1,0 +1,1194 @@
+
+/* =========================================
+   PESANAN OFFLINE TENANT - KANTINKITA
+========================================= */
+
+.of-page {
+  width: 100%;
+  min-width: 0;
+  color: #38000a;
+}
+
+.of-page,
+.of-page *,
+.of-page *::before,
+.of-page *::after {
+  box-sizing: border-box;
+}
+
+.of-page button,
+.of-page input,
+.of-page select,
+.of-page textarea {
+  font-family: inherit;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.of-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.of-heading h1 {
+  margin: 0 0 6px;
+  color: #38000a;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.of-heading p {
+  margin: 0;
+  color: #77717d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.of-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 37px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #650916;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.of-primary:hover {
+  background: #881426;
+}
+
+/* =========================================
+   NOTIFIKASI
+========================================= */
+
+.of-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 12px 14px;
+  border: 1px solid #cfecd9;
+  border-radius: 9px;
+  background: #effaf2;
+  color: #177849;
+  font-size: 11px;
+}
+
+.of-notice span {
+  flex: 1;
+}
+
+.of-notice button {
+  display: grid;
+  place-items: center;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* =========================================
+   KARTU STATISTIK
+========================================= */
+
+.of-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.of-stat {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  min-height: 94px;
+  padding: 12px;
+  border: 1px solid #f0e7dc;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(70, 20, 20, 0.025);
+}
+
+.of-stat-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+
+.of-stat-icon.yellow {
+  background: #fff3d3;
+  color: #a97700;
+}
+
+.of-stat-icon.orange {
+  background: #fff0e2;
+  color: #cb6918;
+}
+
+.of-stat-icon.green {
+  background: #e1f6e9;
+  color: #14864b;
+}
+
+.of-stat-icon.maroon {
+  background: #fbe8eb;
+  color: #650916;
+}
+
+.of-stat > div:last-child {
+  min-width: 0;
+}
+
+.of-stat small,
+.of-stat strong,
+.of-stat > div:last-child > span {
+  display: block;
+}
+
+.of-stat small {
+  color: #77717d;
+  font-size: 9px;
+}
+
+.of-stat strong {
+  margin: 5px 0;
+  color: #38000a;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.of-stat .of-stat-money {
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.of-stat > div:last-child > span {
+  color: #92838e;
+  font-size: 9px;
+}
+
+/* =========================================
+   PANEL DAFTAR PESANAN
+========================================= */
+
+.of-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #f0e7dc;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(70, 20, 20, 0.025);
+}
+
+.of-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 19px 14px;
+}
+
+.of-panel-header h2 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.of-panel-header p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+}
+
+.of-total-label {
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #fff3d3;
+  color: #986500;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =========================================
+   PENCARIAN DAN FILTER
+========================================= */
+
+.of-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px 17px;
+}
+
+.of-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  max-width: 370px;
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #eadfd5;
+  border-radius: 8px;
+  color: #827985;
+}
+
+.of-search input {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #38000a;
+  font-size: 11px;
+}
+
+.of-toolbar select {
+  width: 166px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #eadfd5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4e4350;
+  font-size: 11px;
+}
+
+/* =========================================
+   TABEL PESANAN
+========================================= */
+
+.of-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.of-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.of-table thead {
+  background: #faf7f3;
+}
+
+.of-table th {
+  padding: 13px 12px;
+  border-top: 1px solid #f4efeb;
+  border-bottom: 1px solid #f4efeb;
+  color: #706a79;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.of-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #f4efeb;
+  color: #484050;
+  font-size: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.of-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.of-table tbody tr:hover {
+  background: #fffdf9;
+}
+
+.of-code,
+.of-total-price {
+  color: #38000a !important;
+  font-weight: 800;
+}
+
+.of-cell-strong,
+.of-cell-small,
+.of-food-cell strong,
+.of-food-cell small {
+  display: block;
+}
+
+.of-cell-strong,
+.of-food-cell strong {
+  margin-bottom: 5px;
+  color: #38000a;
+  font-size: 10px;
+}
+
+.of-cell-small,
+.of-food-cell small {
+  color: #89818a;
+  font-size: 9px;
+}
+
+.of-food-cell {
+  max-width: 220px;
+}
+
+.of-food-cell strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================
+   STATUS PEMBAYARAN
+========================================= */
+
+.of-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 9px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.of-status.pending {
+  background: #fff3d3;
+  color: #a57000;
+}
+
+.of-status.paid {
+  background: #e2f7e9;
+  color: #14864b;
+}
+
+/* =========================================
+   TOMBOL AKSI TABEL
+========================================= */
+
+.of-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.of-actions button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eadfd5;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #650916;
+  cursor: pointer;
+}
+
+.of-actions button:hover {
+  background: #fff3ea;
+}
+
+.of-actions button.danger {
+  color: #c83935;
+}
+
+.of-actions button.danger:hover {
+  background: #fff0ef;
+}
+
+.of-empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  padding: 45px 15px;
+  color: #b58b32;
+}
+
+.of-empty strong {
+  color: #38000a;
+  font-size: 12px;
+}
+
+.of-empty p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+}
+
+/* =========================================
+   MODAL DASAR
+========================================= */
+
+.of-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(24, 5, 12, 0.6);
+}
+
+.of-modal {
+  width: min(100%, 560px);
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 25px 65px rgba(26, 5, 12, 0.2);
+}
+
+/* MODAL INPUT KATALOG LEBIH LEBAR */
+
+.of-modal.of-catalog-modal {
+  width: min(100%, 850px);
+}
+
+.of-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 19px 22px;
+  border-bottom: 1px solid #f4efeb;
+}
+
+.of-modal-header h2 {
+  margin: 0 0 5px;
+  color: #38000a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.of-modal-header p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+}
+
+.of-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  border: none;
+  border-radius: 7px;
+  background: #fff4f1;
+  color: #650916;
+  cursor: pointer;
+}
+
+.of-modal-body {
+  padding: 20px 22px;
+}
+
+.of-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.of-field > span {
+  color: #55434b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.of-field input,
+.of-field select,
+.of-field textarea {
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 11px;
+  border: 1px solid #eadfd5;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #38000a;
+  font-size: 11px;
+}
+
+.of-field input:focus,
+.of-field select:focus,
+.of-field textarea:focus {
+  border-color: #bd8d94;
+}
+
+.of-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff0ee;
+  color: #bd3030;
+  font-size: 10px;
+}
+
+/* =========================================
+   KATALOG MENU
+========================================= */
+
+.of-catalog-heading {
+  margin: 18px 0 13px;
+}
+
+.of-catalog-heading h3 {
+  margin: 0 0 5px;
+  color: #38000a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.of-catalog-heading p {
+  margin: 0;
+  color: #827882;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.of-catalog-toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.of-catalog-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  padding: 0 11px;
+  border: 1px solid #eadfd5;
+  border-radius: 8px;
+  color: #8b7d86;
+}
+
+.of-catalog-search input {
+  width: 100%;
+  min-width: 0;
+  height: 37px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #38000a;
+  font-size: 11px;
+}
+
+.of-catalog-toolbar select {
+  width: 138px;
+  padding: 0 9px;
+  border: 1px solid #eadfd5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4e4350;
+  font-size: 11px;
+}
+
+/* =========================================
+   GRID KARTU MAKANAN
+========================================= */
+
+.of-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.of-menu-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #eee4d9;
+  border-radius: 11px;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.of-menu-card:hover {
+  border-color: #d8bca6;
+}
+
+/* GAMBAR MAKANAN */
+
+.of-menu-photo {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  background: #fff0d0;
+}
+
+.of-photo-fallback {
+  display: grid;
+  place-items: center;
+  color: #b88b2a;
+}
+
+/* ISI KARTU MAKANAN */
+
+.of-menu-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+}
+
+.of-menu-category {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #fff3d3;
+  color: #996900;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.of-menu-card-content > strong {
+  color: #38000a;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.of-menu-price {
+  color: #650916;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* TOMBOL TAMBAH */
+
+.of-menu-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: auto;
+  padding: 9px;
+  border: none;
+  border-radius: 7px;
+  background: #650916;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.of-menu-add:hover {
+  background: #8d1529;
+}
+
+/* =========================================
+   HARGA PRASMANAN
+========================================= */
+
+.of-menu-price-hint {
+  color: #8b7d86;
+  font-size: 9px;
+}
+
+.of-menu-price-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.of-menu-price-options button {
+  min-width: 0;
+  padding: 9px 5px;
+  border: 1px solid #ebd898;
+  border-radius: 6px;
+  background: #fff3d3;
+  color: #956400;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.of-menu-price-options button:hover {
+  background: #ffe18c;
+  border-color: #c59622;
+}
+
+.of-catalog-empty {
+  padding: 20px;
+  color: #8b7d86;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* =========================================
+   RINGKASAN PESANAN
+========================================= */
+
+.of-cart {
+  margin: 22px 0 17px;
+  padding: 15px;
+  border: 1px solid #eadfd5;
+  border-radius: 11px;
+  background: #fffdf9;
+}
+
+.of-cart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.of-cart-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #38000a;
+  font-size: 13px;
+}
+
+.of-cart-heading > span {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #fff3d3;
+  color: #956400;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.of-cart-empty {
+  padding: 18px;
+  border: 1px dashed #e9ddd5;
+  border-radius: 8px;
+  color: #938891;
+  font-size: 11px;
+  text-align: center;
+}
+
+.of-cart-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.of-cart-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #efe8e0;
+}
+
+.of-cart-item:last-child {
+  border-bottom: none;
+}
+
+.of-cart-name {
+  min-width: 0;
+}
+
+.of-cart-name strong {
+  display: block;
+  color: #38000a;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.of-cart-name small {
+  display: block;
+  margin-top: 5px;
+  color: #8b7d86;
+  font-size: 9px;
+}
+
+/* TOMBOL JUMLAH */
+
+.of-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.of-quantity button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid #eadfd5;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #650916;
+  cursor: pointer;
+}
+
+.of-quantity button:hover {
+  background: #fff3d3;
+}
+
+.of-quantity span {
+  min-width: 15px;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.of-cart-subtotal {
+  min-width: 80px;
+  color: #38000a;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.of-cart-remove {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: none;
+  border-radius: 6px;
+  background: #fff0ef;
+  color: #c83935;
+  cursor: pointer;
+}
+
+.of-cart-remove:hover {
+  background: #ffe0dd;
+}
+
+/* =========================================
+   TOTAL PESANAN
+========================================= */
+
+.of-form-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 9px;
+  background: #fff6e5;
+}
+
+.of-form-total span {
+  color: #645058;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.of-form-total strong {
+  color: #650916;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.of-form-note {
+  margin: 13px 0 0;
+  color: #8b7e83;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FOOTER MODAL
+========================================= */
+
+.of-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 22px;
+  border-top: 1px solid #f4efeb;
+  background: #ffffff;
+}
+
+.of-cancel {
+  padding: 9px 15px;
+  border: 1px solid #e8dcd5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #55434b;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.of-cancel:hover {
+  background: #faf7f3;
+}
+
+/* =========================================
+   MODAL DETAIL PESANAN
+========================================= */
+
+.of-modal.of-detail-modal {
+  width: min(100%, 480px);
+}
+
+.of-detail-info {
+  display: grid;
+  gap: 13px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f1e8de;
+}
+
+.of-detail-info > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.of-detail-info > div > span:first-child {
+  color: #77717d;
+  font-size: 10px;
+}
+
+.of-detail-info strong {
+  color: #38000a;
+  font-size: 10px;
+  text-align: right;
+}
+
+.of-detail-title {
+  margin: 0 0 7px;
+  color: #38000a;
+  font-size: 13px;
+}
+
+.of-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1e8de;
+}
+
+.of-detail-item strong {
+  color: #38000a;
+  font-size: 11px;
+}
+
+.of-detail-item small {
+  display: block;
+  margin-top: 5px;
+  color: #77717d;
+  font-size: 10px;
+}
+
+.of-detail-item > strong {
+  white-space: nowrap;
+}
+
+.of-detail-note {
+  padding: 11px;
+  border-radius: 7px;
+  background: #fff9e9;
+  color: #866000;
+  font-size: 10px;
+}
+
+/* =========================================
+   KONFIRMASI HAPUS
+========================================= */
+
+.of-confirm {
+  width: min(100%, 380px);
+  padding: 26px;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.of-confirm-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #fff0ef;
+  color: #c83935;
+}
+
+.of-confirm h2 {
+  margin: 0 0 10px;
+  color: #38000a;
+  font-size: 18px;
+}
+
+.of-confirm p {
+  color: #77717d;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.of-confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.of-delete {
+  padding: 9px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #c83935;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.of-delete:hover {
+  background: #a92d2a;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .of-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .of-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .of-heading {
+    flex-direction: column;
+  }
+
+  .of-heading h1 {
+    font-size: 25px;
+  }
+
+  .of-stats {
+    gap: 9px;
+  }
+
+  .of-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .of-search {
+    max-width: none;
+  }
+
+  .of-toolbar select {
+    width: 100%;
+  }
+
+  .of-backdrop {
+    padding: 10px;
+  }
+
+  .of-modal {
+    max-height: calc(100vh - 20px);
+  }
+
+  .of-modal-header,
+  .of-modal-body,
+  .of-modal-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .of-menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .of-menu-photo {
+    height: 95px;
+  }
+
+  .of-menu-card-content {
+    padding: 10px;
+  }
+
+  .of-cart-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 9px;
+  }
+
+  .of-cart-subtotal {
+    text-align: left;
+  }
+
+  .of-catalog-toolbar select {
+    width: 115px;
+  }
+}
+
+@media (max-width: 400px) {
+  .of-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .of-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .of-menu-photo {
+    height: 145px;
+  }
+
+  .of-catalog-toolbar {
+    flex-direction: column;
+  }
+
+  .of-catalog-toolbar select {
+    width: 100%;
+    min-height: 37px;
+  }
+
+  .of-form-total strong {
+    font-size: 16px;
+  }
+}

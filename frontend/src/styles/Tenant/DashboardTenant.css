@@ -1,0 +1,699 @@
+
+/* =========================================
+   KANTINKITA - DASHBOARD TENANT
+   Ukuran mengikuti Admin
+========================================= */
+
+.td-page {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  color: #38000a;
+}
+
+.td-page,
+.td-page *,
+.td-page *::before,
+.td-page *::after {
+  box-sizing: border-box;
+}
+
+/* JUDUL */
+
+.td-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.td-heading h1 {
+  margin: 0 0 5px;
+  color: #38000a;
+  font-size: 29px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.td-heading p {
+  margin: 0;
+  color: #77717d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.td-online-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-width: 100px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.td-online-toggle.aktif {
+  border: 1px solid #d3efda;
+  background: #eaf8ed;
+  color: #149648;
+}
+
+.td-online-toggle.nonaktif {
+  border: 1px solid #f4d8d5;
+  background: #fff1ef;
+  color: #c12c32;
+}
+
+.td-online-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* EMPAT KARTU STATISTIK */
+
+.td-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.td-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 96px;
+  padding: 11px 12px;
+  border: 1px solid #f1e8de;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(70, 20, 20, 0.025);
+}
+
+.td-stat-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.td-stat-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.td-stat-icon.kuning {
+  background: #fff3d3;
+  color: #bd8100;
+}
+
+.td-stat-icon.merah {
+  background: #ffe7e5;
+  color: #e93439;
+}
+
+.td-stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.td-stat-info > span {
+  color: #706b79;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.td-stat-info strong {
+  color: #38000a;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.td-stat-info small {
+  color: #77717d;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.td-growth span {
+  color: #0fa760;
+  font-weight: 800;
+}
+
+/* PANEL UMUM */
+
+.td-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #f1e8de;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(70, 20, 20, 0.025);
+}
+
+.td-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 65px;
+  padding: 13px 16px;
+}
+
+.td-heading-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.td-heading-left > svg {
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  color: #650916;
+}
+
+.td-heading-left h2 {
+  margin: 0 0 5px;
+  color: #38000a;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.td-heading-left p {
+  margin: 0;
+  color: #77717d;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* TRANSAKSI DAN AKSI CEPAT */
+
+.td-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 13px;
+  margin-bottom: 15px;
+}
+
+.td-transactions,
+.td-quick-panel {
+  min-width: 0;
+  min-height: 285px;
+}
+
+.td-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #cd1c18;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.td-view-all:hover {
+  color: #a71616;
+}
+
+/* TABEL TRANSAKSI */
+
+.td-table-wrap {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0 10px 10px;
+  overflow-x: auto;
+}
+
+.td-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.td-table thead {
+  background: #faf7f3;
+}
+
+.td-table th {
+  padding: 12px 8px;
+  border-top: 1px solid #f4efeb;
+  border-bottom: 1px solid #f4efeb;
+  color: #706a79;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.td-table td {
+  padding: 11px 8px;
+  border-bottom: 1px solid #f4efeb;
+  color: #484050;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.td-table tbody tr:hover {
+  background: #fffdf9;
+}
+
+.td-code {
+  color: #38000a;
+  font-weight: 800;
+}
+
+.td-status-badge {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.td-status-badge.baru {
+  background: #fff3d0;
+  color: #a96a00;
+}
+
+.td-status-badge.diproses {
+  background: #ffece6;
+  color: #d83b22;
+}
+
+.td-status-badge.siap {
+  background: #fff3d0;
+  color: #a96a00;
+}
+
+.td-status-badge.selesai {
+  background: #dff7e9;
+  color: #079452;
+}
+
+.td-table-action {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #554d60;
+  cursor: pointer;
+}
+
+.td-table-action:hover {
+  background: #ffe7e1;
+}
+
+/* AKSI CEPAT */
+
+.td-quick-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.td-quick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0 10px 10px;
+}
+
+.td-quick-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 60px;
+  padding: 7px 9px;
+  border: 1px solid #f5ece5;
+  border-radius: 11px;
+  background: #fff;
+  color: #38000a;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.td-quick-item:hover {
+  background: #fff9f4;
+}
+
+.td-quick-item.pesanan {
+  background: #fff1ed;
+}
+
+.td-quick-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 41px;
+  height: 41px;
+  border-radius: 12px;
+  background: #fff1c9;
+  color: #b97c00;
+}
+
+.td-quick-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.td-quick-item.pesanan .td-quick-icon {
+  background: #ffe8e4;
+  color: #e53030;
+}
+
+.td-quick-item.menu .td-quick-icon {
+  background: #dff6e8;
+  color: #0fa760;
+}
+
+.td-quick-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.td-quick-text strong {
+  color: #38000a;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.td-quick-text small {
+  color: #77717d;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.td-quick-item > svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #79717e;
+}
+
+/* PANEL GRAFIK DAN STATUS */
+
+.td-bottom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 13px;
+}
+
+.td-chart-panel,
+.td-order-panel {
+  min-width: 0;
+  min-height: 230px;
+}
+
+.td-chart-heading-icon {
+  color: #e44a26 !important;
+}
+
+.td-chart-select {
+  flex-shrink: 0;
+  padding: 8px 10px;
+  border: 1px solid #f1e8de;
+  border-radius: 8px;
+  background: #fff;
+  color: #484050;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* GRAFIK PENJUALAN */
+
+.td-chart {
+  display: flex;
+  gap: 9px;
+  height: 175px;
+  padding: 5px 15px 15px;
+}
+
+.td-chart-yaxis {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  padding-bottom: 21px;
+  color: #77717d;
+  font-size: 9px;
+  text-align: right;
+}
+
+.td-chart-main {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.td-chart-gridlines {
+  position: absolute;
+  inset: 0 0 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.td-chart-gridlines span {
+  display: block;
+  width: 100%;
+  border-top: 1px solid #f1e8de;
+}
+
+.td-chart-bars {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 7px;
+  height: 100%;
+}
+
+.td-chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  height: 100%;
+  min-width: 0;
+}
+
+.td-chart-bar-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - 23px);
+}
+
+.td-chart-bar {
+  width: min(100%, 42px);
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(
+    180deg,
+    #eb6661,
+    #ed8079
+  );
+}
+
+.td-chart-column > span {
+  height: 14px;
+  color: #77717d;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+/* STATUS PESANAN - TANPA PERSENTASE */
+
+.td-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  padding: 0 12px 14px;
+}
+
+.td-order-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 122px;
+  padding: 12px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.td-order-status.baru {
+  background: #fff6de;
+  color: #dfa000;
+}
+
+.td-order-status.diproses {
+  background: #ffe6df;
+  color: #dc2c28;
+}
+
+.td-order-status.siap {
+  background: #fff1cd;
+  color: #c38b05;
+}
+
+.td-order-status.selesai {
+  background: #e4f8e9;
+  color: #10a153;
+}
+
+.td-order-status > svg {
+  flex-shrink: 0;
+  width: 21px;
+  height: 21px;
+}
+
+.td-order-status > strong {
+  margin: 0;
+  color: #38000a;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.td-order-status > span {
+  margin: 0;
+  color: #4c2930;
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* RESPONSIVE LAPTOP */
+
+@media (min-width: 701px) and (max-width: 1200px) {
+  .td-content-grid {
+    grid-template-columns: minmax(0, 1fr) 245px;
+    gap: 10px;
+  }
+
+  .td-stats {
+    gap: 8px;
+  }
+
+  .td-stat-card {
+    gap: 7px;
+    padding: 9px;
+  }
+
+  .td-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .td-stat-info > span {
+    font-size: 8px;
+  }
+
+  .td-table th,
+  .td-table td {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
+/* RESPONSIVE TABLET */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .td-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .td-content-grid,
+  .td-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-quick-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 700px) {
+  .td-heading h1 {
+    font-size: 25px;
+  }
+
+  .td-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .td-content-grid,
+  .td-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .td-quick-list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .td-status-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .td-heading {
+    flex-direction: column;
+  }
+
+  .td-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .td-heading-left h2 {
+    font-size: 14px;
+  }
+}
