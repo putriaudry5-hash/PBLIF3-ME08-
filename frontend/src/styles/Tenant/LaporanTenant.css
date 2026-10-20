@@ -1,0 +1,545 @@
+
+/* ======================================
+   LAPORAN PENJUALAN TENANT - KANTINKITA
+====================================== */
+
+.lt-page {
+  width: 100%;
+  min-width: 0;
+  color: #38000a;
+}
+
+.lt-page,
+.lt-page *,
+.lt-page *::before,
+.lt-page *::after {
+  box-sizing: border-box;
+}
+
+.lt-page button,
+.lt-page input,
+.lt-page select {
+  font-family: inherit;
+}
+
+/* HEADER */
+
+.lt-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.lt-heading h1 {
+  margin: 0 0 6px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.lt-heading p {
+  margin: 0;
+  color: #77717d;
+  font-size: 11px;
+}
+
+.lt-export {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 37px;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #650916;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lt-export:hover {
+  background: #8b1426;
+}
+
+/* FILTER */
+
+.lt-filter-panel {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 17px;
+  padding: 15px;
+  border: 1px solid #f0e7dc;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.lt-filter-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lt-filter-panel > div > span {
+  font-size: 10px;
+  color: #58474f;
+  font-weight: 700;
+}
+
+.lt-filter-panel select {
+  width: 180px;
+  height: 37px;
+  padding: 0 11px;
+  border: 1px solid #e9ddd4;
+  border-radius: 8px;
+  background: #fff;
+  color: #493e45;
+  font-size: 11px;
+  outline: none;
+}
+
+.lt-filter-panel p {
+  margin: 0 0 10px auto;
+  color: #999099;
+  font-size: 9px;
+  text-align: right;
+}
+
+/* STATISTIK */
+
+.lt-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.lt-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 95px;
+  padding: 12px;
+  border: 1px solid #f0e7dc;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(70, 20, 20, 0.025);
+}
+
+.lt-stat-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.lt-stat-icon.maroon {
+  background: #fbe8eb;
+  color: #650916;
+}
+
+.lt-stat-icon.blue {
+  background: #e7f0ff;
+  color: #3970ba;
+}
+
+.lt-stat-icon.yellow {
+  background: #fff3d3;
+  color: #ac7900;
+}
+
+.lt-stat-icon.green {
+  background: #e1f6e9;
+  color: #14864b;
+}
+
+.lt-stat-card > div {
+  min-width: 0;
+}
+
+.lt-stat-card small,
+.lt-stat-card strong,
+.lt-stat-card > div > span {
+  display: block;
+}
+
+.lt-stat-card small {
+  font-size: 9px;
+  color: #77717d;
+}
+
+.lt-stat-card strong {
+  margin: 6px 0;
+  font-size: 17px;
+  font-weight: 900;
+  color: #38000a;
+  white-space: nowrap;
+}
+
+.lt-stat-card > div > span {
+  font-size: 9px;
+  color: #92838e;
+}
+
+/* PANEL */
+
+.lt-panel {
+  min-width: 0;
+  margin-bottom: 17px;
+  overflow: hidden;
+  border: 1px solid #f0e7dc;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(70, 20, 20, 0.025);
+}
+
+.lt-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 19px 12px;
+}
+
+.lt-panel-heading h2 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.lt-panel-heading p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+}
+
+.lt-panel-heading > svg {
+  color: #ac7900;
+}
+
+.lt-panel-tag {
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #fff3d3;
+  color: #986500;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* GRAFIK GARIS */
+
+.lt-chart-wrap {
+  padding: 7px 16px 0;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.lt-chart {
+  display: block;
+  width: 100%;
+  min-width: 480px;
+  height: auto;
+  max-height: 270px;
+}
+
+.lt-chart-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 12px 17px;
+  color: #77717d;
+  font-size: 10px;
+}
+
+.lt-chart-legend {
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  border-radius: 5px;
+  background: #800e20;
+}
+
+/* RINGKASAN BAWAH */
+
+.lt-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.lt-summary-list,
+.lt-menu-recap {
+  padding: 0 19px 15px;
+}
+
+.lt-summary-list > div,
+.lt-menu-recap > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f4efeb;
+}
+
+.lt-summary-list > div:last-child,
+.lt-menu-recap > div:last-child {
+  border-bottom: 0;
+}
+
+.lt-summary-list span {
+  font-size: 10px;
+  color: #77717d;
+}
+
+.lt-summary-list strong {
+  font-size: 11px;
+  color: #38000a;
+  white-space: nowrap;
+}
+
+.lt-menu-recap > div > span {
+  min-width: 0;
+}
+
+.lt-menu-recap > div > span > strong,
+.lt-menu-recap small {
+  display: block;
+}
+
+.lt-menu-recap > div > span > strong {
+  font-size: 11px;
+  color: #38000a;
+}
+
+.lt-menu-recap small {
+  margin-top: 5px;
+  font-size: 9px;
+  color: #92838e;
+}
+
+.lt-menu-recap > div > strong {
+  font-size: 11px;
+  color: #38000a;
+  white-space: nowrap;
+}
+
+.lt-empty-text {
+  padding: 12px 0;
+  font-size: 11px;
+  color: #92838e;
+}
+
+/* PENCARIAN TABEL */
+
+.lt-table-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: min(370px, calc(100% - 36px));
+  height: 38px;
+  margin: 0 18px 16px;
+  padding: 0 12px;
+  border: 1px solid #eadfd5;
+  border-radius: 8px;
+  color: #827985;
+}
+
+.lt-table-toolbar input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #38000a;
+  font-size: 11px;
+}
+
+/* TABEL TRANSAKSI */
+
+.lt-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.lt-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.lt-table thead {
+  background: #faf7f3;
+}
+
+.lt-table th {
+  padding: 13px 12px;
+  border-top: 1px solid #f4efeb;
+  border-bottom: 1px solid #f4efeb;
+  font-size: 9px;
+  font-weight: 700;
+  color: #706a79;
+  white-space: nowrap;
+}
+
+.lt-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #f4efeb;
+  color: #484050;
+  font-size: 10px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.lt-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.lt-table tbody tr:hover {
+  background: #fffdf9;
+}
+
+.lt-code,
+.lt-money {
+  font-weight: 800;
+  color: #38000a !important;
+}
+
+.lt-type,
+.lt-paid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 9px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.lt-type.online {
+  background: #e7f0ff;
+  color: #326ab1;
+}
+
+.lt-type.offline {
+  background: #fff3d3;
+  color: #a57000;
+}
+
+.lt-paid {
+  background: #e2f7e9;
+  color: #14864b;
+}
+
+/* DATA KOSONG */
+
+.lt-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 40px 15px;
+  text-align: center;
+  color: #b58b32;
+}
+
+.lt-empty strong {
+  color: #38000a;
+  font-size: 12px;
+}
+
+.lt-empty p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1250px) {
+  .lt-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .lt-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .lt-filter-panel {
+    flex-wrap: wrap;
+  }
+
+  .lt-filter-panel p {
+    flex-basis: 100%;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .lt-heading {
+    flex-direction: column;
+  }
+
+  .lt-heading h1 {
+    font-size: 25px;
+  }
+
+  .lt-filter-panel > div,
+  .lt-filter-panel select {
+    width: 100%;
+  }
+
+  .lt-stats {
+    gap: 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .lt-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ======================================
+   EKSPOR CSV - UJUNG KANAN BAWAH
+====================================== */
+
+.lt-export-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 20px;
+}
+
+.lt-export-bottom .lt-export {
+  min-width: 145px;
+  height: 40px;
+  padding: 10px 16px;
+  border-radius: 9px;
+  background: #650916;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lt-export-bottom .lt-export:hover {
+  background: #881426;
+}

@@ -1,0 +1,928 @@
+
+/* =========================================
+   KANTINKITA - KELOLA MENU TENANT
+   Senada dengan Dashboard Admin dan Tenant
+========================================= */
+
+.km-page {
+  width: 100%;
+  min-width: 0;
+  color: #38000a;
+}
+
+.km-page *,
+.km-page *::before,
+.km-page *::after {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.km-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.km-heading h1 {
+  margin: 0 0 6px;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  color: #38000a;
+}
+
+.km-heading p {
+  margin: 0;
+  color: #77717d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.km-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 37px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 9px;
+  background: #650916;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.km-primary-btn:hover {
+  background: #8c1023;
+}
+
+/* NOTIFIKASI */
+
+.km-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 12px 14px;
+  border: 1px solid #c9eed7;
+  border-radius: 10px;
+  background: #e9f9ef;
+  color: #187348;
+  font-size: 11px;
+}
+
+.km-message > span {
+  flex: 1;
+}
+
+.km-message button {
+  display: grid;
+  place-items: center;
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* STATISTIK */
+
+.km-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.km-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 96px;
+  padding: 12px;
+  border: 1px solid #f1e8de;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(70, 20, 20, 0.025);
+}
+
+.km-stat-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.km-stat-icon.kuning {
+  background: #fff3d3;
+  color: #bd8100;
+}
+
+.km-stat-icon.hijau {
+  background: #dff6e8;
+  color: #0fa760;
+}
+
+.km-stat-icon.merah {
+  background: #ffe7e5;
+  color: #e93439;
+}
+
+.km-stat-card > div:last-child {
+  min-width: 0;
+}
+
+.km-stat-card span,
+.km-stat-card strong,
+.km-stat-card small {
+  display: block;
+}
+
+.km-stat-card span {
+  margin-bottom: 4px;
+  color: #706b79;
+  font-size: 9px;
+}
+
+.km-stat-card strong {
+  margin-bottom: 3px;
+  color: #38000a;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.km-stat-card small {
+  color: #77717d;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* PANEL */
+
+.km-panel {
+  min-width: 0;
+  border: 1px solid #f1e8de;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(70, 20, 20, 0.025);
+  overflow: hidden;
+}
+
+.km-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 19px 19px 14px;
+}
+
+.km-panel-heading h2 {
+  margin: 0 0 5px;
+  color: #38000a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.km-panel-heading p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.km-total-label {
+  flex-shrink: 0;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: #fff3d3;
+  color: #986500;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* TOOLBAR */
+
+.km-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 18px 17px;
+}
+
+.km-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  max-width: 340px;
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #eadfd5;
+  border-radius: 9px;
+  background: #fff;
+  color: #827985;
+}
+
+.km-search input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #38000a;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.km-search input::placeholder {
+  color: #a59ca3;
+}
+
+.km-filter {
+  width: 175px;
+  max-width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #eadfd5;
+  border-radius: 9px;
+  background: #fff;
+  color: #4e4350;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* TABEL */
+
+.km-table-wrap {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.km-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.km-table thead {
+  background: #faf7f3;
+}
+
+.km-table th {
+  padding: 13px 17px;
+  border-top: 1px solid #f4efeb;
+  border-bottom: 1px solid #f4efeb;
+  color: #706a79;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.km-table td {
+  padding: 13px 17px;
+  border-bottom: 1px solid #f4efeb;
+  color: #484050;
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.km-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.km-table tbody tr:hover {
+  background: #fffdf9;
+}
+
+.km-menu-name {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 190px;
+}
+
+.km-menu-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  border-radius: 10px;
+  background: #fff3d3;
+  color: #ba8400;
+}
+
+.km-menu-name > div {
+  min-width: 0;
+}
+
+.km-menu-name strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #38000a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.km-menu-name small {
+  display: block;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #8c8490;
+  font-size: 9px;
+}
+
+.km-category {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.km-category.satuan {
+  background: #fff3d3;
+  color: #986500;
+}
+
+.km-category.prasmanan {
+  background: #f0e8ff;
+  color: #7952ad;
+}
+
+.km-price {
+  color: #38000a !important;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+
+/* PILIHAN HARGA PRASMANAN */
+
+.km-price-options {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-width: 260px;
+  margin: 0;
+}
+
+.km-price-options span {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #fff3d3;
+  color: #865e00;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* STOK TANPA IKON */
+
+.km-stock {
+  display: inline-block;
+  color: #197344;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.km-stock.habis {
+  color: #ca3440;
+}
+
+/* KOLOM HARGA LEBIH RAPI */
+
+.km-table td.km-price {
+  vertical-align: middle;
+  white-space: normal;
+}
+
+
+.km-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 100px;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.km-status.aktif {
+  background: #dff7e9;
+  color: #0b894e;
+}
+
+.km-status.nonaktif {
+  background: #ffe7e5;
+  color: #c3313c;
+}
+
+.km-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* TOMBOL AKSI */
+
+.km-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.km-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #f1e8de;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.km-icon-btn.edit {
+  color: #a16b00;
+}
+
+.km-icon-btn.edit:hover {
+  background: #fff3d3;
+}
+
+.km-icon-btn.delete {
+  color: #cc2d34;
+}
+
+.km-icon-btn.delete:hover {
+  background: #ffe7e5;
+}
+
+.km-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding: 42px 15px;
+  color: #b58b32;
+  text-align: center;
+}
+
+.km-empty strong {
+  color: #38000a;
+  font-size: 12px;
+}
+
+.km-empty p {
+  margin: 0;
+  color: #77717d;
+  font-size: 10px;
+}
+
+/* =========================================
+   MODAL TAMBAH DAN EDIT
+========================================= */
+
+.km-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(24, 5, 12, 0.6);
+}
+
+.km-modal {
+  width: min(100%, 540px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  border: 1px solid #f1e8de;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 25px 65px rgba(26, 5, 12, 0.2);
+}
+
+.km-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #f4efeb;
+}
+
+.km-modal-header h2 {
+  margin: 0 0 5px;
+  color: #38000a;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.km-modal-header p {
+  margin: 0;
+  color: #77717d;
+  font-size: 11px;
+}
+
+.km-modal-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff4f1;
+  color: #650916;
+  cursor: pointer;
+}
+
+.km-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px;
+}
+
+.km-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.km-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.km-field > span {
+  color: #483743;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.km-field input,
+.km-field select,
+.km-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 39px;
+  padding: 10px 12px;
+  border: 1px solid #e9ddd5;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #38000a;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.km-field textarea {
+  resize: vertical;
+}
+
+.km-field input:focus,
+.km-field select:focus,
+.km-field textarea:focus {
+  border-color: #ad5966;
+  box-shadow: 0 0 0 3px rgba(101, 9, 22, 0.08);
+}
+
+.km-form-note {
+  margin: 0;
+  color: #92838e;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.km-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 12px;
+  border: 1px solid #f3d0d0;
+  border-radius: 8px;
+  background: #fff0ef;
+  color: #bd2832;
+  font-size: 11px;
+}
+
+.km-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px;
+  border-top: 1px solid #f4efeb;
+}
+
+.km-cancel-btn {
+  min-height: 37px;
+  padding: 9px 17px;
+  border: 1px solid #e7dcd5;
+  border-radius: 8px;
+  background: #fff;
+  color: #524852;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.km-cancel-btn:hover {
+  background: #faf7f3;
+}
+
+/* KONFIRMASI HAPUS */
+
+.km-confirm-modal {
+  width: min(100%, 370px);
+  padding: 28px 25px;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 25px 65px rgba(26, 5, 12, 0.2);
+}
+
+.km-confirm-icon {
+  display: grid;
+  place-items: center;
+  width: 57px;
+  height: 57px;
+  margin: 0 auto 17px;
+  border-radius: 50%;
+  background: #ffe7e5;
+  color: #cc2934;
+}
+
+.km-confirm-modal h2 {
+  margin: 0 0 9px;
+  color: #38000a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.km-confirm-modal p {
+  margin: 0;
+  color: #77717d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.km-confirm-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+.km-danger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 37px;
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #cd1c18;
+  color: #fff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.km-danger-btn:hover {
+  background: #a91616;
+}
+
+/* RESPONSIVE LAPTOP */
+
+@media (max-width: 1100px) {
+  .km-table th,
+  .km-table td {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .km-stat-card {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .km-stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 850px) {
+  .km-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 600px) {
+  .km-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .km-heading h1 {
+    font-size: 25px;
+  }
+
+  .km-heading > .km-primary-btn {
+    align-self: flex-start;
+  }
+
+  .km-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .km-search,
+  .km-filter {
+    width: 100%;
+    max-width: none;
+  }
+
+  .km-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .km-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .km-modal-backdrop {
+    padding: 12px;
+  }
+
+  .km-form-content {
+    padding: 17px;
+  }
+
+  .km-modal-header,
+  .km-modal-footer {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+
+/* =========================================
+   PILIHAN HARGA PRASMANAN
+========================================= */
+
+/* Harga yang tampil di tabel */
+
+.km-price-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 235px;
+  margin-top: 7px;
+}
+
+.km-price-options span {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 6px;
+  border-radius: 5px;
+  background: #fff3d3;
+  color: #976400;
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Form tambah/edit pilihan harga */
+
+.km-price-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+}
+
+.km-price-editor-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+}
+
+.km-rupiah-prefix {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 35px;
+  height: 39px;
+  border-radius: 8px;
+  background: #fff3d3;
+  color: #865e00;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.km-price-editor-row input {
+  flex: 1;
+  min-width: 0;
+  height: 39px;
+  padding: 9px 12px;
+  border: 1px solid #e9ddd5;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #38000a;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.km-price-editor-row input:focus {
+  border-color: #ad5966;
+  box-shadow: 0 0 0 3px rgba(101, 9, 22, 0.08);
+}
+
+.km-remove-price {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 35px;
+  height: 39px;
+  border: 1px solid #f2d1d1;
+  border-radius: 8px;
+  background: #fff0ef;
+  color: #cd1c18;
+  cursor: pointer;
+}
+
+.km-remove-price:hover {
+  background: #ffe0dd;
+}
+
+/* Tombol tambah harga */
+
+.km-add-price {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  align-self: flex-start;
+  margin-top: 5px;
+  padding: 9px 13px;
+  border: 1px dashed #bd8a4a;
+  border-radius: 8px;
+  background: #fff9e9;
+  color: #865e00;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.km-add-price:hover {
+  background: #fff0c4;
+}
