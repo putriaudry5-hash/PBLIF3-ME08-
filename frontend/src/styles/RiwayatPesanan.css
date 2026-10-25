@@ -1,0 +1,355 @@
+/* HALAMAN RIWAYAT PESANAN */
+
+.riwayat-page {
+  min-height: 100vh;
+  background: #fffbef;
+  color: #380b16;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.riwayat-page * {
+  box-sizing: border-box;
+}
+
+.riwayat-container {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 30px 4%;
+}
+
+/* TOMBOL KEMBALI */
+
+.riwayat-kembali {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding: 9px 13px;
+  border: 1px solid #f0e5d5;
+  border-radius: 7px;
+  background: #fffdf7;
+  color: #65545a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.riwayat-kembali:hover {
+  background: #fff0e9;
+  color: #c91d1d;
+}
+
+.riwayat-kembali span {
+  font-size: 17px;
+}
+
+/* JUDUL HALAMAN */
+
+.riwayat-header {
+  margin-bottom: 30px;
+}
+
+.riwayat-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #c91d1d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.riwayat-header h1 {
+  margin: 0 0 10px;
+  color: #380b16;
+  font-size: clamp(27px, 3vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.riwayat-header p {
+  margin: 0;
+  color: #806f6c;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* BAGIAN DAFTAR TRANSAKSI */
+
+.riwayat-list-section {
+  overflow: hidden;
+  border: 1px solid #eee3d8;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 4px 13px rgba(56, 11, 22, 0.04);
+}
+
+.riwayat-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #f0e5d5;
+}
+
+.riwayat-list-heading h2 {
+  margin: 0 0 7px;
+  color: #380b16;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.riwayat-list-heading p {
+  margin: 0;
+  color: #8a7977;
+  font-size: 12px;
+}
+
+.riwayat-count {
+  flex-shrink: 0;
+  padding: 8px 11px;
+  border: 1px solid #f0d8be;
+  border-radius: 6px;
+  background: #fffdf7;
+  color: #c91d1d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* TABEL */
+
+.riwayat-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.riwayat-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+.riwayat-table thead {
+  background: #fff5e9;
+}
+
+.riwayat-table th {
+  padding: 15px 16px;
+  border-bottom: 1px solid #f0d8be;
+  color: #65545a;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.riwayat-table td {
+  padding: 17px 16px;
+  border-bottom: 1px solid #f4eee5;
+  color: #65545a;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.riwayat-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.riwayat-table tbody tr {
+  transition: background 0.2s;
+}
+
+.riwayat-table tbody tr:hover {
+  background: #fffcf6;
+}
+
+.riwayat-nomor {
+  color: #8a7977 !important;
+}
+
+.riwayat-id {
+  color: #c91d1d !important;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.riwayat-tanggal {
+  min-width: 130px;
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.riwayat-tenant {
+  min-width: 140px;
+  color: #380b16 !important;
+  font-weight: 700;
+}
+
+.riwayat-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.riwayat-menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.riwayat-menu-item > span {
+  color: #380b16;
+  font-weight: 700;
+}
+
+.riwayat-menu-item small {
+  color: #8a7977;
+  font-size: 10px;
+}
+
+.riwayat-tidak-ada {
+  color: #a0928b;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.riwayat-total {
+  color: #380b16 !important;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* STATUS PESANAN */
+
+.riwayat-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-selesai {
+  border: 1px solid #d3e8d5;
+  background: #edf7ed;
+  color: #38794a;
+}
+
+.status-dibatalkan {
+  border: 1px solid #f4d4d0;
+  background: #fff0ed;
+  color: #c91d1d;
+}
+
+/* KONDISI DATA KOSONG */
+
+.riwayat-kosong {
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.riwayat-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 17px;
+  border: 1px solid #f0d8be;
+  border-radius: 12px;
+  background: #fff5e9;
+  font-size: 23px;
+}
+
+.riwayat-kosong h3 {
+  margin: 0 0 9px;
+  color: #380b16;
+  font-size: 17px;
+}
+
+.riwayat-kosong p {
+  max-width: 390px;
+  margin: 0 auto 20px;
+  color: #8a7977;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.riwayat-cari-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #ff9b22;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.riwayat-cari-button:hover {
+  background: #e98612;
+}
+
+/* FOOTER */
+
+.riwayat-footer {
+  padding: 25px 0 10px;
+  color: #a0928b;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .riwayat-container {
+    padding: 22px 16px;
+  }
+
+  .riwayat-kembali {
+    margin-bottom: 22px;
+  }
+
+  .riwayat-header {
+    margin-bottom: 23px;
+  }
+
+  .riwayat-header h1 {
+    font-size: 27px;
+  }
+
+  .riwayat-list-heading {
+    padding: 18px 16px;
+  }
+
+  .riwayat-list-heading h2 {
+    font-size: 16px;
+  }
+
+  .riwayat-count {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .riwayat-table {
+    min-width: 900px;
+  }
+
+  .riwayat-table th,
+  .riwayat-table td {
+    padding: 14px 13px;
+  }
+
+  .riwayat-kosong {
+    padding: 40px 16px;
+  }
+}

@@ -1,10 +1,19 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { GOOGLE_CLIENT_ID } from "./config";
+
 import { TenantProvider } from "./context/TenantContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // LOGIN
 import LoginInternal from "./pages/auth/LoginInternal";
+import LoginPelanggan from "./pages/auth/LoginPelanggan";
 
 // LAYOUT ADMIN
 import AdminLayout from "./layouts/AdminLayout";
@@ -19,68 +28,131 @@ import RiwayatTransaksi from "./pages/admin/RiwayatTransaksi";
 import Laporan from "./pages/admin/Laporan";
 import Pengaturan from "./pages/admin/Pengaturan";
 
+// HALAMAN PELANGGAN
+import DashboardPelanggan from "./pages/pelanggan/DashboardPelanggan";
+import ProfilPelanggan from "./pages/pelanggan/ProfilPelanggan";
+import MenuTenant from "./pages/pelanggan/MenuTenant";
+import Keranjang from "./pages/pelanggan/Keranjang";
+import Checkout from "./pages/pelanggan/Checkout";
+import HasilPembayaran from "./pages/pelanggan/HasilPembayaran";
+import DetailPesanan from "./pages/pelanggan/DetailPesanan";
+import PesananSaya from "./pages/pelanggan/PesananSaya";
+import RiwayatPesanan from "./pages/pelanggan/RiwayatPesanan";
+
 function App() {
   return (
-    <BrowserRouter>
-      <TenantProvider>
-        <Routes>
-          {/* HALAMAN AWAL */}
-          <Route
-            path="/"
-            element={<Navigate to="/login/internal" replace />}
-          />
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <BrowserRouter>
+        <TenantProvider>
+          <Routes>
+            {/* HALAMAN AWAL */}
+            <Route
+              path="/"
+              element={<Navigate to="/login/pelanggan" replace />}
+            />
 
-          {/* LOGIN ADMIN DAN TENANT */}
-          <Route
-            path="/login/internal"
-            element={<LoginInternal />}
-          />
+            {/* LOGIN */}
+            <Route
+              path="/login/internal"
+              element={<LoginInternal />}
+            />
+            <Route
+              path="/login/pelanggan"
+              element={<LoginPelanggan />}
+            />
 
-          {/* HALAMAN ADMIN - WAJIB LOGIN */}
-          <Route
-            element={<ProtectedRoute allowedRoles={["admin"]} />}
-          >
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route
-                index
-                element={<Navigate to="dashboard" replace />}
-              />
+            {/* BERANDA PELANGGAN */}
+            <Route
+              path="/beranda"
+              element={<DashboardPelanggan />}
+            />
 
-              <Route path="dashboard" element={<Dashboard />} />
+            {/* PROFIL PELANGGAN */}
+            <Route
+              path="/profil"
+              element={<ProfilPelanggan />}
+            />
 
-              <Route path="tenant" element={<DataTenant />} />
+            {/* PESANAN SAYA */}
+            <Route
+              path="/pesanan-saya"
+              element={<PesananSaya />}
+            />
 
-              <Route path="pelanggan" element={<DataPelanggan />} />
+            {/* RIWAYAT PESANAN LAMA */}
+            <Route
+              path="/riwayat-pesanan"
+              element={<RiwayatPesanan />}
+            />
 
-              <Route
-                path="transaksi-offline"
-                element={<TransaksiOffline />}
-              />
+            {/* KERANJANG */}
+            <Route
+              path="/keranjang"
+              element={<Keranjang />}
+            />
 
-              <Route
-                path="transaksi-online"
-                element={<TransaksiOnline />}
-              />
+            {/* CHECKOUT */}
+            <Route
+              path="/checkout"
+              element={<Checkout />}
+            />
 
-              <Route
-                path="riwayat-transaksi"
-                element={<RiwayatTransaksi />}
-              />
+            {/* HASIL PEMBAYARAN */}
+            <Route
+              path="/hasil-pembayaran"
+              element={<HasilPembayaran />}
+            />
 
-              <Route path="laporan" element={<Laporan />} />
+            {/* DETAIL PESANAN */}
+            <Route
+              path="/detail-pesanan"
+              element={<DetailPesanan />}
+            />
 
-              <Route path="pengaturan" element={<Pengaturan />} />
+            {/* MENU TENANT */}
+            <Route
+              path="/tenant/:id/menu"
+              element={<MenuTenant />}
+            />
+
+            {/* HALAMAN ADMIN: WAJIB LOGIN */}
+            <Route
+              element={<ProtectedRoute allowedRoles={["admin"]} />}
+            >
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route
+                  index
+                  element={<Navigate to="dashboard" replace />}
+                />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="tenant" element={<DataTenant />} />
+                <Route path="pelanggan" element={<DataPelanggan />} />
+                <Route
+                  path="transaksi-offline"
+                  element={<TransaksiOffline />}
+                />
+                <Route
+                  path="transaksi-online"
+                  element={<TransaksiOnline />}
+                />
+                <Route
+                  path="riwayat-transaksi"
+                  element={<RiwayatTransaksi />}
+                />
+                <Route path="laporan" element={<Laporan />} />
+                <Route path="pengaturan" element={<Pengaturan />} />
+              </Route>
             </Route>
-          </Route>
 
-          {/* HALAMAN TIDAK DITEMUKAN */}
-          <Route
-            path="*"
-            element={<Navigate to="/login/internal" replace />}
-          />
-        </Routes>
-      </TenantProvider>
-    </BrowserRouter>
+            {/* HALAMAN TIDAK DITEMUKAN */}
+            <Route
+              path="*"
+              element={<Navigate to="/login/pelanggan" replace />}
+            />
+          </Routes>
+        </TenantProvider>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   );
 }
 

@@ -1,0 +1,567 @@
+/* ========================================
+   PROFIL PELANGGAN - KANTINKITA
+======================================== */
+
+.profil-page {
+  min-height: 100vh;
+  padding-bottom: 45px;
+  background: #fffbef;
+  color: #380b16;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-page * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.profil-header {
+  padding: 25px 4% 28px;
+  background: #fffdf7;
+  border-bottom: 1px solid #f0e5d5;
+}
+
+.profil-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 9px 13px;
+  border: 1px solid #f0e5d5;
+  border-radius: 7px;
+  background: #fffdf7;
+  color: #65545a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profil-back:hover {
+  background: #fff0e9;
+  color: #c91d1d;
+}
+
+.profil-back span {
+  font-size: 17px;
+}
+
+.profil-heading {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.profil-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #c91d1d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.profil-heading h1 {
+  margin: 0 0 9px;
+  color: #380b16;
+  font-size: clamp(28px, 3vw, 35px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.profil-heading p {
+  margin: 0;
+  color: #806f6c;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* KONTEN UTAMA */
+
+.profil-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 30px auto 0;
+  padding: 0 25px;
+}
+
+/* KARTU IDENTITAS */
+
+.profil-card {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding: 30px;
+  border: 1px solid #f0d8be;
+  border-radius: 13px;
+  background: #fff5e9;
+  box-shadow: 0 4px 15px rgba(56, 11, 22, 0.04);
+}
+
+.profil-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background: #fff0cc;
+  box-shadow: 0 2px 9px rgba(56, 11, 22, 0.08);
+}
+
+.profil-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profil-avatar-fallback {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #380b16;
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.profil-user-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.profil-account-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #c91d1d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+}
+
+.profil-user-info h2 {
+  margin: 0 0 7px;
+  color: #380b16;
+  font-size: 23px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.profil-user-info > p {
+  margin: 0 0 13px;
+  color: #806f6c;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.profil-google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid #f0e5d5;
+  border-radius: 20px;
+  background: #fffdf7;
+  color: #65545a;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.profil-google-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #45a65e;
+}
+
+/* BAGIAN AKTIVITAS */
+
+.profil-menu-section {
+  margin-top: 32px;
+}
+
+.profil-menu-section > h2 {
+  margin: 0 0 15px;
+  color: #380b16;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+/* MENU RIWAYAT PESANAN */
+
+.profil-menu-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #f0e5d5;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #380b16;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 13px rgba(56, 11, 22, 0.035);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profil-menu-card:hover {
+  border-color: #f0c6ad;
+  background: #fffdf9;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(56, 11, 22, 0.07);
+}
+
+.profil-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  border: 1px solid #f0d8be;
+  border-radius: 10px;
+  background: #fff5e9;
+  color: #c91d1d;
+}
+
+.profil-menu-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.profil-menu-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.profil-menu-text strong {
+  color: #380b16;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.profil-menu-text > span {
+  color: #806f6c;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.profil-menu-text small {
+  color: #c91d1d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.profil-menu-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #fff0e9;
+  color: #c91d1d;
+  font-size: 19px;
+  transition: transform 0.2s ease;
+}
+
+.profil-menu-card:hover .profil-menu-arrow {
+  transform: translateX(3px);
+}
+
+/* KELUAR AKUN */
+
+.profil-logout-section {
+  margin-top: 27px;
+}
+
+.profil-logout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 49px;
+  padding: 12px 18px;
+  border: 1px solid #f0c8c3;
+  border-radius: 9px;
+  background: #fffdf7;
+  color: #c91d1d;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.profil-logout-button:hover {
+  border-color: #c91d1d;
+  background: #fff0ed;
+}
+
+.profil-logout-button svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* DIALOG KONFIRMASI LOGOUT */
+
+.profil-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(56, 11, 22, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.profil-modal {
+  width: 100%;
+  max-width: 390px;
+  padding: 30px;
+  border: 1px solid #f0e5d5;
+  border-radius: 14px;
+  background: #fffdf7;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(56, 11, 22, 0.16);
+  animation: profil-modal-muncul 0.2s ease-out;
+}
+
+.profil-modal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 17px;
+  border: 1px solid #f0c8c3;
+  border-radius: 50%;
+  background: #fff0ed;
+  color: #c91d1d;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.profil-modal h2 {
+  margin: 0 0 10px;
+  color: #380b16;
+  font-size: 20px;
+}
+
+.profil-modal > p {
+  margin: 0;
+  color: #806f6c;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.profil-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.profil-modal-actions button {
+  flex: 1;
+  min-height: 42px;
+  padding: 10px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.profil-cancel-button {
+  border: 1px solid #f0e5d5;
+  background: #ffffff;
+  color: #65545a;
+}
+
+.profil-cancel-button:hover {
+  background: #faf6ef;
+}
+
+.profil-confirm-logout {
+  border: 1px solid #c91d1d;
+  background: #c91d1d;
+  color: #ffffff;
+}
+
+.profil-confirm-logout:hover {
+  border-color: #a91616;
+  background: #a91616;
+}
+
+@keyframes profil-modal-muncul {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 1400px) {
+  .profil-container {
+    margin-top: 38px;
+  }
+}
+
+@media (max-width: 700px) {
+  .profil-header {
+    padding: 20px 18px 23px;
+  }
+
+  .profil-back {
+    margin-bottom: 20px;
+  }
+
+  .profil-heading h1 {
+    font-size: 28px;
+  }
+
+  .profil-container {
+    margin-top: 22px;
+    padding: 0 16px;
+  }
+
+  .profil-card {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 21px 17px;
+  }
+
+  .profil-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profil-avatar-fallback {
+    font-size: 27px;
+  }
+
+  .profil-user-info h2 {
+    font-size: 19px;
+  }
+
+  .profil-user-info > p {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .profil-menu-section {
+    margin-top: 27px;
+  }
+
+  .profil-menu-section > h2 {
+    font-size: 17px;
+  }
+
+  .profil-menu-card {
+    gap: 12px;
+    padding: 15px 13px;
+  }
+
+  .profil-menu-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .profil-menu-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .profil-menu-text strong {
+    font-size: 13px;
+  }
+
+  .profil-menu-text > span {
+    font-size: 11px;
+  }
+
+  .profil-menu-text small {
+    font-size: 10px;
+  }
+
+  .profil-menu-arrow {
+    width: 27px;
+    height: 27px;
+  }
+
+  .profil-logout-section {
+    margin-top: 22px;
+  }
+
+  .profil-modal {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .profil-card {
+    gap: 12px;
+    padding: 17px 12px;
+  }
+
+  .profil-avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+  .profil-avatar-fallback {
+    font-size: 23px;
+  }
+
+  .profil-user-info h2 {
+    font-size: 17px;
+  }
+
+  .profil-google-badge {
+    font-size: 9px;
+  }
+
+  .profil-menu-card {
+    gap: 9px;
+    padding: 13px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profil-page *,
+  .profil-page *::before,
+  .profil-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

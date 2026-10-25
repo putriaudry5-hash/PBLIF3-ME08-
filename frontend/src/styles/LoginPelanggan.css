@@ -1,0 +1,1108 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* ==========================================
+   KANTINKITA - LOGIN PELANGGAN
+   Desain mengikuti Login Internal
+========================================== */
+
+:root {
+  --cream: #FFFDF0;
+  --white: #FFFFFF;
+  --yellow: #FFE566;
+  --yellow-soft: #FFF2BA;
+  --red: #CD1C18;
+  --maroon: #38000A;
+  --muted: #766D73;
+  --border: #F0DDD7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--maroon);
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ==========================================
+   HALAMAN
+========================================== */
+
+.login-page {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding: 0;
+  overflow-x: clip;
+
+  background: var(--cream);
+  color: var(--maroon);
+  font-family: "Inter", sans-serif;
+}
+
+.login-page button {
+  font-family: inherit;
+}
+
+/* ==========================================
+   HEADER DAN LOGO UTAMA
+========================================== */
+
+.login-header {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+
+  width: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 25px 6% 0;
+}
+
+.kantin-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+
+  background: var(--yellow);
+  color: var(--maroon);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.logo-text {
+  color: var(--maroon);
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo-text span {
+  color: var(--red);
+}
+
+/* ==========================================
+   LAYOUT UTAMA
+========================================== */
+
+.login-layout {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 405px;
+  align-items: center;
+
+  column-gap: clamp(35px, 5vw, 85px);
+
+  width: 100%;
+  max-width: 1750px;
+  flex: 1;
+  min-height: 0;
+
+  margin: 0 auto;
+  padding: 15px 10% 36px 8%;
+}
+
+/* ==========================================
+   BAGIAN KIRI
+========================================== */
+
+.hero-content {
+  width: 100%;
+  max-width: 650px;
+  min-width: 0;
+}
+
+.hero-label {
+  margin: 0 0 22px;
+
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.7px;
+  line-height: 1.6;
+}
+
+.hero-title {
+  margin: 0;
+
+  color: var(--maroon);
+  font-size: clamp(43px, 3.25vw, 55px);
+  font-weight: 900;
+  line-height: 1.13;
+  letter-spacing: -1.8px;
+}
+
+.hero-title span {
+  color: var(--red);
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 25px 0 0;
+
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+.desktop-break {
+  display: initial;
+}
+
+/* ==========================================
+   FITUR PELANGGAN
+========================================== */
+
+.feature-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  align-items: center;
+  gap: 19px;
+
+  margin-top: 31px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 12px;
+  min-width: 0;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 49px;
+  height: 49px;
+  border-radius: 13px;
+
+  background: var(--yellow-soft);
+  color: var(--red);
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-text {
+  min-width: 0;
+}
+
+.feature-text h3 {
+  margin: 0 0 7px;
+
+  color: var(--maroon);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.feature-text p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.feature-divider {
+  width: 1px;
+  height: 46px;
+  background: #EADDD7;
+}
+
+/* ==========================================
+   KARTU LOGIN GOOGLE
+========================================== */
+
+.login-card {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 365px;
+  min-width: 0;
+  justify-self: center;
+
+  padding: 27px 24px 23px;
+
+  border: 1px solid #F2E4DD;
+  border-top: 3px solid var(--yellow);
+  border-radius: 20px;
+
+  background: var(--white);
+  box-shadow: 0 18px 50px rgba(56, 0, 10, 0.075);
+
+  text-align: left;
+}
+
+/* ==========================================
+   LOGO DI DALAM KARTU
+========================================== */
+
+.logo-small {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.logo-small .logo-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+.logo-small .logo-text {
+  font-size: 19px;
+  letter-spacing: -0.7px;
+}
+
+/* ==========================================
+   JUDUL DAN DESKRIPSI KARTU
+========================================== */
+
+.login-card-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.login-card-content h2 {
+  margin: 0 0 10px;
+
+  color: var(--maroon);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+}
+
+.login-intro {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   TOMBOL GOOGLE
+========================================== */
+
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 49px;
+  margin-top: 23px;
+  padding: 12px 15px;
+
+  border: 1px solid var(--red);
+  border-radius: 10px;
+
+  background: var(--red);
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.google-login-button:hover {
+  background: #AD1715;
+  transform: translateY(-1px);
+}
+
+.google-login-button:active {
+  transform: translateY(0);
+}
+
+.google-login-button:focus-visible {
+  outline: 3px solid rgba(205, 28, 24, 0.2);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   CATATAN DAN FOOTER KARTU
+========================================== */
+
+.login-note {
+  margin: 20px 0 0;
+
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.card-footer {
+  margin-top: 22px;
+  padding-top: 16px;
+
+  border-top: 1px solid #F0E5DF;
+
+  color: #95898C;
+  font-size: 9px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==========================================
+   DEKORASI LATAR
+   Ukuran dibatasi supaya tidak berlebihan
+========================================== */
+
+.decoration {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.decoration-left {
+  top: 7%;
+  left: -145px;
+
+  width: 245px;
+  height: 390px;
+
+  border-radius: 50%;
+  background: rgba(255, 239, 164, 0.22);
+}
+
+.decoration-top {
+  top: -155px;
+  right: -75px;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.decoration-top-inner {
+  top: -120px;
+  right: -45px;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+  background: #FFED9B;
+  opacity: 0.7;
+
+  transform: translate(-45px, -12px);
+}
+
+.red-dot,
+.yellow-dot {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.red-dot {
+  top: 32px;
+  right: 15%;
+
+  width: 20px;
+  height: 20px;
+
+  background: var(--red);
+}
+
+.dot-right {
+  top: 185px;
+  right: 3%;
+
+  width: 18px;
+  height: 18px;
+
+  background: var(--yellow);
+}
+
+.dot-left {
+  top: 67%;
+  left: 2%;
+
+  width: 18px;
+  height: 18px;
+
+  background: var(--yellow);
+}
+
+/* Hilangkan gelombang besar agar tidak menutupi halaman */
+
+.bottom-wave,
+.bottom-wave-line {
+  display: none;
+}
+
+/* Ilustrasi kantin dibuat lebih kecil */
+
+.stall-decoration {
+  position: absolute;
+  z-index: -1;
+  right: -20px;
+  bottom: 45px;
+
+  width: 145px;
+
+  color: #F3D96F;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.stall-decoration svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   FOOTER HALAMAN
+========================================== */
+
+.copyright {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+
+  width: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 8px 6% 21px;
+
+  color: #8E8084;
+  font-size: 10px;
+}
+
+/* ==========================================
+   DESKTOP - SATU LAYAR
+========================================== */
+
+@media (min-width: 1101px) and (min-height: 680px) {
+  .login-page {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+/* ==========================================
+   LAPTOP DENGAN TINGGI LAYAR PENDEK
+========================================== */
+
+@media (min-width: 1101px) and (max-height: 760px) {
+  .login-header {
+    padding-top: 17px;
+  }
+
+  .login-layout {
+    padding-top: 8px;
+    padding-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(39px, 3vw, 49px);
+  }
+
+  .hero-label {
+    margin-bottom: 17px;
+  }
+
+  .hero-description {
+    margin-top: 18px;
+  }
+
+  .feature-list {
+    margin-top: 23px;
+  }
+
+  .login-card {
+    padding: 21px 27px 18px;
+  }
+
+  .logo-small {
+    margin-bottom: 15px;
+  }
+
+  .google-login-button {
+    margin-top: 17px;
+  }
+
+  .login-note {
+    margin-top: 15px;
+  }
+
+  .card-footer {
+    margin-top: 15px;
+    padding-top: 11px;
+  }
+
+  .copyright {
+    padding-bottom: 13px;
+  }
+}
+
+/* ==========================================
+   TABLET LANDSCAPE
+========================================== */
+
+@media (min-width: 801px) and (max-width: 1100px) {
+  .login-layout {
+    grid-template-columns: minmax(0, 1fr) 350px;
+    column-gap: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-title {
+    font-size: clamp(34px, 4vw, 43px);
+  }
+
+  .login-card {
+    max-width: 350px;
+    padding: 24px;
+  }
+
+  .feature-list {
+    gap: 16px;
+  }
+
+  .feature-item {
+    gap: 10px;
+  }
+
+  .feature-text h3 {
+    font-size: 11px;
+  }
+
+  .feature-text p {
+    font-size: 10px;
+  }
+}
+
+/* ==========================================
+   TABLET PORTRAIT
+========================================== */
+
+@media (max-width: 800px) {
+  .login-header {
+    padding: 25px 5% 0;
+  }
+
+  .login-layout {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 650px;
+    gap: 35px;
+
+    padding: 40px 5% 55px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 6vw, 48px);
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 405px;
+    justify-self: center;
+  }
+
+  .copyright {
+    padding: 8px 5% 20px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 540px) {
+  .login-header {
+    padding: 22px 5% 0;
+  }
+
+  .logo-box {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .logo-text {
+    font-size: 21px;
+  }
+
+  .login-layout {
+    padding: 35px 5% 45px;
+    gap: 30px;
+  }
+
+  .hero-label {
+    margin-bottom: 19px;
+    font-size: 10px;
+    letter-spacing: 1.9px;
+  }
+
+  .hero-title {
+    font-size: clamp(29px, 8vw, 39px);
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 27px;
+  }
+
+  .feature-item {
+    flex: none;
+  }
+
+  .feature-divider {
+    display: none;
+  }
+
+  .login-card {
+    max-width: 100%;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .logo-small .logo-box {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+  }
+
+  .logo-small .logo-text {
+    font-size: 19px;
+  }
+
+  .login-card-content h2 {
+    font-size: 23px;
+  }
+
+  .login-intro {
+    font-size: 11px;
+  }
+
+  .google-login-button {
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .login-note {
+    font-size: 11px;
+  }
+
+  .decoration-top {
+    top: -200px;
+    right: -190px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .decoration-top-inner {
+    top: -170px;
+    right: -160px;
+    width: 260px;
+    height: 260px;
+  }
+
+  .red-dot {
+    top: 22px;
+    right: 13%;
+    width: 15px;
+    height: 15px;
+  }
+
+  .dot-right {
+    top: 150px;
+  }
+
+  .dot-left {
+    top: 47%;
+    left: 3%;
+    width: 15px;
+    height: 15px;
+  }
+
+  .stall-decoration {
+    right: -45px;
+    bottom: 30px;
+    width: 110px;
+    opacity: 0.2;
+  }
+
+  .copyright {
+    font-size: 10px;
+    padding: 8px 5% 20px;
+  }
+}
+
+/* HP kecil */
+
+@media (max-width: 380px) {
+  .login-header {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .login-layout {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .login-card {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+}
+
+/* Kurangi animasi sesuai pengaturan pengguna */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ==========================================
+   PENYESUAIAN LOGIN PELANGGAN
+   Mengikuti tampilan Login Internal
+========================================== */
+
+/* Samakan font dan warna */
+.login-page {
+  --cream: #FFFDF0;
+  --yellow: #FFE566;
+  --red: #CD1C18;
+  --maroon: #38000A;
+  --text-muted: #766D73;
+  --border: #F0DDD7;
+
+  font-family: "Inter", sans-serif;
+  color: var(--maroon);
+  background: var(--cream);
+}
+
+/* Samakan ukuran dan posisi logo */
+.login-page .logo-box {
+  width: 43px;
+  height: 43px;
+  border-radius: 11px;
+  font-size: 22px;
+}
+
+.login-page .kantin-logo {
+  gap: 11px;
+}
+
+.login-page .logo-text {
+  font-size: 23px;
+  letter-spacing: -1px;
+}
+
+/* Samakan posisi bagian kiri dan kartu kanan */
+.login-page .login-layout {
+  grid-template-columns: minmax(0, 1fr) 405px;
+  align-items: center;
+  gap: clamp(35px, 5vw, 85px);
+  width: 100%;
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 15px 10% 36px 8%;
+}
+
+/* Samakan ukuran tulisan promosi */
+.login-page .hero-content {
+  width: 100%;
+  max-width: 650px;
+  min-width: 0;
+  padding: 0;
+}
+
+.login-page .hero-label {
+  margin-bottom: 22px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.7px;
+}
+
+.login-page .hero-title {
+  font-size: clamp(43px, 3.25vw, 55px);
+  line-height: 1.13;
+  letter-spacing: -1.8px;
+}
+
+.login-page .hero-description {
+  margin-top: 25px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Samakan ukuran fitur */
+.login-page .feature-list {
+  gap: 19px;
+  margin-top: 31px;
+}
+
+.login-page .feature-item {
+  gap: 12px;
+}
+
+.login-page .feature-icon {
+  width: 49px;
+  height: 49px;
+  border-radius: 13px;
+  background: #FFF2BA;
+  color: var(--red);
+}
+
+.login-page .feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.login-page .feature-text h3 {
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.login-page .feature-text p {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.login-page .feature-divider {
+  height: 46px;
+  background: #EADDD7;
+}
+
+/* Samakan bentuk kartu login internal */
+.login-page .login-card {
+  width: 100%;
+  max-width: 405px;
+  min-width: 0;
+  justify-self: center;
+  padding: 27px 24px 23px;
+  border: 1px solid #F2E4DD;
+  border-top: 3px solid var(--yellow);
+  border-radius: 20px;
+  background: #FFFFFF;
+  box-shadow: 0 18px 50px rgba(56, 0, 10, 0.075);
+}
+
+/* Samakan logo di dalam kartu */
+.login-page .logo-small {
+  gap: 10px;
+}
+
+.login-page .logo-small .logo-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+.login-page .logo-small .logo-text {
+  font-size: 19px;
+  letter-spacing: -0.7px;
+}
+
+/* Samakan judul dan teks kartu */
+.login-page .login-card-content h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+}
+
+.login-page .login-intro {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Tombol Google tetap merah, tetapi lebih ramping */
+.login-page .google-login-button {
+  min-height: 49px;
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--red);
+  font-size: 14px;
+}
+
+.login-page .google-login-button:hover {
+  background: #AD1715;
+}
+
+.login-page .login-note {
+  margin-top: 17px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.login-page .card-footer {
+  margin-top: 18px;
+  padding-top: 13px;
+  font-size: 9px;
+}
+
+/* PENTING: dekorasi harus berada di atas background,
+   tetapi tetap di belakang tulisan dan kartu */
+.login-page .decoration,
+.login-page .bottom-wave,
+.login-page .bottom-wave-line,
+.login-page .stall-decoration {
+  z-index: 0;
+}
+
+.login-page .login-header,
+.login-page .login-layout,
+.login-page .copyright {
+  position: relative;
+  z-index: 2;
+}
+
+/* Dekorasi bawah jangan menutupi isi halaman */
+.login-page .bottom-wave {
+  pointer-events: none;
+}
+
+/* Tampilan tablet */
+@media (max-width: 1100px) {
+  .login-page .login-layout {
+    grid-template-columns: minmax(0, 1fr) 350px;
+    gap: 25px;
+    padding: 15px 5% 36px;
+  }
+
+  .login-page .hero-title {
+    font-size: clamp(34px, 4vw, 43px);
+  }
+
+  .login-page .login-card {
+    max-width: 350px;
+    padding: 24px;
+  }
+}
+
+/* Tampilan HP */
+@media (max-width: 800px) {
+  .login-page .login-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 650px;
+    padding: 35px 5% 85px;
+  }
+
+  .login-page .hero-title {
+    font-size: clamp(29px, 8vw, 39px);
+    letter-spacing: -1px;
+  }
+
+  .login-page .hero-description {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .login-page .feature-list {
+    margin-top: 27px;
+  }
+
+  .login-page .login-card {
+    width: 100%;
+    max-width: 405px;
+    justify-self: center;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .login-page .login-card-content h2 {
+    font-size: 23px;
+  }
+
+  .login-page .google-login-button {
+    min-height: 50px;
+  }
+}

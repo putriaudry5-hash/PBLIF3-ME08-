@@ -1,0 +1,1145 @@
+.checkout-page {
+  min-height: 100vh;
+  background: #f7f8fc;
+  color: #202938;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.checkout-page * {
+  box-sizing: border-box;
+}
+
+.checkout-navbar {
+  min-height: 76px;
+  padding: 16px 6%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8eaf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.checkout-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 0;
+  color: #202938;
+  font-size: 21px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.checkout-logo {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: #16845b;
+}
+
+.checkout-brand-highlight {
+  color: #16845b;
+}
+
+.checkout-nav-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.checkout-back,
+.checkout-breadcrumb button {
+  background: none;
+  border: 0;
+  color: #16845b;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.checkout-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 28px 0 60px;
+}
+
+.checkout-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #778092;
+  font-size: 13px;
+  margin-bottom: 26px;
+}
+
+.checkout-breadcrumb button {
+  padding: 0;
+}
+
+.checkout-heading {
+  margin-bottom: 25px;
+}
+
+.checkout-eyebrow {
+  color: #16845b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.checkout-heading h1 {
+  margin: 8px 0;
+  font-size: clamp(27px, 4vw, 36px);
+}
+
+.checkout-heading p {
+  margin: 0;
+  color: #737d8d;
+  line-height: 1.6;
+}
+
+.checkout-demo-notice {
+  display: flex;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid #f1d49a;
+  border-radius: 14px;
+  background: #fff9e9;
+  color: #744e08;
+  margin-bottom: 25px;
+}
+
+.checkout-demo-notice > span {
+  font-size: 24px;
+}
+
+.checkout-demo-notice strong {
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+.checkout-demo-notice p {
+  margin: 7px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(290px, 0.8fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.checkout-card,
+.checkout-summary,
+.checkout-result,
+.checkout-empty {
+  background: white;
+  border: 1px solid #e8eaf0;
+  border-radius: 18px;
+  box-shadow: 0 5px 22px rgba(27, 39, 57, 0.04);
+}
+
+.checkout-card {
+  padding: 25px;
+}
+
+.checkout-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkout-step {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #e6f5ed;
+  color: #16845b;
+  font-weight: 800;
+}
+
+.checkout-card-heading h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.checkout-card-heading p {
+  margin: 0;
+  color: #81899a;
+  font-size: 13px;
+}
+
+.checkout-items {
+  margin-top: 20px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.checkout-item-image {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f1f5f3;
+  font-size: 26px;
+}
+
+.checkout-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkout-item-info {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkout-item-info strong {
+  overflow-wrap: anywhere;
+}
+
+.checkout-item-info span {
+  color: #788192;
+  font-size: 12px;
+}
+
+.checkout-item-subtotal {
+  text-align: right;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.checkout-text-button {
+  margin-top: 17px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #16845b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.checkout-divider {
+  height: 1px;
+  background: #edf0f4;
+  margin: 24px 0;
+}
+
+.checkout-methods {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.checkout-method {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+  border: 1px solid #e5e8ef;
+  border-radius: 13px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.checkout-method:hover {
+  border-color: #a7d7c1;
+}
+
+.checkout-method.selected {
+  border-color: #16845b;
+  background: #f1faf5;
+}
+
+.checkout-method-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #e8f4ee;
+  color: #16845b;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.checkout-method-icon.dana {
+  background: #e7f1ff;
+  color: #1764cf;
+}
+
+.checkout-method-icon.ovo {
+  background: #f1e9ff;
+  color: #713bc2;
+}
+
+.checkout-method-icon.gopay {
+  background: #e4f4ff;
+  color: #0079bd;
+}
+
+.checkout-method-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkout-method-info small {
+  color: #7b8493;
+  line-height: 1.4;
+}
+
+.checkout-radio {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid #d4d9e2;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+}
+
+.checkout-method.selected .checkout-radio {
+  border-color: #16845b;
+  background: #16845b;
+}
+
+.checkout-method-note {
+  margin: 16px 0 0;
+  color: #81899a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.checkout-summary {
+  padding: 24px;
+  position: sticky;
+  top: 20px;
+}
+
+.checkout-summary h2 {
+  margin: 0 0 23px;
+  font-size: 19px;
+}
+
+.checkout-summary-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 17px 0;
+  color: #707a8a;
+  font-size: 14px;
+}
+
+.checkout-summary-row span:last-child {
+  color: #283244;
+  font-weight: 600;
+  text-align: right;
+}
+
+.checkout-total {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.checkout-total span {
+  color: #737d8d;
+  font-size: 14px;
+}
+
+.checkout-total strong {
+  color: #16845b;
+  font-size: 27px;
+  overflow-wrap: anywhere;
+}
+
+.checkout-button {
+  min-height: 48px;
+  padding: 13px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 11px;
+  background: #16845b;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.checkout-button:hover {
+  background: #116c49;
+}
+
+.checkout-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkout-pay-button {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.checkout-secure-note {
+  margin: 14px 0 0;
+  color: #828b9a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.checkout-empty,
+.checkout-result {
+  max-width: 680px;
+  margin: 35px auto;
+  padding: 36px;
+  text-align: center;
+}
+
+.checkout-empty-icon,
+.checkout-result-icon {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #e6f5ed;
+  color: #16845b;
+  font-size: 30px;
+}
+
+.checkout-empty h1,
+.checkout-result h2 {
+  margin: 10px 0;
+}
+
+.checkout-empty p,
+.checkout-result > p {
+  color: #737d8d;
+  line-height: 1.7;
+}
+
+.checkout-empty .checkout-button {
+  margin-top: 12px;
+}
+
+.checkout-result-detail {
+  margin: 25px 0;
+  padding: 5px 18px;
+  border-radius: 12px;
+  background: #f7f9fb;
+  text-align: left;
+}
+
+.checkout-result-detail > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e8ebf0;
+}
+
+.checkout-result-detail > div:last-child {
+  border-bottom: 0;
+}
+
+.checkout-result-detail span {
+  color: #737d8d;
+  font-size: 13px;
+}
+
+.checkout-result-detail strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.checkout-status-demo {
+  color: #16845b;
+}
+
+.checkout-result-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.checkout-button-secondary {
+  background: #eef2f5;
+  color: #273345;
+}
+
+.checkout-button-secondary:hover {
+  background: #e1e7ec;
+}
+
+@media (max-width: 800px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+
+  .checkout-nav-title {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .checkout-navbar {
+    padding: 14px 4%;
+    gap: 8px;
+  }
+
+  .checkout-brand {
+    font-size: 18px;
+  }
+
+  .checkout-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .checkout-back {
+    font-size: 12px;
+  }
+
+  .checkout-container {
+    width: 92%;
+    padding-top: 20px;
+  }
+
+  .checkout-card,
+  .checkout-summary {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .checkout-item {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .checkout-item-image {
+    width: 54px;
+    height: 54px;
+  }
+
+  .checkout-item-info {
+    flex-basis: calc(100% - 80px);
+  }
+
+  .checkout-item-subtotal {
+    margin-left: 64px;
+  }
+
+  .checkout-demo-notice {
+    padding: 13px;
+  }
+
+  .checkout-result,
+  .checkout-empty {
+    padding: 23px 16px;
+  }
+
+  .checkout-result-detail {
+    padding: 5px 12px;
+  }
+
+  .checkout-result-detail > div {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .checkout-result-detail strong {
+    text-align: left;
+  }
+
+  .checkout-result-actions {
+    flex-direction: column;
+  }
+
+  .checkout-result-actions .checkout-button {
+    width: 100%;
+  }
+}
+
+
+/* =====================================
+   KANTINKITA - PENYESUAIAN WARNA CHECKOUT
+   Tema: krem, marun, merah, dan oranye
+===================================== */
+
+.checkout-page {
+  background: #fffbef;
+  color: #380b16;
+}
+
+/* Navbar */
+.checkout-navbar {
+  background: #fffdf7;
+  border-bottom-color: #f0e5d5;
+}
+
+.checkout-brand {
+  color: #380b16;
+}
+
+.checkout-logo {
+  background: #ff9b22;
+  color: #ffffff;
+}
+
+.checkout-brand-highlight {
+  color: #c91d1d;
+}
+
+.checkout-back,
+.checkout-breadcrumb button,
+.checkout-text-button {
+  color: #c91d1d;
+}
+
+.checkout-back:hover,
+.checkout-breadcrumb button:hover,
+.checkout-text-button:hover {
+  color: #991414;
+}
+
+/* Breadcrumb dan heading */
+.checkout-breadcrumb {
+  color: #806f6c;
+}
+
+.checkout-eyebrow {
+  color: #c91d1d;
+}
+
+.checkout-heading h1,
+.checkout-card-heading h2,
+.checkout-summary h2,
+.checkout-empty h1,
+.checkout-result h2 {
+  color: #380b16;
+}
+
+.checkout-heading p,
+.checkout-card-heading p {
+  color: #806f6c;
+}
+
+/* Pemberitahuan simulasi */
+.checkout-demo-notice {
+  background: #fff5e3;
+  border-color: #f0d8a9;
+  color: #380b16;
+}
+
+.checkout-demo-notice strong {
+  color: #991414;
+}
+
+.checkout-demo-notice p {
+  color: #806f6c;
+}
+
+/* Kartu */
+.checkout-card,
+.checkout-summary,
+.checkout-result,
+.checkout-empty {
+  background: #fffdf7;
+  border-color: #eee3d8;
+  box-shadow: 0 5px 18px rgba(56, 11, 22, 0.04);
+}
+
+/* Nomor langkah */
+.checkout-step {
+  background: #fff0cc;
+  color: #a95c08;
+}
+
+/* Daftar menu */
+.checkout-item {
+  border-bottom-color: #f0e5d5;
+}
+
+.checkout-item-image {
+  background: #fff5e9;
+}
+
+.checkout-item-info strong {
+  color: #380b16;
+}
+
+.checkout-item-info span {
+  color: #806f6c;
+}
+
+.checkout-item-subtotal {
+  color: #c91d1d;
+}
+
+.checkout-divider {
+  background: #f0e5d5;
+}
+
+/* Pilihan metode pembayaran */
+.checkout-method {
+  background: #fffdf7;
+  border-color: #eee3d8;
+  color: #380b16;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.checkout-method:hover {
+  border-color: #ffb44f;
+  background: #fffaf0;
+}
+
+.checkout-method.selected {
+  border: 2px solid #ff9b22;
+  background: #fff5e3;
+}
+
+.checkout-method-info strong {
+  color: #380b16;
+}
+
+.checkout-method-info small {
+  color: #806f6c;
+}
+
+/* Ikon metode pembayaran tetap punya warna pembeda */
+.checkout-method-icon {
+  background: #fff0cc;
+  color: #a95c08;
+}
+
+.checkout-method-icon.dana {
+  background: #e7f1ff;
+  color: #1764cf;
+}
+
+.checkout-method-icon.ovo {
+  background: #f1e9ff;
+  color: #713bc2;
+}
+
+.checkout-method-icon.gopay {
+  background: #e4f4ff;
+  color: #0079bd;
+}
+
+/* Radio metode terpilih */
+.checkout-radio {
+  border-color: #e8d8c6;
+}
+
+.checkout-method.selected .checkout-radio {
+  border-color: #c91d1d;
+  background: #c91d1d;
+}
+
+.checkout-method-note {
+  color: #806f6c;
+}
+
+/* Ringkasan pembayaran */
+.checkout-summary-row {
+  color: #806f6c;
+}
+
+.checkout-summary-row span:last-child {
+  color: #380b16;
+}
+
+.checkout-total span {
+  color: #806f6c;
+}
+
+.checkout-total strong {
+  color: #c91d1d;
+}
+
+/* Tombol utama */
+.checkout-button {
+  background: #ff9b22;
+  color: #ffffff;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.checkout-button:hover:not(:disabled) {
+  background: #e98612;
+}
+
+.checkout-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.checkout-pay-button {
+  background: #ff9b22;
+}
+
+/* Tombol sekunder */
+.checkout-button-secondary {
+  background: #fff0cc;
+  color: #8a4c08;
+}
+
+.checkout-button-secondary:hover:not(:disabled) {
+  background: #ffe3a3;
+}
+
+/* Catatan keamanan */
+.checkout-secure-note {
+  color: #806f6c;
+}
+
+/* Halaman keranjang kosong dan hasil simulasi */
+.checkout-empty-icon,
+.checkout-result-icon {
+  background: #fff0cc;
+  color: #a95c08;
+}
+
+.checkout-empty p,
+.checkout-result > p {
+  color: #806f6c;
+}
+
+/* Detail hasil simulasi */
+.checkout-result-detail {
+  background: #fffaf0;
+  border: 1px solid #f0e5d5;
+}
+
+.checkout-result-detail > div {
+  border-bottom-color: #f0e5d5;
+}
+
+.checkout-result-detail span {
+  color: #806f6c;
+}
+
+.checkout-result-detail strong {
+  color: #380b16;
+}
+
+.checkout-status-demo {
+  color: #a95c08;
+}
+
+/* Tombol sekunder saat hasil simulasi */
+.checkout-result-actions .checkout-button-secondary {
+  background: #fff0cc;
+  color: #8a4c08;
+}
+
+.checkout-result-actions .checkout-button-secondary:hover:not(:disabled) {
+  background: #ffe3a3;
+}
+
+
+/* =========================================
+   DETAIL PESANAN - KANTINKITA
+========================================= */
+
+.checkout-order-success {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 22px;
+  background: #fffdf7;
+  border: 1px solid #eee3d8;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(56, 11, 22, 0.04);
+}
+
+.checkout-order-success .checkout-result-icon {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.checkout-order-success h2 {
+  margin: 0 0 8px;
+  color: #380b16;
+  font-size: 20px;
+}
+
+.checkout-order-success p {
+  margin: 0;
+  color: #806f6c;
+  line-height: 1.6;
+}
+
+.checkout-order-card {
+  margin-bottom: 22px;
+  padding: 24px;
+  background: #fffdf7;
+  border: 1px solid #eee3d8;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(56, 11, 22, 0.04);
+}
+
+.checkout-order-card h2 {
+  margin: 0 0 20px;
+  color: #380b16;
+  font-size: 20px;
+}
+
+.checkout-order-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.checkout-order-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.checkout-order-info span,
+.checkout-order-subtotal span {
+  color: #806f6c;
+  font-size: 13px;
+}
+
+.checkout-order-info strong {
+  color: #380b16;
+  font-size: 14px;
+}
+
+.checkout-order-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.checkout-order-title h2 {
+  margin: 0;
+}
+
+.checkout-order-title > span {
+  padding: 7px 12px;
+  color: #8a4c08;
+  background: #fff0cc;
+  border-radius: 20px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.checkout-order-tenant {
+  padding: 20px 0;
+  border-top: 1px solid #f0e5d5;
+}
+
+.checkout-order-tenant-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.checkout-order-store-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: #c91d1d;
+  background: #fff0cc;
+  border-radius: 12px;
+  font-size: 22px;
+}
+
+.checkout-order-tenant-heading h3 {
+  margin: 0;
+  color: #380b16;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.checkout-order-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.checkout-order-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #fff5e9;
+  border-radius: 12px;
+  font-size: 27px;
+}
+
+.checkout-order-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkout-order-item-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.checkout-order-item-info strong {
+  color: #380b16;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.checkout-order-item-info span {
+  color: #806f6c;
+  font-size: 13px;
+}
+
+.checkout-order-price {
+  color: #c91d1d;
+  font-size: 14px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.checkout-order-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 17px;
+}
+
+.checkout-order-subtotal strong {
+  color: #380b16;
+  font-size: 15px;
+}
+
+.checkout-order-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0e5d5;
+}
+
+.checkout-order-total span {
+  color: #380b16;
+  font-weight: 600;
+}
+
+.checkout-order-total strong {
+  color: #c91d1d;
+  font-size: 24px;
+  overflow-wrap: anywhere;
+}
+
+.checkout-order-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+@media (max-width: 700px) {
+  .checkout-order-success {
+    align-items: flex-start;
+    padding: 17px;
+  }
+
+  .checkout-order-card {
+    padding: 18px;
+  }
+
+  .checkout-order-info {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .checkout-order-item {
+    gap: 10px;
+  }
+
+  .checkout-order-image {
+    width: 56px;
+    height: 56px;
+  }
+
+  .checkout-order-item-info strong {
+    font-size: 14px;
+  }
+
+  .checkout-order-price {
+    max-width: 100px;
+    font-size: 12px;
+  }
+
+  .checkout-order-total strong {
+    font-size: 20px;
+  }
+
+  .checkout-order-actions {
+    flex-direction: column;
+  }
+
+  .checkout-order-actions .checkout-button {
+    width: 100%;
+  }
+}

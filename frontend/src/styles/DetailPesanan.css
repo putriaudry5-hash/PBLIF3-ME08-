@@ -1,0 +1,458 @@
+.detail-pesanan-page {
+  min-height: 100vh;
+  background: #fffbef;
+  color: #380b16;
+}
+
+.detail-pesanan-page * {
+  box-sizing: border-box;
+}
+
+.detail-pesanan-navbar {
+  min-height: 76px;
+  padding: 16px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: #fffdf7;
+  border-bottom: 1px solid #eee3d8;
+}
+
+.detail-pesanan-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: transparent;
+  color: #380b16;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.detail-pesanan-brand > span:last-child > span {
+  color: #c91d1d;
+}
+
+.detail-pesanan-logo {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #ff9b22;
+  color: white;
+}
+
+.detail-pesanan-back,
+.detail-pesanan-breadcrumb button {
+  border: none;
+  background: transparent;
+  color: #c91d1d;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.detail-pesanan-container {
+  width: min(920px, 92%);
+  margin: 0 auto;
+  padding: 28px 0 50px;
+}
+
+.detail-pesanan-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  color: #806f6c;
+  font-size: 13px;
+}
+
+.detail-pesanan-breadcrumb button {
+  padding: 0;
+}
+
+.detail-pesanan-heading {
+  margin-bottom: 24px;
+}
+
+.detail-pesanan-eyebrow {
+  color: #c91d1d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.detail-pesanan-heading h1 {
+  margin: 8px 0;
+  color: #380b16;
+  font-size: clamp(27px, 4vw, 36px);
+}
+
+.detail-pesanan-heading p {
+  margin: 0;
+  color: #806f6c;
+  line-height: 1.7;
+}
+
+.detail-pesanan-success {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  margin-bottom: 20px;
+  background: #fffdf7;
+  border: 1px solid #eee3d8;
+  border-radius: 16px;
+}
+
+.detail-pesanan-success-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #e4f4e8;
+  color: #27834a;
+  border-radius: 50%;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.detail-pesanan-success h2 {
+  margin: 0 0 7px;
+  color: #380b16;
+  font-size: 19px;
+}
+
+.detail-pesanan-success p {
+  margin: 0;
+  color: #806f6c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.detail-pesanan-card {
+  padding: 24px;
+  margin-bottom: 20px;
+  background: #fffdf7;
+  border: 1px solid #eee3d8;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(56, 11, 22, 0.04);
+}
+
+.detail-pesanan-card > h2,
+.detail-pesanan-section-heading h2 {
+  margin: 0;
+  color: #380b16;
+  font-size: 19px;
+}
+
+.detail-pesanan-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.detail-pesanan-info-grid > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.detail-pesanan-info-grid span {
+  color: #806f6c;
+  font-size: 13px;
+}
+
+.detail-pesanan-info-grid strong {
+  color: #380b16;
+  font-size: 14px;
+}
+
+.detail-pesanan-info-grid .detail-pesanan-status {
+  color: #27834a;
+  font-size: 12px;
+}
+
+.detail-pesanan-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.detail-pesanan-section-heading > span {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fff0cc;
+  color: #8a4c08;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.detail-pesanan-tenant {
+  padding: 20px 0;
+  border-top: 1px solid #f0e5d5;
+}
+
+.detail-pesanan-tenant-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.detail-pesanan-store-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #fff0cc;
+  color: #c91d1d;
+  font-size: 23px;
+}
+
+.detail-pesanan-tenant-heading > div {
+  min-width: 0;
+}
+
+.detail-pesanan-tenant-heading > div > span {
+  color: #806f6c;
+  font-size: 12px;
+}
+
+.detail-pesanan-tenant-heading h3 {
+  margin: 4px 0 0;
+  color: #380b16;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.detail-pesanan-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.detail-pesanan-image {
+  width: 66px;
+  height: 66px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff5e9;
+  font-size: 26px;
+}
+
+.detail-pesanan-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-pesanan-item-info {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.detail-pesanan-item-info strong {
+  color: #380b16;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.detail-pesanan-item-info span {
+  color: #806f6c;
+  font-size: 13px;
+}
+
+.detail-pesanan-item-price {
+  color: #c91d1d;
+  font-size: 14px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.detail-pesanan-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 17px;
+}
+
+.detail-pesanan-subtotal span {
+  color: #806f6c;
+  font-size: 13px;
+}
+
+.detail-pesanan-subtotal strong {
+  color: #380b16;
+  font-size: 14px;
+}
+
+.detail-pesanan-total-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  color: #806f6c;
+  font-size: 14px;
+}
+
+.detail-pesanan-total-row strong {
+  color: #380b16;
+  text-align: right;
+}
+
+.detail-pesanan-grand-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #f0e5d5;
+}
+
+.detail-pesanan-grand-total span {
+  color: #380b16;
+  font-weight: 700;
+}
+
+.detail-pesanan-grand-total strong {
+  color: #c91d1d;
+  font-size: 24px;
+  overflow-wrap: anywhere;
+}
+
+.detail-pesanan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.detail-pesanan-button {
+  min-height: 46px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff9b22;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.detail-pesanan-button:hover {
+  background: #e98612;
+}
+
+.detail-pesanan-button-secondary {
+  background: #fff0cc;
+  color: #8a4c08;
+}
+
+.detail-pesanan-button-secondary:hover {
+  background: #ffe3a3;
+}
+
+.detail-pesanan-disclaimer {
+  margin: 20px 0 0;
+  color: #806f6c;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.detail-pesanan-empty {
+  padding: 40px 24px;
+  background: #fffdf7;
+  border: 1px solid #eee3d8;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.detail-pesanan-empty-icon {
+  font-size: 42px;
+}
+
+.detail-pesanan-empty h1 {
+  color: #380b16;
+  font-size: 24px;
+}
+
+.detail-pesanan-empty p {
+  margin-bottom: 24px;
+  color: #806f6c;
+  line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+  .detail-pesanan-navbar {
+    padding: 14px 4%;
+  }
+
+  .detail-pesanan-container {
+    width: 92%;
+    padding-top: 22px;
+  }
+
+  .detail-pesanan-card {
+    padding: 18px;
+  }
+
+  .detail-pesanan-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .detail-pesanan-success {
+    align-items: flex-start;
+    padding: 17px;
+  }
+
+  .detail-pesanan-item {
+    gap: 10px;
+  }
+
+  .detail-pesanan-image {
+    width: 54px;
+    height: 54px;
+  }
+
+  .detail-pesanan-item-price {
+    max-width: 95px;
+    font-size: 12px;
+  }
+
+  .detail-pesanan-grand-total strong {
+    font-size: 20px;
+  }
+
+  .detail-pesanan-actions {
+    flex-direction: column;
+  }
+
+  .detail-pesanan-actions .detail-pesanan-button {
+    width: 100%;
+  }
+}

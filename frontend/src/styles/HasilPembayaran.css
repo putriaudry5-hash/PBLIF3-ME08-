@@ -1,0 +1,159 @@
+/* HALAMAN HASIL PEMBAYARAN */
+.hasil-pembayaran-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fffbef;
+  color: #380b16;
+  font-family: inherit;
+}
+
+.hasil-pembayaran-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #f0dfd3;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(56, 11, 22, 0.08);
+}
+
+.pembayaran-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pembayaran-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #fff0e5;
+  color: #b84722;
+  border: 2px solid #f2c5a8;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.pembayaran-header h1 {
+  margin: 0 0 12px;
+  color: #380b16;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.pembayaran-header p {
+  margin: 0;
+  color: #765b5b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pembayaran-informasi {
+  padding: 8px 20px;
+  background: #fffbef;
+  border: 1px solid #f0dfd3;
+  border-radius: 14px;
+}
+
+.pembayaran-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eaded3;
+}
+
+.pembayaran-row:last-child {
+  border-bottom: none;
+}
+
+.pembayaran-row span {
+  color: #765b5b;
+  font-size: 14px;
+}
+
+.pembayaran-row strong {
+  color: #380b16;
+  font-size: 14px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.pembayaran-row .status-pembayaran {
+  color: #a33d1e;
+  font-weight: 700;
+}
+
+.pembayaran-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.btn-pembayaran {
+  flex: 1;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid #380b16;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #380b16;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-pembayaran:hover {
+  background: #f8e9df;
+}
+
+/* Tombol Lihat Detail Pesanan */
+.btn-pembayaran:last-child {
+  background: #ff9b22;
+  color: #380b16;
+  border: 1px solid #ff9b22;
+}
+
+.btn-pembayaran:last-child:hover {
+  background: #ff9b22;
+  border-color: #ff9b22;
+}
+
+@media (max-width: 600px) {
+  .hasil-pembayaran-page {
+    padding: 20px 14px;
+  }
+
+  .hasil-pembayaran-card {
+    padding: 24px 18px;
+  }
+
+  .pembayaran-header h1 {
+    font-size: 22px;
+  }
+
+  .pembayaran-informasi {
+    padding: 6px 14px;
+  }
+
+  .pembayaran-row {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pembayaran-actions {
+    flex-direction: column;
+  }
+
+  .btn-pembayaran {
+    width: 100%;
+  }
+}
