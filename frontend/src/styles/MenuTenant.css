@@ -1,0 +1,467 @@
+.menu-tenant-page {
+  min-height: 100vh;
+  background: #fff9e6;
+  color: #5b1725;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.menu-navbar {
+  min-height: 76px;
+  padding: 14px 6%;
+  background: #fffdf5;
+  border-bottom: 1px solid #ffe566;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  color: #5b1725;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.menu-brand > span:last-child > span {
+  color: #cd1c18;
+}
+
+.menu-logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #70172a;
+  color: white;
+  border-radius: 12px;
+  font-size: 24px;
+}
+
+.menu-cart-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #70172a;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu-cart-button:hover {
+  background: #cd1c18;
+}
+
+/* KONTEN UTAMA */
+.menu-main {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  padding: 30px 0 50px;
+}
+
+.menu-back-button {
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  color: #70172a;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-heading {
+  margin-top: 24px;
+  padding: 34px;
+  border-radius: 22px;
+  background: #fffdf5;
+  border: 1px solid #ffe566;
+}
+
+.menu-eyebrow {
+  color: #cd1c18;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.menu-heading h1 {
+  margin: 12px 0;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.menu-heading > p,
+.menu-list-heading p {
+  color: #826c68;
+  line-height: 1.6;
+}
+
+.menu-tenant-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.menu-tenant-info span {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #fff1c2;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* JUDUL DAFTAR MENU */
+.menu-list-section {
+  margin-top: 38px;
+}
+
+.menu-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.menu-list-heading h2 {
+  margin-bottom: 8px;
+  font-size: 27px;
+}
+
+.menu-list-heading p {
+  margin-top: 0;
+}
+
+.menu-list-heading > span {
+  white-space: nowrap;
+  background: #ffe566;
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* GRID MENU: 4 KOLOM DI DESKTOP */
+.menu-tenant-page .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.menu-tenant-page .menu-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #fffdf5;
+  border: 1px solid #f0e5ce;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #5b17251a;
+}
+
+/* GAMBAR MAKANAN */
+.menu-food-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #f1e8d5;
+}
+
+.menu-card-body {
+  padding: 16px;
+}
+
+.menu-card-body h3 {
+  margin: 0 0 9px;
+  font-size: 18px;
+}
+
+.menu-description {
+  min-height: 40px;
+  margin: 0;
+  color: #826c68;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* HARGA DAN TOMBOL TAMBAH */
+.menu-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.menu-card-bottom strong {
+  color: #70172a;
+  font-size: 15px;
+}
+
+.menu-add-button {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: #cd1c18;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.menu-add-button:hover {
+  background: #70172a;
+}
+
+/* PILIHAN HARGA PER PORSI */
+.prasmanan-label {
+  margin: 14px 0 8px;
+  font-size: 14px;
+  color: #805b60;
+}
+
+.prasmanan-harga-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.prasmanan-harga-option {
+  width: 100%;
+  padding: 10px 6px;
+  border: 1px solid #ffe566;
+  border-radius: 10px;
+  background: #fffdf5;
+  color: #70172a;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.prasmanan-harga-option:hover {
+  background: #fff0b3;
+}
+
+.prasmanan-harga-option.dipilih {
+  background: #70172a;
+  border-color: #70172a;
+  color: #ffffff;
+}
+
+.prasmanan-harga-grid + .menu-card-bottom {
+  margin-top: 4px;
+}
+
+/* HARGA TETAP PER POTONG */
+.menu-prasmanan-fixed {
+  margin-top: 4px;
+}
+
+.menu-satuan-label {
+  display: inline-block;
+  margin: 14px 0 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #fff0b3;
+  color: #70172a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.menu-prasmanan-fixed .menu-card-bottom {
+  margin-top: 8px;
+}
+
+/* RINGKASAN KERANJANG */
+.menu-cart-summary {
+  position: sticky;
+  bottom: 16px;
+  margin-top: 30px;
+  padding: 18px 22px;
+  border: 1px solid #ffe566;
+  border-radius: 16px;
+  background: #fffdf5;
+  box-shadow: 0 8px 28px #5b17251a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  z-index: 5;
+}
+
+.menu-cart-summary p {
+  margin-bottom: 0;
+}
+
+.menu-cart-summary button,
+.menu-not-found button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: #70172a;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.menu-cart-summary button:hover,
+.menu-not-found button:hover {
+  background: #cd1c18;
+}
+
+/* TENANT TIDAK DITEMUKAN */
+.menu-not-found {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 16px;
+  background: #fff9e6;
+  color: #5b1725;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .menu-tenant-page .menu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-food-image {
+    height: 170px;
+  }
+
+  .menu-card-body {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .menu-tenant-page .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-heading {
+    padding: 26px;
+  }
+}
+
+/* HP */
+@media (max-width: 500px) {
+  .menu-navbar {
+    padding: 12px 5%;
+  }
+
+  .menu-brand {
+    font-size: 18px;
+  }
+
+  .menu-logo {
+    width: 36px;
+    height: 36px;
+    font-size: 21px;
+  }
+
+  .menu-cart-button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .menu-main {
+    width: 90%;
+    padding-top: 20px;
+  }
+
+  .menu-heading {
+    padding: 22px;
+  }
+
+  .menu-list-heading h2 {
+    font-size: 23px;
+  }
+
+  .menu-tenant-page .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .menu-food-image {
+    height: 135px;
+  }
+
+  .menu-card-body {
+    padding: 12px;
+  }
+
+  .menu-card-body h3 {
+    font-size: 16px;
+  }
+
+  .menu-description {
+    font-size: 12px;
+  }
+
+  .menu-card-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .menu-add-button {
+    width: 100%;
+  }
+
+  .prasmanan-harga-option {
+    font-size: 12px;
+    padding: 9px 4px;
+  }
+
+  .menu-cart-summary {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 16px;
+  }
+}
+
+
+.menu-cart-error,
+.menu-cart-success {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.menu-cart-error {
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.menu-cart-success {
+  background: #edf9f0;
+  color: #18733b;
+}
+
+.menu-add-button:disabled,
+.prasmanan-harga-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,727 @@
+.beranda-pelanggan {
+  min-height: 100vh;
+  background: #fffbef;
+  color: #380b16;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.beranda-pelanggan * {
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+
+.beranda-navbar {
+  height: 62px;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffdf7;
+  border-bottom: 1px solid #f0e5d5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.beranda-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #380b16;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.beranda-brand > span:last-child > span {
+  color: #c91d1d;
+}
+
+.beranda-logo {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: #ff9b22;
+  color: white;
+  border-radius: 9px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.beranda-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.beranda-nav-links > a {
+  color: #65545a;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.beranda-nav-links > a:hover,
+.beranda-nav-links > .nav-active {
+  color: #c91d1d;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.profile-avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff0cc;
+  color: #380b16;
+  font-weight: 800;
+}
+
+.profile-name {
+  font-weight: 700;
+}
+
+/* KONTEN */
+
+.beranda-content {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 28px 4%;
+}
+
+/* BANNER */
+
+.beranda-hero {
+  min-height: 320px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  overflow: hidden;
+  background: #fff5e9;
+  border: 1px solid #f0d8be;
+  border-radius: 15px;
+  box-shadow: 0 5px 16px rgba(56, 11, 22, 0.04);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 9%;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 5px;
+  background: #fffdf7;
+  color: #c91d1d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-bottom: 17px;
+}
+
+.hero-text h1 {
+  color: #380b16;
+  font-size: clamp(30px, 3vw, 43px);
+  line-height: 1.16;
+  letter-spacing: -1.2px;
+  margin: 0 0 15px;
+}
+
+.hero-text p {
+  max-width: 430px;
+  color: #806f6c;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 19px;
+  background: #ff9b22;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(255, 155, 34, 0.18);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-button:hover {
+  background: #e98612;
+  transform: translateY(-1px);
+}
+
+.hero-image {
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 10px 10px 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: block;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+.hero-image-caption {
+  position: absolute;
+  left: 20px;
+  bottom: 23px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 9px;
+  background: rgba(255, 253, 247, 0.94);
+  color: #380b16;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* DAFTAR TENANT */
+
+.tenant-section {
+  padding-top: 42px;
+}
+
+.tenant-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.section-eyebrow {
+  display: block;
+  color: #c91d1d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.tenant-section-heading h2 {
+  color: #380b16;
+  font-size: 26px;
+  margin: 0 0 8px;
+  letter-spacing: -0.6px;
+}
+
+.tenant-section-heading p {
+  color: #8a7977;
+  font-size: 12px;
+  margin: 0;
+}
+
+.tenant-total {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: 1px solid #f0d8be;
+  border-radius: 7px;
+  background: #fffdf7;
+  color: #c91d1d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* KARTU TENANT */
+
+.tenant-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tenant-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #eee3d8;
+  border-radius: 12px;
+  box-shadow: 0 4px 13px rgba(56, 11, 22, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tenant-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(56, 11, 22, 0.09);
+}
+
+.tenant-image-wrap {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+  background: #f1e9d9;
+}
+
+.tenant-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.tenant-card:hover .tenant-image {
+  transform: scale(1.04);
+}
+
+.tenant-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 8px;
+  background: #fffdf7;
+  border: 1px solid #e9e5d9;
+  border-radius: 20px;
+  color: #38794a;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: #45a65e;
+  border-radius: 50%;
+}
+
+.tenant-card-body {
+  padding: 15px;
+}
+
+.tenant-card-body h3 {
+  color: #380b16;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 7px;
+}
+
+.tenant-category {
+  color: #8b7b77;
+  font-size: 11px;
+  margin: 0 0 14px;
+}
+
+.tenant-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+  margin-bottom: 13px;
+}
+
+.tenant-info span {
+  padding: 7px 8px;
+  border-radius: 6px;
+  background: #faf6ef;
+  color: #75615e;
+  font-size: 10px;
+}
+
+.tenant-menu-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid #f4c7b9;
+  border-radius: 7px;
+  background: #fffdf7;
+  color: #c91d1d;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tenant-menu-button:hover {
+  background: #fff0e9;
+}
+
+/* FOOTER */
+
+.beranda-footer {
+  padding: 32px 0 12px;
+  color: #a0928b;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 1400px) {
+  .tenant-image-wrap {
+    height: 185px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .tenant-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .beranda-content {
+    padding: 24px 3%;
+  }
+
+  .beranda-hero {
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  .hero-text {
+    padding: 30px;
+  }
+
+  .hero-image {
+    min-height: 290px;
+  }
+
+  .hero-image img {
+    min-height: 270px;
+  }
+}
+
+@media (max-width: 700px) {
+  .beranda-navbar {
+    height: auto;
+    min-height: 60px;
+    padding: 12px 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .beranda-nav-links {
+    gap: 15px;
+  }
+
+  .beranda-nav-links > a {
+    font-size: 11px;
+  }
+
+  .profile-name {
+    display: none;
+  }
+
+  .beranda-content {
+    padding: 20px 16px;
+  }
+
+  .beranda-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    padding: 30px 24px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-image {
+    min-height: 220px;
+    padding: 0 10px 10px;
+  }
+
+  .hero-image img {
+    min-height: 210px;
+    max-height: 250px;
+  }
+
+  .hero-image-caption {
+    bottom: 23px;
+    left: 20px;
+  }
+
+  .tenant-section {
+    padding-top: 30px;
+  }
+
+  .tenant-section-heading h2 {
+    font-size: 23px;
+  }
+
+  .tenant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .tenant-image-wrap {
+    height: 125px;
+  }
+
+  .tenant-card-body {
+    padding: 11px;
+  }
+
+  .tenant-card-body h3 {
+    font-size: 13px;
+  }
+
+  .tenant-info {
+    flex-direction: column;
+  }
+
+  .tenant-info span {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .tenant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-image-wrap {
+    height: 190px;
+  }
+}
+
+
+/* TOMBOL KERANJANG DI NAVBAR */
+.nav-cart-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.nav-cart-button:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.nav-cart-icon {
+  font-size: 19px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #e53935;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .beranda-navbar {
+    flex-wrap: wrap;
+  }
+
+  .beranda-nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-cart-button {
+    padding: 7px;
+    font-size: 13px;
+  }
+}
+
+/* FOTO DAN NAMA PROFIL DI NAVBAR */
+.profile-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f4e5d6;
+  color: #762d2d;
+  font-weight: 700;
+}
+
+.profile-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-avatar > span {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+
+.profile-name {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* PERBAIKAN NAVBAR MOBILE KANTINKITA */
+@media (max-width: 768px) {
+  .beranda-navbar {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  /* Logo berada di bagian atas */
+  .beranda-brand {
+    align-self: flex-start;
+    gap: 9px;
+    font-size: 21px;
+    white-space: nowrap;
+  }
+
+  .beranda-logo {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  /* Semua menu dirapikan dalam satu baris */
+  .beranda-nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .beranda-nav-links > a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .nav-cart-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 4px;
+    padding: 6px 4px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .nav-cart-icon {
+    font-size: 16px;
+  }
+
+  .nav-profile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profile-name {
+    display: none;
+  }
+}
+
+/* HP dengan layar sangat kecil */
+@media (max-width: 400px) {
+  .beranda-navbar {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .beranda-brand {
+    font-size: 19px;
+  }
+
+  .beranda-nav-links {
+    gap: 3px;
+  }
+
+  .beranda-nav-links > a {
+    font-size: 10px;
+  }
+
+  .nav-cart-button {
+    gap: 2px;
+    padding: 5px 2px;
+    font-size: 10px;
+  }
+
+  .nav-cart-icon {
+    font-size: 14px;
+  }
+
+  .profile-avatar {
+    width: 30px;
+    height: 30px;
+  }
+}

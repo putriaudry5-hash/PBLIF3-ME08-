@@ -1,0 +1,336 @@
+
+/* DAFTAR PESANAN */
+.daftar-pesanan {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.daftar-pesanan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #380b16;
+}
+
+.daftar-pesanan-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.daftar-pesanan-header span {
+  color: #765b5b;
+  font-size: 14px;
+}
+
+.pesanan-card {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #f0dfd3;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(56, 11, 22, 0.06);
+  color: #380b16;
+}
+
+.pesanan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eaded3;
+}
+
+.pesanan-label {
+  color: #765b5b;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+}
+
+.pesanan-card-header h3 {
+  margin: 6px 0;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.pesanan-tanggal {
+  margin: 0;
+  color: #765b5b;
+  font-size: 13px;
+}
+
+.pesanan-status {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #fff0e5;
+  color: #a33d1e;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.progres-pesanan {
+  padding: 22px 0;
+  border-bottom: 1px solid #eaded3;
+}
+
+.progres-pesanan > h3 {
+  margin: 0 0 24px;
+  font-size: 16px;
+}
+
+.progres-langkah {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.progres-tahap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 9px;
+  color: #a99a96;
+  text-align: center;
+}
+
+.progres-ikon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #f1eeeb;
+  color: #8b7d79;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.progres-tahap.aktif {
+  color: #27834a;
+}
+
+.progres-tahap.aktif .progres-ikon {
+  background: #e6f4ea;
+  color: #27834a;
+  border: 1px solid #b7dfc1;
+}
+
+.progres-tahap span {
+  max-width: 100px;
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.progres-garis {
+  height: 5px;
+  margin: 14px 10px 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f1eeeb;
+}
+
+.progres-garis-isi {
+  height: 100%;
+  border-radius: 10px;
+  background: #27834a;
+  transition: width 0.3s ease;
+}
+
+.progres-keterangan {
+  margin: 16px 0 0;
+  color: #765b5b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pesanan-card-menu {
+  padding: 10px 0;
+}
+
+.pesanan-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.pesanan-menu-item strong {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.pesanan-menu-item p {
+  margin: 6px 0 0;
+  color: #765b5b;
+  font-size: 13px;
+}
+
+.pesanan-menu-item > strong {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pesanan-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid #eaded3;
+}
+
+.pesanan-ringkasan {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pesanan-ringkasan span {
+  color: #765b5b;
+  font-size: 13px;
+}
+
+.pesanan-ringkasan strong {
+  font-size: 13px;
+  text-align: right;
+}
+
+.pesanan-ringkasan .pesanan-total {
+  color: #a33d1e;
+  font-size: 17px;
+}
+
+.pesanan-detail-button,
+.pesanan-simulasi-button {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pesanan-detail-button {
+  margin-bottom: 10px;
+  border: 1px solid #380b16;
+  background: #fff;
+  color: #380b16;
+}
+
+.pesanan-detail-button:hover {
+  background: #f8e9df;
+}
+
+.pesanan-simulasi-button {
+  border: 1px solid #ff9b22;
+  background: #ff9b22;
+  color: #380b16;
+}
+
+.pesanan-simulasi-button:hover {
+  background: #f18b12;
+}
+
+@media (max-width: 480px) {
+  .pesanan-card {
+    padding: 18px 14px;
+  }
+
+  .pesanan-card-header {
+    flex-direction: column;
+  }
+
+  .progres-ikon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .progres-tahap span {
+    font-size: 10px;
+  }
+}
+
+
+/* HEADER PESANAN SAYA */
+.pesanan-saya-header {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0 28px;
+}
+
+.pesanan-kembali {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+
+  background: #ffffff;
+  color: #380b16;
+  border: 1px solid #eaded3;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pesanan-kembali:hover {
+  background: #fff0e5;
+  border-color: #ff9b22;
+  transform: translateX(-2px);
+}
+
+.pesanan-kembali:focus-visible {
+  outline: 2px solid #ff9b22;
+  outline-offset: 3px;
+}
+
+.pesanan-saya-header h1 {
+  margin: 0 0 8px;
+  color: #380b16;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.pesanan-saya-header p {
+  margin: 0;
+  color: #765b5b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .pesanan-saya-header {
+    padding: 14px 0 22px;
+  }
+
+  .pesanan-kembali {
+    margin-bottom: 20px;
+  }
+
+  .pesanan-saya-header h1 {
+    font-size: 25px;
+  }
+
+  .pesanan-saya-header p {
+    font-size: 14px;
+  }
+}
