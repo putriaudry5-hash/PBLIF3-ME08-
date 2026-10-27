@@ -18,14 +18,19 @@ function bacaPesanan() {
 
 function statusPesanan(item) {
   const status = String(item.status || "").toLowerCase();
+  const index = Number(item.statusIndex);
 
-  if (status.includes("batal") || status.includes("cancel")) {
+  if (
+    status.includes("batal") ||
+    status.includes("cancel")
+  ) {
     return "Dibatalkan";
   }
 
-  const index = Number(item.statusIndex);
-
-  if (status.includes("selesai") || index >= 3) {
+  if (
+    status.includes("selesai") ||
+    index >= 3
+  ) {
     return "Selesai";
   }
 
@@ -67,7 +72,18 @@ function namaMenu(menu) {
 }
 
 function jumlahMenu(menu) {
-  return Number(menu.quantity ?? menu.jumlah ?? menu.qty ?? 1);
+  return Number(
+    menu.quantity ?? menu.jumlah ?? menu.qty ?? 1
+  );
+}
+
+function hargaMenu(menu) {
+  return Number(
+    menu.harga ??
+    menu.harga_satuan ??
+    menu.price ??
+    0
+  );
 }
 
 export default function RiwayatPesanan() {
@@ -114,21 +130,24 @@ export default function RiwayatPesanan() {
 
         <header className="riwayat-header">
           <span className="riwayat-eyebrow">
-            AKTIVITAS KAMU
+            RIWAYAT TRANSAKSI
           </span>
 
           <h1>Riwayat Pesanan</h1>
 
           <p>
             Daftar pesanan yang sudah selesai atau dibatalkan.
+            Kamu bisa melihat kembali menu dan transaksi sebelumnya.
           </p>
         </header>
 
         <section className="riwayat-list-section">
           <div className="riwayat-list-heading">
             <div>
-              <h2>Daftar Transaksi</h2>
-              <p>Riwayat transaksi KantinKita.</p>
+              <h2>Daftar Riwayat Pesanan</h2>
+              <p>
+                Pesanan yang sudah mencapai status akhir.
+              </p>
             </div>
 
             <span className="riwayat-count">
@@ -138,21 +157,23 @@ export default function RiwayatPesanan() {
 
           {daftarPesanan.length === 0 ? (
             <div className="riwayat-kosong">
-              <div className="riwayat-empty-icon">📋</div>
+              <div className="riwayat-empty-icon">
+                🧾
+              </div>
 
               <h3>Belum Ada Riwayat Pesanan</h3>
 
               <p>
-                Pesanan yang selesai atau dibatalkan akan
-                ditampilkan di sini.
+                Pesanan yang sudah selesai atau dibatalkan
+                akan muncul di halaman ini.
               </p>
 
               <button
                 type="button"
                 className="riwayat-cari-button"
-                onClick={() => navigate("/beranda")}
+                onClick={() => navigate("/")}
               >
-                Cari Makanan →
+                Cari Menu
               </button>
             </div>
           ) : (
@@ -161,98 +182,115 @@ export default function RiwayatPesanan() {
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Nomor Pesanan</th>
+                    <th>ID Pesanan</th>
                     <th>Tanggal</th>
-                    <th>Nama Kantin</th>
-                    <th>Menu</th>
-                    <th>Jumlah</th>
-                    <th>Total Pembayaran</th>
+                    <th>Tenant</th>
+                    <th>Menu Pesanan</th>
+                    <th>Total</th>
                     <th>Status</th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {daftarPesanan.map((item, index) => {
-                    const items = Array.isArray(item.items)
-                      ? item.items
-                      : [];
+                  {daftarPesanan.map((pesanan, index) => {
+                    const status = statusPesanan(pesanan);
 
-                    const jumlah =
-                      item.totalItem ??
+                    const items = Array.isArray(pesanan.items)
+                      ? pesanan.items
+                      : Array.isArray(pesanan.detail)
+                        ? pesanan.detail
+                        : [];
+
+                    const totalItem = items.reduce(
+                      (total, menu) =>
+                        total + jumlahMenu(menu),
+                      0
+                    );
+
+                    const totalHarga =
+                      pesanan.totalHarga ??
+                      pesanan.total_harga ??
+                      pesanan.total ??
                       items.reduce(
                         (total, menu) =>
-                          total + jumlahMenu(menu),
+                          total +
+                          hargaMenu(menu) * jumlahMenu(menu),
                         0
                       );
 
                     const nomorPesanan =
-                      item.nomorSimulasi || item.id || "-";
+                      pesanan.nomorSimulasi ||
+                      pesanan.kode ||
+                      pesanan.id ||
+                      `PES-${index + 1}`;
 
-                    const tenant =
-                      item.namaTenant ||
-                      item.tenant?.nama ||
-                      item.tenant?.name ||
-                      item.tenantName ||
+                    const namaTenant =
+                      pesanan.namaTenant ||
+                      pesanan.nama_tenant ||
+                      pesanan.tenant?.nama ||
+                      pesanan.tenant?.name ||
                       "Tenant KantinKita";
 
-                    const status = statusPesanan(item);
-
                     return (
-                      <tr
-                        key={
-                          item.id ||
-                          item.nomorSimulasi ||
-                          `${item.tanggal || "pesanan"}-${index}`
-                        }
-                      >
+                      <tr key={pesanan.id ?? nomorPesanan}>
                         <td className="riwayat-nomor">
                           {index + 1}
                         </td>
 
                         <td className="riwayat-id">
-                          #{nomorPesanan}
+                          {nomorPesanan}
                         </td>
 
                         <td className="riwayat-tanggal">
-                          {formatTanggal(item.tanggal)}
+                          {formatTanggal(
+                            pesanan.tanggal ||
+                            pesanan.created_at
+                          )}
                         </td>
 
                         <td className="riwayat-tenant">
-                          {tenant}
+                          {namaTenant}
                         </td>
 
                         <td>
-                          <div className="riwayat-menu-list">
-                            {items.length > 0 ? (
-                              items.map((menu, menuIndex) => (
+                          {items.length > 0 ? (
+                            <div className="riwayat-menu-list">
+                              {items.map((menu, menuIndex) => (
                                 <div
-                                  key={menuIndex}
                                   className="riwayat-menu-item"
+                                  key={
+                                    menu.id ??
+                                    `${namaMenu(menu)}-${menuIndex}`
+                                  }
                                 >
-                                  <span>{namaMenu(menu)}</span>
+                                  <span>
+                                    {namaMenu(menu)}
+                                  </span>
+
                                   <small>
-                                    {jumlahMenu(menu)} ×{" "}
+                                    {jumlahMenu(menu)} item
+                                    {" · "}
                                     {formatRupiah(
-                                      menu.harga ??
-                                      menu.price ??
-                                      menu.harga_satuan ??
-                                      0
+                                      hargaMenu(menu) *
+                                      jumlahMenu(menu)
                                     )}
                                   </small>
                                 </div>
-                              ))
-                            ) : (
-                              <span className="riwayat-tidak-ada">
-                                Detail tidak tersedia
-                              </span>
-                            )}
-                          </div>
+                              ))}
+
+                              <small>
+                                Total {totalItem} item
+                              </small>
+                            </div>
+                          ) : (
+                            <span className="riwayat-tidak-ada">
+                              Detail menu tidak tersedia
+                            </span>
+                          )}
                         </td>
 
-                        <td>{jumlah} item</td>
-
                         <td className="riwayat-total">
-                          {formatRupiah(item.totalHarga)}
+                          {formatRupiah(totalHarga)}
                         </td>
 
                         <td>
@@ -276,7 +314,7 @@ export default function RiwayatPesanan() {
         </section>
 
         <footer className="riwayat-footer">
-          KantinKita · Riwayat transaksi
+          KantinKita · Riwayat transaksi pelanggan
         </footer>
       </div>
     </main>

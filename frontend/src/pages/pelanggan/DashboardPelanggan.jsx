@@ -1,3 +1,4 @@
+﻿import heroImage from "../../assets/hero.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/DashboardPelanggan.css";
@@ -87,7 +88,7 @@ function DashboardPelanggan() {
         setTenants(
           dataTenant.map((tenant) => ({
             id: tenant.id,
-            nama: tenant.nama ?? "Tenant",
+            nama: tenant.nama ?? tenant.name ?? "Tenant",
             kategori:
               tenant.kategori ??
               tenant.keterangan ??
@@ -226,7 +227,7 @@ function DashboardPelanggan() {
             onClick={() => navigate("/keranjang")}
             aria-label={`Keranjang, ${jumlahKeranjang} barang`}
           >
-            <span className="nav-cart-icon">🛒</span>
+            <span className="nav-cart-icon">ðŸ›’</span>
             <span>Keranjang</span>
 
             {jumlahKeranjang > 0 && (
@@ -298,12 +299,12 @@ function DashboardPelanggan() {
 
           <div className="hero-image">
             <img
-              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1000"
+              src={heroImage}
               alt="Suasana dapur"
             />
 
             <div className="hero-image-caption">
-              <span>🍽️</span>
+              <span>ðŸ½ï¸</span>
               Banyak pilihan, lebih praktis!
             </div>
           </div>
@@ -384,7 +385,7 @@ function DashboardPelanggan() {
                     </p>
 
                     <div className="tenant-info">
-                      <span>🍴 {tenant.jenis}</span>
+                      <span>ðŸ´ {tenant.jenis}</span>
                     </div>
 
                     <button
@@ -394,7 +395,7 @@ function DashboardPelanggan() {
                         navigate(`/tenant/${tenant.id}/menu`)
                       }
                     >
-                      Lihat Menu <span>→</span>
+                      Lihat Menu <span>â†’</span>
                     </button>
                   </div>
                 </article>
@@ -405,7 +406,7 @@ function DashboardPelanggan() {
 
         {/* FOOTER */}
         <footer className="beranda-footer">
-          © 2026 KantinKita · Pesan makanan kampus lebih praktis.
+          Â© 2026 KantinKita Â· Pesan makanan kampus lebih praktis.
         </footer>
       </main>
     </div>
@@ -413,3 +414,4 @@ function DashboardPelanggan() {
 }
 
 export default DashboardPelanggan;
+
