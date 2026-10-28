@@ -1,9 +1,11 @@
+﻿import heroImage from "../../assets/hero.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/DashboardPelanggan.css";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+const API_URL = (
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"
+).replace(/\/+$/, "");
 
 const GAMBAR_DEFAULT =
   "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=700";
@@ -43,7 +45,7 @@ function DashboardPelanggan() {
   const [loadingTenant, setLoadingTenant] = useState(true);
   const [errorTenant, setErrorTenant] = useState("");
 
-  // Mengambil tenant langsung dari database melalui Laravel API
+  // Mengambil tenant dari Laravel API
   useEffect(() => {
     const controller = new AbortController();
 
@@ -68,7 +70,7 @@ function DashboardPelanggan() {
 
         const hasil = await response.json();
 
-        // Mendukung respons berbentuk array atau object pembungkus
+        // Mendukung beberapa bentuk respons API
         const dataTenant = Array.isArray(hasil)
           ? hasil
           : Array.isArray(hasil.data)
@@ -79,15 +81,10 @@ function DashboardPelanggan() {
           ? hasil.data.tenants
           : [];
 
-        if (!Array.isArray(dataTenant)) {
-          throw new Error("Format data tenant dari API tidak sesuai.");
-        }
-
-        // Menggunakan data tenant dari database
         setTenants(
           dataTenant.map((tenant) => ({
             id: tenant.id,
-            nama: tenant.nama ?? "Tenant",
+            nama: tenant.nama ?? tenant.name ?? "Tenant",
             kategori:
               tenant.kategori ??
               tenant.keterangan ??
@@ -95,7 +92,7 @@ function DashboardPelanggan() {
               "Tenant Kantin",
             jenis: tenant.jenis ?? "Tidak ditentukan",
             gambar: tenant.foto
-              ? tenant.foto.startsWith("http")
+              ? /^https?:\/\//i.test(tenant.foto)
                 ? tenant.foto
                 : `${API_URL}/storage/${tenant.foto.replace(/^\/+/, "")}`
               : GAMBAR_DEFAULT,
@@ -121,7 +118,7 @@ function DashboardPelanggan() {
     return () => controller.abort();
   }, []);
 
-  // Mengambil jumlah barang di keranjang pelanggan
+  // Mengambil jumlah barang di keranjang
   useEffect(() => {
     const controller = new AbortController();
 
@@ -254,6 +251,7 @@ function DashboardPelanggan() {
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                     const fallback = e.currentTarget.nextElementSibling;
+
                     if (fallback) {
                       fallback.style.display = "flex";
                     }
@@ -261,7 +259,11 @@ function DashboardPelanggan() {
                 />
               ) : null}
 
-              <span style={{ display: fotoProfil ? "none" : "flex" }}>
+              <span
+                style={{
+                  display: fotoProfil ? "none" : "flex",
+                }}
+              >
                 {namaProfil.trim().charAt(0).toUpperCase() || "P"}
               </span>
             </span>
@@ -297,16 +299,19 @@ function DashboardPelanggan() {
           </div>
 
           <div className="hero-image">
-            <img
-              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1000"
-              alt="Suasana dapur"
-            />
+  <img
+    src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=900"
+    alt="Beragam hidangan makanan"
+    onError={(e) => {
+      e.currentTarget.style.display = "none";
+    }}
+  />
 
-            <div className="hero-image-caption">
-              <span>🍽️</span>
-              Banyak pilihan, lebih praktis!
-            </div>
-          </div>
+  <div className="hero-image-caption">
+    <span>🍽️</span>
+    Banyak pilihan, lebih praktis!
+  </div>
+</div>
         </section>
 
         {/* DAFTAR TENANT DARI API */}
@@ -339,6 +344,7 @@ function DashboardPelanggan() {
           ) : errorTenant ? (
             <div className="tenant-empty" role="alert">
               <p>{errorTenant}</p>
+
               <button
                 type="button"
                 className="tenant-menu-button"

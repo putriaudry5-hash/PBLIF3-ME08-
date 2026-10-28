@@ -228,6 +228,7 @@ function Keranjang() {
     <div className="keranjang-page">
       <header className="keranjang-navbar">
         <button
+          type="button"
           className="keranjang-brand"
           onClick={() => navigate("/beranda")}
           aria-label="Kembali ke dashboard KantinKita"
@@ -244,6 +245,7 @@ function Keranjang() {
         </div>
 
         <button
+          type="button"
           className="keranjang-nav-back"
           onClick={() => navigate("/beranda")}
         >
@@ -253,7 +255,10 @@ function Keranjang() {
 
       <main className="keranjang-content">
         <div className="keranjang-breadcrumb">
-          <button onClick={() => navigate("/beranda")}>
+          <button
+            type="button"
+            onClick={() => navigate("/beranda")}
+          >
             Beranda
           </button>
           <span>/</span>
@@ -277,7 +282,12 @@ function Keranjang() {
         {error && (
           <div className="keranjang-alert" role="alert">
             <span>{error}</span>
-            <button onClick={muatKeranjang}>Muat ulang</button>
+            <button
+              type="button"
+              onClick={muatKeranjang}
+            >
+              Muat ulang
+            </button>
           </div>
         )}
 
@@ -295,6 +305,7 @@ function Keranjang() {
               Yuk, cari menu favoritmu di KantinKita.
             </p>
             <button
+              type="button"
               className="keranjang-primary"
               onClick={() => navigate("/beranda")}
             >
@@ -361,6 +372,7 @@ function Keranjang() {
                     </p>
 
                     <button
+                      type="button"
                       className="keranjang-delete"
                       onClick={() => hapusItem(item)}
                       disabled={itemDiproses === item.id}
@@ -372,6 +384,8 @@ function Keranjang() {
                   <div className="keranjang-item-side">
                     <div className="keranjang-quantity">
                       <button
+                        type="button"
+                        className="keranjang-quantity-btn"
                         aria-label={`Kurangi ${item.nama_menu}`}
                         disabled={
                           item.quantity <= 1 ||
@@ -382,9 +396,13 @@ function Keranjang() {
                         −
                       </button>
 
-                      <span>{item.quantity}</span>
+                      <span className="keranjang-quantity-number">
+                        {item.quantity}
+                      </span>
 
                       <button
+                        type="button"
+                        className="keranjang-quantity-btn"
                         aria-label={`Tambah ${item.nama_menu}`}
                         disabled={itemDiproses === item.id}
                         onClick={() => ubahJumlah(item, 1)}
@@ -402,6 +420,7 @@ function Keranjang() {
 
               <div className="keranjang-bottom-actions">
                 <button
+                  type="button"
                   className="keranjang-continue"
                   onClick={() => navigate("/beranda")}
                 >
@@ -409,6 +428,7 @@ function Keranjang() {
                 </button>
 
                 <button
+                  type="button"
                   className="keranjang-primary keranjang-checkout-bottom"
                   onClick={lanjutCheckout}
                   disabled={itemsTerpilih.length === 0}

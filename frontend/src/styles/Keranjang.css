@@ -404,28 +404,59 @@
   white-space: nowrap;
 }
 
+
+/* Kontrol jumlah barang di keranjang */
 .keranjang-quantity {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 11px;
-  padding: 4px;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 8px;
+  min-width: 118px;
+  box-sizing: border-box;
   border: 1px solid #f0d8be;
-  border-radius: 8px;
+  border-radius: 9px;
   background: #fffdf7;
 }
 
+/* Tombol minus dan plus */
 .keranjang-quantity button {
-  width: 29px;
-  height: 29px;
-  display: grid;
-  place-items: center;
-  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
   border-radius: 6px;
   background: #fff0cc;
-  color: #a95c08;
-  font-size: 19px;
+  color: #70172a;
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
+}
+
+.keranjang-quantity button:hover:not(:disabled) {
+  background: #ffe3a3;
+}
+
+.keranjang-quantity button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Angka jumlah */
+.keranjang-quantity span {
+  display: inline-block;
+  min-width: 18px;
+  text-align: center;
+  color: #380b16;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 30px;
 }
 
 .keranjang-quantity button:hover {
@@ -1158,4 +1189,224 @@
     width: 100%;
     text-align: center;
   }
+}
+
+
+/* =====================================
+   TOMBOL JUMLAH BARANG KERANJANG
+===================================== */
+
+.keranjang-page .keranjang-quantity {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 124px;
+  min-height: 44px;
+  padding: 5px 7px;
+  border: 1px solid #eadfc9;
+  border-radius: 10px;
+  background: #fffdf5;
+  box-sizing: border-box;
+}
+
+.keranjang-page .keranjang-quantity button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px !important;
+  min-width: 32px;
+  height: 32px !important;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  background: #ffe566;
+  color: #5b1725;
+  font-family: inherit;
+  font-size: 20px !important;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.keranjang-page .keranjang-quantity button:hover:not(:disabled) {
+  background: #f5d64d !important;
+}
+
+.keranjang-page .keranjang-quantity button:disabled {
+  background: #f0ede5 !important;
+  color: #aaa49a !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.keranjang-page .keranjang-quantity span {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-width: 20px;
+  margin: 0;
+  padding: 0;
+  color: #5b1725;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Kontrol jumlah barang */
+.keranjang-quantity {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-width: 120px;
+  height: 44px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+  border: 1px solid #eadfc9;
+  border-radius: 10px;
+  background: #fffdf5;
+}
+
+/* Tombol minus dan plus */
+.keranjang-quantity .keranjang-quantity-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 32px !important;
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 7px !important;
+  background: #ffe566 !important;
+  color: #5b1725 !important;
+  font-family: inherit;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.keranjang-quantity .keranjang-quantity-btn:hover:not(:disabled) {
+  background: #f5d64d !important;
+}
+
+.keranjang-quantity .keranjang-quantity-btn:disabled {
+  background: #f0ede5 !important;
+  color: #aaa49a !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* Angka jumlah barang */
+.keranjang-quantity .keranjang-quantity-number {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 20px !important;
+  width: 20px !important;
+  min-width: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  color: #5b1725 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   FIX TOMBOL JUMLAH KERANJANG KANTINKITA
+========================================= */
+
+.keranjang-page .keranjang-item-side .keranjang-quantity {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+
+  width: 124px !important;
+  min-width: 124px !important;
+  height: 44px !important;
+  padding: 5px 6px !important;
+
+  box-sizing: border-box !important;
+  border: 1px solid #eadfc9 !important;
+  border-radius: 10px !important;
+  background: #fffdf5 !important;
+}
+
+.keranjang-page .keranjang-item-side .keranjang-quantity > button.keranjang-quantity-btn {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  display: flex !important;
+  flex: 0 0 32px !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 32px !important;
+  min-width: 32px !important;
+  max-width: 32px !important;
+  height: 32px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 7px !important;
+
+  background: #ffe566 !important;
+  color: #5b1725 !important;
+  font-family: inherit !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+.keranjang-page .keranjang-item-side .keranjang-quantity > button.keranjang-quantity-btn:hover:not(:disabled) {
+  background: #f5d64d !important;
+}
+
+.keranjang-page .keranjang-item-side .keranjang-quantity > button.keranjang-quantity-btn:disabled {
+  background: #f0ede5 !important;
+  color: #aaa49a !important;
+  cursor: not-allowed !important;
+  opacity: 1 !important;
+}
+
+.keranjang-page .keranjang-item-side .keranjang-quantity > span.keranjang-quantity-number {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-width: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+
+  color: #5b1725 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  text-align: center !important;
 }
